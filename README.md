@@ -1,20 +1,37 @@
-# Mon Nom
+# [Your Name]
 
----
+## About Me
 
-<div style="display: flex; align-items: center;">
-  <div style="flex: 1; margin-right: 20px;">
-    <img src="https://imgur.com/a/hEEf1LB" alt="Ma Photo" style="border-radius: 50%; width: 100px; height: 100px;">
-    <div style="text-align: center;">
-      <p>Ville</p>
-      <p>Âge</p>
-    </div>
-  </div>
-  <div style="flex: 2;">
-    ## Bienvenue sur mon site
+Brief introduction about yourself, your professional background, skills, and interests.
 
-    - Point 1
-    - Point 2
-    - Point 3
-  </div>
-</div>
+## Projects
+
+### [Project Name 1](link_to_project_1)
+Short description of the project.
+
+### [Project Name 2](link_to_project_2)
+Short description of the project.
+
+### [Project Name 3](link_to_project_3)
+Short description of the project.
+
+## Blog
+
+### [Blog Post 1 Title](link_to_blog_post_1)
+Brief summary of the blog post.
+
+### [Blog Post 2 Title](link_to_blog_post_2)
+Brief summary of the blog post.
+
+### [Blog Post 3 Title](link_to_blog_post_3)
+Brief summary of the blog post.
+
+## Contact
+
+- Email: [your@email.com](mailto:your@email.com)
+- LinkedIn: [Your LinkedIn Profile](link_to_linkedin_profile)
+- GitHub: [Your GitHub Profile](link_to_github_profile)
+
+## Resume/CV
+
+You can also link to your resume or CV if you have it hosted on GitHub or elsewhere.
