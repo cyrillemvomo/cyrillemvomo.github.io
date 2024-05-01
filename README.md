@@ -1,5 +1,5 @@
-<div style="display: flex; align-items: center; margin-bottom: 20px;">
-  <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 100px; height: 100px; margin-right: 20px;">
+<div style="display: flex; align-items: top; margin-bottom: 20px;">
+  <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-right: 20px;">
   <div>
     <h1>About Me</h1>
     <p>Welcome to my website!</p>
