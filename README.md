@@ -1,8 +1,5 @@
 <div style="display: flex; align-items: top; margin-bottom: 20px;">
   <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-right: 20px;">
-  - Email: [cyrille.mvomo@mail.mcgill.ca](mailto:cyrille.mvomo@mail.mcgill.ca)
-  - LinkedIn: [@cyrillemvomo](http://www.linkedin.com/in/cyrille-mvomo)
-  - GitHub: [@cyrillemvomo](https://github.com/cyrillemvomo)
   <div>
     <h1>About Me</h1>
     <p>Welcome to my website!</p>
@@ -12,5 +9,13 @@
     <p>My journey has been enriched by immersive experiences, including a visiting graduate student researcher role at the School of Engineering of the Swiss Federal Institute of Technology (EPFL) with Dr. Bouri's REHAssist Group (BIOROB & TNE Labs). During this tenure, I contributed to the evaluation of an exoskeleton aimed at enhancing mobility.</p>
     <p>My academic foundation includes a Bachelor's and Master's degree obtained from the University of Paris, with affiliations to AFREP Institute and CRI (now LPI), respectively.</p>
     <p>Thank you for visiting my website.</p>
+    
+    <div style="margin-top: 20px;">
+      <ul style="list-style-type: none; padding: 0;">
+        <li>Email: <a href="mailto:cyrille.mvomo@mail.mcgill.ca">cyrille.mvomo@mail.mcgill.ca</a></li>
+        <li>LinkedIn: <a href="http://www.linkedin.com/in/cyrille-mvomo">@cyrillemvomo</a></li>
+        <li>GitHub: <a href="https://github.com/cyrillemvomo">@cyrillemvomo</a></li>
+      </ul>
+    </div>
   </div>
 </div>
