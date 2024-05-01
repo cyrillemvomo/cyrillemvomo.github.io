@@ -2,18 +2,8 @@
 
 ## About Me
 
-Brief introduction about yourself, your professional background, skills, and interests.
+Biomechanist-Data Scientist with 2+ years of mixed clinical and research experience supporting and developing digital health projects and products in orthopedics and rehabilitation, through the application of powerful AI, data analytics and technology.
 
-## Projects
-
-### [Project Name 1](link_to_project_1)
-Short description of the project.
-
-### [Project Name 2](link_to_project_2)
-Short description of the project.
-
-### [Project Name 3](link_to_project_3)
-Short description of the project.
 
 ## Blog
 
@@ -28,8 +18,8 @@ Brief summary of the blog post.
 
 ## Contact
 
-- Email: [your@email.com](mailto:your@email.com)
-- LinkedIn: [Your LinkedIn Profile](link_to_linkedin_profile)
+- Email: [cyrille.mvomo@mail.mcgill.ca](mailto:cyrille.mvomo@mail.mcgill.ca)
+- LinkedIn: [http://www.linkedin.com/in/cyrille-mvomo](http://www.linkedin.com/in/cyrille-mvomo)
 - GitHub: [Your GitHub Profile](link_to_github_profile)
 
 ## Resume/CV
