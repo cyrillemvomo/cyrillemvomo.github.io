@@ -1,5 +1,10 @@
 <div style="display: flex; align-items: top; margin-bottom: 20px;">
   <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-right: 20px;">
+  <ul style="list-style-type: none; padding: 0;">
+    <li>Email: <a href="mailto:cyrille.mvomo@mail.mcgill.ca">cyrille.mvomo@mail.mcgill.ca</a></li>
+    <li>LinkedIn: <a href="http://www.linkedin.com/in/cyrille-mvomo">@cyrillemvomo</a></li>
+    <li>GitHub: <a href="https://github.com/cyrillemvomo">@cyrillemvomo</a></li>
+  </ul>
   <div>
     <h1>About Me</h1>
     <p>Welcome to my website!</p>
