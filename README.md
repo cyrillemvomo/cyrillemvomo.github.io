@@ -1,8 +1,12 @@
-<div style="margin-left: 20px;">
 
-# [Your Name]
+<div style="display: flex; align-items: center;">
+  <div style="flex: 1; margin-right: 20px;">
+    <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 100px; height: 100px;">
+  </div>
+</div>
+</div>
 
-## About Me
+# About Me
 Welcome to my website!
 
 I'm a biomechanist and data scientist with over 2 years of diverse experience in both clinical and research settings. My expertise lies in supporting and developing digital health projects and products, harnessing the power of AI, data analytics, and technology in locomotion rehabilitation and orthopedics.
