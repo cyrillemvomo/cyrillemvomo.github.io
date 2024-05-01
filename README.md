@@ -1,27 +1,16 @@
 # [Your Name]
 
 ## About Me
+Welcome to my website!
 
-Biomechanist-Data Scientist with 2+ years of mixed clinical and research experience supporting and developing digital health projects and products in orthopedics and rehabilitation, through the application of powerful AI, data analytics and technology.
+I'm a biomechanist and data scientist with over 2 years of diverse experience in both clinical and research settings. My expertise lies in supporting and developing digital health projects and products in rehabilitation, harnessing the power of AI, data analytics, and technology.
 
+Currently, my research is centered around utilizing wearable sensing technologies to develop practical progression biomarkers for individuals living with Parkinson's disease.
 
-## Blog
+I am presently pursuing a Ph.D. in Biomechanics & Neurosciences (Kin) under the mentorship of Dr. Paquette from the Human Brain Control of Locomotion Lab, McGill University, and Dr. Awai from the Data Analytics & Rehabilitation Technology Lab, LLUI. Additionally, I hold academic positions as a Lecturer at the University of Paris - AFREP Institute, and as a research committee member at the University of Paris - Department of Rehabilitation Sciences.
 
-### [Blog Post 1 Title](link_to_blog_post_1)
-Brief summary of the blog post.
+My journey has been enriched by immersive experiences, including a visiting graduate student researcher role at the School of Engineering of the Swiss Federal Institute of Technology (EPFL) with Dr. Bouri's REHAssist Group (BIOROB & TNE Labs). During this tenure, I contributed to the evaluation of an exoskeleton aimed at enhancing mobility.
 
-### [Blog Post 2 Title](link_to_blog_post_2)
-Brief summary of the blog post.
+My academic foundation includes a Bachelor's and Master's degree obtained from the University of Paris, with affiliations to AFREP Institute and CRI (now LPI), respectively.
 
-### [Blog Post 3 Title](link_to_blog_post_3)
-Brief summary of the blog post.
-
-## Contact
-
-- Email: [cyrille.mvomo@mail.mcgill.ca](mailto:cyrille.mvomo@mail.mcgill.ca)
-- LinkedIn: [http://www.linkedin.com/in/cyrille-mvomo](http://www.linkedin.com/in/cyrille-mvomo)
-- GitHub: [Your GitHub Profile](link_to_github_profile)
-
-## Resume/CV
-
-You can also link to your resume or CV if you have it hosted on GitHub or elsewhere.
+Thank you for visiting my website.
