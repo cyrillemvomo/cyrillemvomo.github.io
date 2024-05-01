@@ -2,7 +2,7 @@
   <div style="margin-right: 20px;">
     <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-bottom: 10px;">
     <ul style="list-style-type: none; padding: 0; margin: 0; text-align: center;">
-      <li><img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 20px; height: 20px; margin-bottom: 10px;">: <a href="mailto:cyrille.mvomo@mail.mcgill.ca">cyrille.mvomo@mail.mcgill.ca</a></li>
+      <li><img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 20px; height: 20px; margin-bottom: 10px;">: <a href="">cyrille.mvomo@mail.mcgill.ca</a></li>
       <li>LinkedIn: <a href="http://www.linkedin.com/in/cyrille-mvomo">@cyrillemvomo</a></li>
       <li>GitHub: <a href="https://github.com/cyrillemvomo">@cyrillemvomo</a></li>
     </ul>
