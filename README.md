@@ -1,4 +1,4 @@
-<div style="background-color: black; padding: 20px;"> <!-- Added beige background and padding -->
+<div style="background-color: white; color: grey; padding: 20px;"> <!-- Added beige background and padding -->
   <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
     <div style="margin-right: 20px; width: 1000px;"> <!-- Fixed width added here -->
       <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-bottom: 10px;">
