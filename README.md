@@ -2,9 +2,9 @@
   <div style="margin-right: 20px;">
     <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-bottom: 10px;">
     <ul style="list-style-type: none; padding: 0; margin: 0; text-align: center;">
-      <li>Email: <a href="mailto:cyrille.mvomo@mail.mcgill.ca">cyrille.mvomo@mail.mcgill.ca</a></li>
-      <li>LinkedIn: <a href="http://www.linkedin.com/in/cyrille-mvomo">@cyrillemvomo</a></li>
-      <li>GitHub: <a href="https://github.com/cyrillemvomo">@cyrillemvomo</a></li>
+      <li><a href="mailto:cyrille.mvomo@mail.mcgill.ca"><img src="email-and-mail-icon-black-free-png.png" alt="Email Logo" style="width: 50px; height: 50px;"></a></li>
+      <li><a href="http://www.linkedin.com/in/cyrille-mvomo"><img src="Linkedin_Logo.png" alt="LinkedIn Logo" style="width: 40px; height: 40px;"></a></li>
+      <li><a href="https://github.com/cyrillemvomo"><img src="github-logo-7880D80B8D-seeklogo.png" alt="GitHub Logo" style="width: 40px; height: 40px;"></a></li>
     </ul>
   </div>
   <div>
