@@ -8,8 +8,8 @@
     </ul>
   </div>
   <div>
-    <h1>About Me</h1>
-    <p>Welcome to my website!</p>
+    <h1>Welcome to my website!</h1>
+
     <p>I'm a biomechanist and data scientist with over 2 years of diverse experience in both clinical and research settings. My expertise lies in supporting and developing digital health projects and products, harnessing the power of AI, data analytics, and technology in locomotion rehabilitation and orthopedics.</p>
     <p>Currently, my research is centered around utilizing wearable sensing technologies to develop practical progression biomarkers for individuals living with Parkinson's disease.</p>
     <p>I am presently pursuing a Ph.D. in Biomechanics & Neurosciences (Kin) under the mentorship of Dr. Paquette (primary supervisor) from the Human Brain Control of Locomotion Lab, McGill University, and Dr. Awai from the Data Analytics & Rehabilitation Technology Lab, LLUI. Additionally, I hold academic positions as a Lecturer at the University of Paris - AFREP Institute, and as a research committee member at the University of Paris - Department of Rehabilitation Sciences.</p>
