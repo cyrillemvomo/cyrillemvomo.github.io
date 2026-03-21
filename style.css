@@ -1,15 +1,7 @@
-
-
-
-
-/* ========================= */
-/* style.css */
-/* ========================= */
-
 body {
     margin: 0;
-    font-family: "Courier New", Courier, monospace;
-    background: #e5e7eb; /* light grey */
+    font-family: "Courier Prime", "Courier New", Courier, monospace;
+    background: #e5e7eb;
     color: black;
   }
   
@@ -18,25 +10,27 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 24px 48px;
-    background: none; /* no fill */
+    background: transparent;
     color: black;
   }
   
   .banner-left h1 {
     margin: 0;
     font-size: 2rem;
+    font-weight: 700;
   }
   
   .banner-left p {
     margin: 6px 0 0 0;
     font-size: 1rem;
+    font-weight: 400;
   }
   
   .banner-right a {
     color: black;
     text-decoration: none;
     margin-left: 24px;
-    font-weight: 500;
+    font-weight: 700;
   }
   
   .banner-right a:hover {
@@ -47,3 +41,6 @@ body {
     padding: 40px 48px;
   }
   
+  h1, h2, p, a {
+    color: black;
+  }
