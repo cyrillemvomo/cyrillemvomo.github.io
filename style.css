@@ -1,4 +1,8 @@
-body {
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f7f7f7;
@@ -9,27 +13,44 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 48px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 5vw;
     background: #0f172a;
     color: white;
   }
   
+  .banner-left {
+    flex: 1 1 300px;
+    min-width: 0;
+  }
+  
   .banner-left h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.1;
   }
   
   .banner-left p {
-    margin: 6px 0 0 0;
-    font-size: 1rem;
+    margin: 8px 0 0 0;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
     opacity: 0.9;
+    line-height: 1.4;
+  }
+  
+  .banner-right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 16px;
+    flex: 1 1 250px;
   }
   
   .banner-right a {
     color: white;
     text-decoration: none;
-    margin-left: 24px;
     font-weight: 500;
+    font-size: 1rem;
   }
   
   .banner-right a:hover {
@@ -37,5 +58,39 @@ body {
   }
   
   .content {
-    padding: 40px 48px;
+    padding: 40px 5vw;
+  }
+  
+  /* Tablet */
+  @media (max-width: 900px) {
+    .top-banner {
+      align-items: flex-start;
+    }
+  
+    .banner-right {
+      justify-content: flex-start;
+    }
+  }
+  
+  /* Phone */
+  @media (max-width: 600px) {
+    .top-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 6vw;
+    }
+  
+    .banner-right {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 12px 20px;
+    }
+  
+    .banner-right a {
+      font-size: 0.95rem;
+    }
+  
+    .content {
+      padding: 28px 6vw;
+    }
   }
