@@ -5,13 +5,24 @@ body {
     color: black;
   }
   
+  /* 🔥 Sticky banner */
   .top-banner {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px 48px;
-    background: rgba(0, 0, 0, 0.03); /* ultra subtle light grey */
+  
+    background: rgba(0, 0, 0, 0.03);
     color: black;
+  }
+  
+  /* Prevent content hiding under banner */
+  .content {
+    padding: 40px 48px;
   }
   
   .banner-left h1 {
@@ -35,10 +46,6 @@ body {
   
   .banner-right a:hover {
     text-decoration: underline;
-  }
-  
-  .content {
-    padding: 40px 48px;
   }
   
   h1, h2, p, a {
