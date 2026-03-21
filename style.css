@@ -1,9 +1,16 @@
+
+
+
+
+/* ========================= */
 /* style.css */
+/* ========================= */
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #e5e7eb; /* light grey background */
-    color: #222;
+    font-family: "Courier New", Courier, monospace;
+    background: #e5e7eb; /* light grey */
+    color: black;
   }
   
   .top-banner {
@@ -11,8 +18,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 24px 48px;
-    background: #0f172a;
-    color: white;
+    background: none; /* no fill */
+    color: black;
   }
   
   .banner-left h1 {
@@ -23,11 +30,10 @@ body {
   .banner-left p {
     margin: 6px 0 0 0;
     font-size: 1rem;
-    opacity: 0.9;
   }
   
   .banner-right a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin-left: 24px;
     font-weight: 500;
@@ -40,3 +46,4 @@ body {
   .content {
     padding: 40px 48px;
   }
+  
