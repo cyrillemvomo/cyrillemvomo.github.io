@@ -19,14 +19,17 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 12px 32px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 280px 1fr; /* same left column as hero */
+    column-gap: 56px;                 /* same gap as hero */
     align-items: center;
   }
   
   .banner-left {
     display: flex;
+    justify-content: center;          /* center name inside 280px column */
     align-items: center;
+    text-align: center;
   }
   
   .banner-left h1 {
@@ -39,6 +42,7 @@ body {
   
   .banner-right {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 24px;
   }
@@ -175,28 +179,25 @@ body {
     .description-column {
       text-align: left;
     }
-  }
   
-  @media (max-width: 700px) {
     .banner-container {
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;      /* changed from flex-start */
+      grid-template-columns: 1fr;
+      row-gap: 12px;
       text-align: center;
     }
   
     .banner-left {
-      width: 100%;
-      justify-content: center;  /* centers your name */
+      justify-content: center;
     }
   
     .banner-right {
-      width: 100%;
-      justify-content: center;  /* centers nav under name */
+      justify-content: center;
       flex-wrap: wrap;
       gap: 18px;
     }
+  }
   
+  @media (max-width: 700px) {
     .page-container {
       padding: 32px 20px 48px 20px;
     }
