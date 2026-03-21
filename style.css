@@ -1,8 +1,4 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f7f7f7;
@@ -10,53 +6,30 @@
   }
   
   .top-banner {
-    background: #0f172a;
-    color: white;
-    width: 100%;
-  }
-  
-  .banner-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 24px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .banner-left {
-    min-width: 220px;
-    flex: 1 1 300px;
+    padding: 24px 48px;
+    background: #0f172a;
+    color: white;
   }
   
   .banner-left h1 {
     margin: 0;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    line-height: 1.1;
+    font-size: 2rem;
   }
   
   .banner-left p {
-    margin: 8px 0 0 0;
-    font-size: clamp(0.95rem, 2vw, 1.1rem);
-    opacity: 0.92;
-    line-height: 1.4;
-  }
-  
-  .banner-right {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 14px 18px;
-    flex: 1 1 280px;
+    margin: 6px 0 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
   }
   
   .banner-right a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.98rem;
+    margin-left: 24px;
+    font-weight: 500;
   }
   
   .banner-right a:hover {
@@ -64,31 +37,5 @@
   }
   
   .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .banner-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px 16px;
-    }
-  
-    .banner-right {
-      width: 100%;
-      justify-content: flex-start;
-    }
-  
-    .content {
-      padding: 28px 16px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .banner-right {
-      flex-direction: column;
-      gap: 10px;
-    }
+    padding: 40px 48px;
   }
