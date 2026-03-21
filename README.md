@@ -1,22 +1,102 @@
-<div style="background-color: white; color: grey; padding: 20px;"> <!-- Added beige background and padding -->
-  <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-    <div style="margin-right: 20px; width: 1000px;"> <!-- Fixed width added here -->
-      <img src="linkedin.png" alt="Ma Photo" style="border-radius: 50%; width: 200px; height: 200px; margin-bottom: 10px;">
-      <ul style="list-style-type: none; padding: 0; margin: 0; text-align: center;">
-        <li><a href="mailto:cyrille.mvomo@mail.mcgill.ca"><img src="email-and-mail-icon-black-free-png.png" alt="Email Logo" style="width: 50px; height: 50px;"></a></li>
-        <li><a href="http://www.linkedin.com/in/cyrille-mvomo"><img src="Linkedin_Logo.png" alt="LinkedIn Logo" style="width: 40px; height: 40px;"></a></li>
-        <li><a href="https://github.com/cyrillemvomo"><img src="github-logo-7880D80B8D-seeklogo.png" alt="GitHub Logo" style="width: 40px; height: 40px;"></a></li>
-      </ul>
-    </div>
-    <div>
-      <h1>Hi, I'm Cyrille</h1>
-      <p>Welcome to my website!</p>
-      <p>I'm a biomechanist and data scientist with over 2 years of diverse experience in both clinical and research settings. My expertise lies in supporting and developing digital health projects and products, harnessing the power of AI, data analytics, and technology in locomotion rehabilitation and orthopedics.</p>
-      <p>Currently, my research is centered around utilizing wearable sensing technologies to develop practical progression biomarkers for individuals living with Parkinson's disease.</p>
-      <p>I am presently pursuing a Ph.D. in Biomechanics & Neurosciences (Kin) under the mentorship of Dr. Paquette (primary supervisor) from the Human Brain Control of Locomotion Lab, McGill University, and Dr. Awai from the Data Analytics & Rehabilitation Technology Lab, LLUI. Additionally, I hold academic positions as a Lecturer at the University of Paris - AFREP Institute, and as a research committee member at the University of Paris - Department of Rehabilitation Sciences.</p>
-      <p>My journey has been enriched by immersive experiences, including a visiting graduate student researcher role at the School of Engineering of the Swiss Federal Institute of Technology (EPFL) with Dr. Bouri's REHAssist Group (BIOROB & TNE Labs). During this tenure, I contributed to the evaluation of an exoskeleton aimed at enhancing mobility.</p>
-      <p>My academic foundation includes a Bachelor's and Master's degree obtained from the University of Paris, with affiliations to AFREP Institute and CRI (now LPI), respectively.</p>
-      <p>Thank you for visiting my website.</p>
-    </div>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyrille Mvomo</title>
+  <style>
+    :root {
+      --bg: #e9e9e9;
+      --text: #000000;
+      --accent: crimson;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .top-banner {
+      width: 100%;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: var(--bg);
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .icon-link img {
+      width: 22px;
+      height: 22px;
+      display: block;
+      filter: brightness(0);
+      transition: filter 0.2s ease;
+      cursor: pointer;
+    }
+
+    .icon-link:hover img {
+      filter: brightness(0) saturate(100%) invert(17%) sepia(96%) saturate(4632%) hue-rotate(338deg) brightness(92%) contrast(94%);
+    }
+
+    .separator {
+      font-size: 18px;
+      line-height: 1;
+      color: var(--text);
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-banner">
+    <nav class="top-links" aria-label="Social and contact links">
+      <a class="icon-link" href="mailto:cyrille.mvomo@mail.mcgill.ca" aria-label="Email">
+        <img src="INSERT-EMAIL-LOGO-LINK-HERE" alt="Email logo" />
+      </a>
+
+      <span class="separator">/</span>
+
+      <a class="icon-link" href="https://www.linkedin.com/in/cyrille-mvomo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="INSERT-LINKEDIN-LOGO-LINK-HERE" alt="LinkedIn logo" />
+      </a>
+
+      <span class="separator">/</span>
+
+      <a class="icon-link" href="https://scholar.google.fr/citations?user=v-sf1K8AAAAJ&hl=fr&oi=ao" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+        <img src="INSERT-GOOGLE-SCHOLAR-LOGO-LINK-HERE" alt="Google Scholar logo" />
+      </a>
+
+      <span class="separator">/</span>
+
+      <a class="icon-link" href="https://github.com/cyrillemvomo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="INSERT-GITHUB-LOGO-LINK-HERE" alt="GitHub logo" />
+      </a>
+    </nav>
+  </header>
+</body>
+</html>
