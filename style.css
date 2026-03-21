@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: "Courier Prime", "Courier New", Courier, monospace;
     background: #ffffff;
-    color: black;
+    color: #1f2937; /* 🔥 dark grey instead of black */
     transition: background 0.3s ease, color 0.3s ease;
   }
   
@@ -29,6 +29,7 @@ body {
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1;
+    color: #1f2937;
   }
   
   .banner-right {
@@ -38,7 +39,7 @@ body {
   }
   
   .banner-right a {
-    color: black;
+    color: #1f2937;
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
@@ -52,7 +53,6 @@ body {
     cursor: pointer;
     font-size: 1.15rem;
     text-decoration: line-through;
-    user-select: none;
   }
   
   .toggle.active {
@@ -94,20 +94,26 @@ body {
   }
   
   .icon-row a {
-    color: black;
+    color: #1f2937;
     font-size: 1.25rem;
     text-decoration: none;
-    transition: opacity 0.2s ease;
   }
   
   .icon-row a:hover {
     opacity: 0.65;
   }
   
+  /* 🔥 lighter grey for location + office */
   .profile-details p {
     margin: 6px 0;
     font-size: 1rem;
     line-height: 1.5;
+    color: #9ca3af; /* light grey */
+  }
+  
+  /* keep McGill bold darker */
+  .profile-details strong {
+    color: #1f2937;
   }
   
   .description-column p {
@@ -134,9 +140,13 @@ body {
   body.dark-mode .banner-left h1,
   body.dark-mode .banner-right a,
   body.dark-mode .icon-row a,
-  body.dark-mode .profile-details p,
   body.dark-mode .description-column p {
     color: white;
+  }
+  
+  /* subtle grey in dark mode */
+  body.dark-mode .profile-details p {
+    color: #9ca3af;
   }
   
   body.dark-mode .profile-photo {
@@ -148,34 +158,5 @@ body {
     .hero-section {
       grid-template-columns: 1fr;
       row-gap: 36px;
-    }
-  
-    .profile-column {
-      text-align: center;
-    }
-  
-    .description-column {
-      text-align: left;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .banner-container {
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-start;
-    }
-  
-    .banner-right {
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-  
-    .page-container {
-      padding: 32px 20px 48px 20px;
-    }
-  
-    .banner-container {
-      padding: 12px 20px;
     }
   }
