@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: "Courier Prime", "Courier New", Courier, monospace;
     background: #ffffff;
-    color: #1f2937; /* 🔥 dark grey instead of black */
+    color: #1f2937;
     transition: background 0.3s ease, color 0.3s ease;
   }
   
@@ -21,6 +21,11 @@ body {
     padding: 12px 32px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+  
+  .banner-left {
+    display: flex;
     align-items: center;
   }
   
@@ -53,6 +58,7 @@ body {
     cursor: pointer;
     font-size: 1.15rem;
     text-decoration: line-through;
+    user-select: none;
   }
   
   .toggle.active {
@@ -97,21 +103,20 @@ body {
     color: #1f2937;
     font-size: 1.25rem;
     text-decoration: none;
+    transition: opacity 0.2s ease;
   }
   
   .icon-row a:hover {
     opacity: 0.65;
   }
   
-  /* 🔥 lighter grey for location + office */
   .profile-details p {
     margin: 6px 0;
     font-size: 1rem;
     line-height: 1.5;
-    color: #9ca3af; /* light grey */
+    color: #9ca3af;
   }
   
-  /* keep McGill bold darker */
   .profile-details strong {
     color: #1f2937;
   }
@@ -144,9 +149,12 @@ body {
     color: white;
   }
   
-  /* subtle grey in dark mode */
   body.dark-mode .profile-details p {
     color: #9ca3af;
+  }
+  
+  body.dark-mode .profile-details strong {
+    color: white;
   }
   
   body.dark-mode .profile-photo {
@@ -158,5 +166,42 @@ body {
     .hero-section {
       grid-template-columns: 1fr;
       row-gap: 36px;
+    }
+  
+    .profile-column {
+      text-align: center;
+    }
+  
+    .description-column {
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .banner-container {
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;      /* changed from flex-start */
+      text-align: center;
+    }
+  
+    .banner-left {
+      width: 100%;
+      justify-content: center;  /* centers your name */
+    }
+  
+    .banner-right {
+      width: 100%;
+      justify-content: center;  /* centers nav under name */
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+  
+    .page-container {
+      padding: 32px 20px 48px 20px;
+    }
+  
+    .banner-container {
+      padding: 12px 20px;
     }
   }
