@@ -26,6 +26,9 @@
       <a href="#">Research</a>
       <a href="#">Projects</a>
       <a href="#">Contact</a>
+
+      <!-- Dark mode toggle -->
+      <span id="theme-toggle" class="toggle">☾</span>
     </nav>
   </header>
 
@@ -34,12 +37,17 @@
       <h2>Welcome</h2>
       <p>This is my personal academic website.</p>
     </section>
-
-    <!-- Add fake content to test scroll -->
-    <section>
-      <p style="margin-top: 1000px;">Scroll test</p>
-    </section>
   </main>
+
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggle.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
