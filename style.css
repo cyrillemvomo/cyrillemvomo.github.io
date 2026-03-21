@@ -46,6 +46,7 @@ body {
   }
   
   .banner-right a:hover {
+    color: crimson;
     text-decoration: underline;
   }
   
@@ -97,10 +98,12 @@ body {
     color: #1f2937;
     font-size: 1.25rem;
     text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
   }
   
   .icon-row a:hover {
-    opacity: 0.65;
+    color: crimson;
+    opacity: 1;
   }
   
   .profile-details p {
@@ -124,6 +127,18 @@ body {
     font-weight: 700;
   }
   
+  /* Text links inside description */
+  .text-link {
+    color: crimson;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  
+  .text-link:hover {
+    color: crimson;
+    text-decoration: underline;
+  }
+  
   /* Dark mode */
   body.dark-mode {
     background: #000000;
@@ -137,9 +152,16 @@ body {
   
   body.dark-mode .banner-left h1,
   body.dark-mode .banner-right a,
-  body.dark-mode .icon-row a,
   body.dark-mode .description-column p {
     color: white;
+  }
+  
+  body.dark-mode .icon-row a {
+    color: white;
+  }
+  
+  body.dark-mode .icon-row a:hover {
+    color: crimson;
   }
   
   body.dark-mode .profile-details p {
@@ -148,6 +170,15 @@ body {
   
   body.dark-mode .profile-photo {
     border: 4px solid rgba(255, 255, 255, 0.12);
+  }
+  
+  body.dark-mode .text-link {
+    color: crimson;
+  }
+  
+  body.dark-mode .text-link:hover {
+    color: crimson;
+    text-decoration: underline;
   }
   
   /* Responsive */
