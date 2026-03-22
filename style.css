@@ -13,7 +13,7 @@ body {
     background: rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
-    transition: background 0.3s ease, min-height 0.3s ease;
+    transition: background 0.3s ease;
   }
   
   .banner-container {
@@ -67,39 +67,38 @@ body {
   
   .menu-toggle {
     display: none;
+    width: 32px;
+    height: 26px;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    width: 30px;
-    height: 24px;
     position: relative;
   }
   
   .menu-toggle span {
-    display: block;
     position: absolute;
     left: 0;
-    width: 30px;
+    width: 32px;
     height: 2px;
     background: #1f2937;
-    transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease, background 0.25s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease;
   }
   
   .menu-toggle span:nth-child(1) {
-    top: 2px;
+    top: 3px;
   }
   
   .menu-toggle span:nth-child(2) {
-    top: 11px;
+    top: 12px;
   }
   
   .menu-toggle span:nth-child(3) {
-    top: 20px;
+    top: 21px;
   }
   
   .menu-toggle.menu-open span:nth-child(1) {
-    top: 11px;
+    top: 12px;
     transform: rotate(45deg);
   }
   
@@ -108,7 +107,7 @@ body {
   }
   
   .menu-toggle.menu-open span:nth-child(3) {
-    top: 11px;
+    top: 12px;
     transform: rotate(-45deg);
   }
   
@@ -179,7 +178,6 @@ body {
     font-weight: 700;
   }
   
-  /* Text links inside description */
   .text-link {
     color: crimson;
     text-decoration: none;
@@ -252,7 +250,6 @@ body {
   @media (max-width: 850px) {
     .banner-container {
       padding: 14px 20px;
-      align-items: flex-start;
     }
   
     .banner-left h1 {
@@ -261,7 +258,6 @@ body {
   
     .menu-toggle {
       display: block;
-      margin-top: 2px;
     }
   
     .banner-right {
@@ -273,30 +269,25 @@ body {
       top: 0;
       left: 0;
       width: 100%;
-      min-height: 100vh;
-      background: rgba(255, 255, 255, 0.92);
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.90);
       backdrop-filter: blur(8px);
       border-bottom: none;
-    }
-  
-    .top-banner.menu-open .banner-container {
-      align-items: flex-start;
     }
   
     .top-banner.menu-open .banner-right {
       display: flex;
       position: absolute;
-      top: 68px;
+      top: 72px;
       right: 20px;
       flex-direction: column;
       align-items: flex-end;
-      gap: 22px;
-      background: transparent;
+      gap: 20px;
     }
   
     .top-banner.menu-open .banner-right a,
     .top-banner.menu-open .toggle {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       text-align: right;
     }
   
@@ -305,6 +296,6 @@ body {
     }
   
     body.dark-mode .top-banner.menu-open {
-      background: rgba(0, 0, 0, 0.92);
+      background: rgba(0, 0, 0, 0.90);
     }
   }

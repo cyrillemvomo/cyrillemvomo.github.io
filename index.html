@@ -25,13 +25,13 @@
       </div>
 
       <div class="banner-right-wrapper">
-        <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" type="button">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <nav id="banner-nav" class="banner-right">
+        <nav class="banner-right" id="banner-nav">
           <a href="#">About</a>
           <a href="#">CV</a>
           <a href="#">News</a>
@@ -91,36 +91,41 @@
   </main>
 
   <script>
-    const themeToggle = document.getElementById("theme-toggle");
     const body = document.body;
+    const themeToggle = document.getElementById("theme-toggle");
+    const topBanner = document.getElementById("top-banner");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelectorAll("#banner-nav a");
 
     themeToggle.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
       themeToggle.classList.toggle("active");
     });
 
-    const menuToggle = document.getElementById("menu-toggle");
-    const topBanner = document.getElementById("top-banner");
-    const bannerNav = document.getElementById("banner-nav");
-
     menuToggle.addEventListener("click", () => {
       topBanner.classList.toggle("menu-open");
-      bannerNav.classList.toggle("menu-open");
       menuToggle.classList.toggle("menu-open");
 
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!expanded));
+      const isOpen = topBanner.classList.contains("menu-open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    document.querySelectorAll(".banner-right a").forEach(link => {
+    navLinks.forEach(link => {
       link.addEventListener("click", () => {
         if (window.innerWidth <= 850) {
           topBanner.classList.remove("menu-open");
-          bannerNav.classList.remove("menu-open");
           menuToggle.classList.remove("menu-open");
           menuToggle.setAttribute("aria-expanded", "false");
         }
       });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 850) {
+        topBanner.classList.remove("menu-open");
+        menuToggle.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
     });
   </script>
 
