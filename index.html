@@ -170,6 +170,9 @@
     const sectionLinks = document.querySelectorAll(".section-link");
     const contentSections = document.querySelectorAll(".content-subsection");
 
+    let clickedSectionId = null;
+    let manualNavigationInProgress = false;
+
     function setActiveLink(targetId) {
       sectionLinks.forEach((link) => {
         link.classList.toggle("active-section-link", link.getAttribute("href") === `#${targetId}`);
@@ -183,12 +186,15 @@
         const targetId = link.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
 
+        clickedSectionId = targetId;
+        manualNavigationInProgress = window.innerWidth > 850;
+
+        setActiveLink(targetId);
+
         targetSection.scrollIntoView({
           behavior: "smooth",
           block: "center"
         });
-
-        setActiveLink(targetId);
 
         if (window.innerWidth <= 850) {
           bannerNav.classList.remove("menu-open");
@@ -200,6 +206,19 @@
 
     function updateActiveSectionOnScroll() {
       if (window.innerWidth <= 850) return;
+
+      if (manualNavigationInProgress && clickedSectionId) {
+        const clickedSection = document.getElementById(clickedSectionId);
+        const rect = clickedSection.getBoundingClientRect();
+
+        setActiveLink(clickedSectionId);
+
+        if (Math.abs(rect.top) < 140 || Math.abs(rect.top + rect.height - window.innerHeight) < 140) {
+          manualNavigationInProgress = false;
+          clickedSectionId = null;
+        }
+        return;
+      }
 
       let currentSectionId = contentSections[0].id;
 
