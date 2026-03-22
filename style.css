@@ -13,7 +13,6 @@ body {
     background: rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
-    transition: background 0.3s ease;
   }
   
   .banner-container {
@@ -178,6 +177,7 @@ body {
     font-weight: 700;
   }
   
+  /* Text links inside description */
   .text-link {
     color: crimson;
     text-decoration: none;
@@ -218,6 +218,7 @@ body {
     color: #9ca3af;
   }
   
+  /* 🔥 THIS IS THE FIX */
   body.dark-mode .profile-details strong {
     color: white;
   }
@@ -273,18 +274,30 @@ body {
       width: 100%;
       background: rgba(255, 255, 255, 0.90);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: none;
       padding-bottom: 20px;
     }
   
+    .top-banner.menu-open .banner-container {
+      align-items: flex-start;
+    }
+  
+    .top-banner.menu-open .banner-right-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  
     .top-banner.menu-open .banner-right {
       display: flex;
-      position: absolute;
-      top: 72px;
-      right: 20px;
+      position: static;
       flex-direction: column;
       align-items: flex-end;
       gap: 20px;
+      margin-top: 58px;
+      padding-right: 20px;
+      background: transparent;
     }
   
     .top-banner.menu-open .banner-right a,
