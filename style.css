@@ -171,6 +171,70 @@ body {
     transform-origin: left center;
     display: inline-block;
   }
+
+  .news-attending-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+
+  .news-panel h3 {
+    margin: 0 0 14px 0;
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .scroll-list {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+
+  .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .date-chip {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .timeline-item p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .current-item .date-chip {
+    background: rgba(220, 20, 60, 0.10);
+    color: rgba(220, 20, 60, 0.90);
+  }
+
+  .current-item p {
+    color: #1f2937;
+  }
+
+  .past-item .date-chip {
+    background: rgba(0, 0, 0, 0.035);
+    color: #a3a3a3;
+  }
+
+  .past-item p {
+    color: #9f9f9f;
+  }
   
   .description-column p {
     margin: 0 0 24px 0;
@@ -207,7 +271,9 @@ body {
   
   body.dark-mode .banner-left h1,
   body.dark-mode .banner-right a,
-  body.dark-mode .description-column p {
+  body.dark-mode .description-column p,
+  body.dark-mode .current-item p,
+  body.dark-mode .news-panel h3 {
     color: white;
   }
 
@@ -256,6 +322,20 @@ body {
   body.dark-mode .content-subsection {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
+
+  body.dark-mode .current-item .date-chip {
+    background: rgba(220, 20, 60, 0.14);
+    color: rgba(255, 170, 185, 0.95);
+  }
+
+  body.dark-mode .past-item .date-chip {
+    background: rgba(255, 255, 255, 0.06);
+    color: #8c8c8c;
+  }
+
+  body.dark-mode .past-item p {
+    color: #8f8f8f;
+  }
   
   body.dark-mode .menu-toggle span {
     background: white;
@@ -272,6 +352,17 @@ body {
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 42px;
+    }
+
+    .news-attending-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .scroll-list {
+      max-height: none;
+      overflow-y: visible;
+      padding-right: 0;
     }
   }
   
