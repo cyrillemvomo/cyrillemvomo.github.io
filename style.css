@@ -158,6 +158,14 @@ body {
     color: #1f2937;
   }
 
+  .pronunciation-link {
+    margin-top: 14px;
+  }
+
+  .pronunciation-link a {
+    font-size: 1rem;
+  }
+
   .content-subsection {
     scroll-margin-top: 120px;
     margin-bottom: 28px;
