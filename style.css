@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding-top: 72px;
     font-family: "Courier Prime", "Courier New", Courier, monospace;
     background: #ffffff;
     color: #1f2937;
@@ -7,10 +8,12 @@ body {
   }
   
   .top-banner {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.92);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
   }
@@ -286,7 +289,7 @@ body {
   }
   
   body.dark-mode .top-banner {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.92);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   
@@ -407,6 +410,10 @@ body {
   }
   
   @media (max-width: 850px) {
+    body {
+      padding-top: 68px;
+    }
+
     .menu-toggle {
       display: block;
     }
