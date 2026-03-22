@@ -80,12 +80,15 @@
         </section>
 
         <section id="news-section" class="content-subsection">
-          <h2>News</h2>
-          <div class="crimson-wave" aria-hidden="true">﹏</div>
-
           <div class="news-attending-grid">
             <div class="news-panel">
-              <h3>News</h3>
+              <button class="panel-toggle" type="button" aria-expanded="false">
+                <span class="panel-heading-wrap">
+                  <span class="panel-heading">News</span>
+                  <span class="crimson-wave panel-wave" aria-hidden="true">﹏</span>
+                </span>
+              </button>
+
               <div class="scroll-list">
                 <div class="timeline-item current-item">
                   <div class="date-chip">Mar 2026</div>
@@ -110,7 +113,13 @@
             </div>
 
             <div class="news-panel">
-              <h3>Attending</h3>
+              <button class="panel-toggle" type="button" aria-expanded="false">
+                <span class="panel-heading-wrap">
+                  <span class="panel-heading">Attending</span>
+                  <span class="crimson-wave panel-wave" aria-hidden="true">﹏</span>
+                </span>
+              </button>
+
               <div class="scroll-list">
                 <div class="timeline-item current-item">
                   <div class="date-chip">Oct 2025</div>
@@ -277,6 +286,18 @@
 
       setActiveLink(currentSectionId);
     }
+
+    const panelToggles = document.querySelectorAll(".panel-toggle");
+
+    panelToggles.forEach((toggleButton) => {
+      toggleButton.addEventListener("click", () => {
+        if (window.innerWidth > 900) return;
+
+        const panel = toggleButton.closest(".news-panel");
+        const isOpen = panel.classList.toggle("mobile-open");
+        toggleButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    });
 
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("load", () => {

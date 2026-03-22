@@ -179,11 +179,34 @@ body {
     align-items: start;
   }
 
-  .news-panel h3 {
+  .panel-toggle {
+    display: block;
+    width: 100%;
+    padding: 0;
     margin: 0 0 14px 0;
-    font-size: 1.02rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: default;
+    font: inherit;
+    color: inherit;
+  }
+
+  .panel-heading-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .panel-heading {
+    margin: 0 0 4px 0;
+    font-size: 1.35rem;
     font-weight: 700;
     line-height: 1.2;
+  }
+
+  .panel-wave {
+    margin: 0;
   }
 
   .scroll-list {
@@ -246,7 +269,6 @@ body {
     font-weight: 700;
   }
   
-  /* Text links inside description */
   .text-link {
     color: crimson;
     text-decoration: none;
@@ -258,7 +280,6 @@ body {
     text-decoration: underline;
   }
   
-  /* Dark mode */
   body.dark-mode {
     background: #000000;
     color: white;
@@ -273,7 +294,7 @@ body {
   body.dark-mode .banner-right a,
   body.dark-mode .description-column p,
   body.dark-mode .current-item p,
-  body.dark-mode .news-panel h3 {
+  body.dark-mode .panel-heading {
     color: white;
   }
 
@@ -341,7 +362,6 @@ body {
     background: white;
   }
   
-  /* Responsive */
   @media (max-width: 900px) {
     .hero-section {
       grid-template-columns: 1fr;
@@ -359,10 +379,30 @@ body {
       gap: 24px;
     }
 
+    .panel-toggle {
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
     .scroll-list {
-      max-height: none;
-      overflow-y: visible;
+      max-height: 120px;
+      overflow: hidden;
       padding-right: 0;
+      transition: max-height 0.3s ease;
+    }
+
+    .news-panel.mobile-open .scroll-list {
+      max-height: 600px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .scroll-list .timeline-item:not(:first-child) {
+      display: none;
+    }
+
+    .news-panel.mobile-open .scroll-list .timeline-item:not(:first-child) {
+      display: flex;
     }
   }
   
