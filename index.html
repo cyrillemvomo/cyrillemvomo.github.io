@@ -233,6 +233,12 @@
     </section>
   </main>
 
+  <footer class="bottom-banner">
+    <div class="bottom-banner-container">
+      <p id="footer-date-text">© Copyright 2026 Cyrille E. Mvomo. Last updated: March 22, 2026.</p>
+    </div>
+  </footer>
+
   <script>
     const toggle = document.getElementById("theme-toggle");
     const body = document.body;
@@ -344,6 +350,28 @@
       scrollLine.style.width = scrollPercent + "%";
     }
 
+    function updateFooterDate() {
+      const footerDateText = document.getElementById("footer-date-text");
+      const now = new Date();
+
+      const yearFormatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Toronto",
+        year: "numeric"
+      });
+
+      const dateFormatter = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Toronto",
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      });
+
+      const currentYear = yearFormatter.format(now);
+      const currentDate = dateFormatter.format(now);
+
+      footerDateText.textContent = `© Copyright ${currentYear} Cyrille E. Mvomo. Last updated: ${currentDate}.`;
+    }
+
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
@@ -353,6 +381,7 @@
       updateActiveSectionOnScroll();
       updateBannerOnScroll();
       updateScrollLine();
+      updateFooterDate();
     });
   </script>
 
