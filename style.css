@@ -354,10 +354,10 @@ body {
   
   .bottom-banner-container p {
     margin: 0;
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     line-height: 1.2;
     color: #9ca3af;
-    text-align: left;
+    text-align: center;
   }
   
   body.dark-mode {
