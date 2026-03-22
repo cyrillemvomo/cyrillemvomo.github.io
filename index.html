@@ -32,12 +32,12 @@
         </button>
 
         <nav id="banner-nav" class="banner-right">
-          <a href="#about-me-section" id="about-link">About</a>
+          <a href="#about-me-section" class="section-link active-section-link">About</a>
           <a href="#">CV</a>
-          <a href="#">News</a>
-          <a href="#">Research</a>
-          <a href="#">Teaching</a>
-          <a href="#">Service</a>
+          <a href="#news-section" class="section-link">News</a>
+          <a href="#research-section" class="section-link">Research</a>
+          <a href="#teaching-section" class="section-link">Teaching</a>
+          <a href="#service-section" class="section-link">Service</a>
           <span id="theme-toggle" class="toggle">☾</span>
         </nav>
       </div>
@@ -67,7 +67,7 @@
 
       <div class="description-column">
         <section id="about-me-section" class="content-subsection">
-          <h2>About Me</h2>
+          <h2>About</h2>
           <div class="crimson-wave" aria-hidden="true">﹏</div>
 
           <p>
@@ -79,7 +79,23 @@
           </p>
         </section>
 
-        <section class="content-subsection">
+        <section id="news-section" class="content-subsection">
+          <h2>News</h2>
+          <div class="crimson-wave" aria-hidden="true">﹏</div>
+
+          <p>
+            I am currently pursuing research on wearable sensing, gait analysis, and digital mobility
+            outcomes in Parkinson’s disease, with a particular focus on real-world monitoring and
+            uncertainty-aware artificial intelligence.
+          </p>
+
+          <p>
+            This page will also highlight future updates on publications, conference presentations,
+            teaching activities, collaborations, and ongoing academic projects.
+          </p>
+        </section>
+
+        <section id="research-section" class="content-subsection">
           <h2>Research Summary</h2>
           <div class="crimson-wave" aria-hidden="true">﹏</div>
 
@@ -94,6 +110,37 @@
             I am particularly interested in <strong>gait analysis</strong>, <strong>construct validity</strong>,
             <strong>uncertainty-aware AI</strong>, and the translation of digital mobility outcomes
             into research and clinical practice.
+          </p>
+        </section>
+
+        <section id="teaching-section" class="content-subsection">
+          <h2>Teaching</h2>
+          <div class="crimson-wave" aria-hidden="true">﹏</div>
+
+          <p>
+            I am committed to teaching and mentorship in both research and classroom settings, with
+            an emphasis on clear scientific communication, quantitative reasoning, and supportive learning
+            environments.
+          </p>
+
+          <p>
+            My teaching interests include biomechanics, neurorehabilitation, wearable technology,
+            data analysis, and the application of engineering principles to human movement.
+          </p>
+        </section>
+
+        <section id="service-section" class="content-subsection">
+          <h2>Service</h2>
+          <div class="crimson-wave" aria-hidden="true">﹏</div>
+
+          <p>
+            I value academic and community service that strengthens collaboration, inclusion, and
+            knowledge sharing across research and education.
+          </p>
+
+          <p>
+            My service interests include student mentorship, interdisciplinary initiatives, peer review,
+            and projects that support equitable access to science and health innovation.
           </p>
         </section>
       </div>
@@ -120,20 +167,56 @@
       menuToggle.setAttribute("aria-expanded", String(!expanded));
     });
 
-    const aboutLink = document.getElementById("about-link");
-    const aboutSection = document.getElementById("about-me-section");
+    const sectionLinks = document.querySelectorAll(".section-link");
+    const contentSections = document.querySelectorAll(".content-subsection");
 
-    aboutLink.addEventListener("click", (event) => {
-      event.preventDefault();
+    function setActiveLink(targetId) {
+      sectionLinks.forEach((link) => {
+        link.classList.toggle("active-section-link", link.getAttribute("href") === `#${targetId}`);
+      });
+    }
 
-      aboutSection.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+    sectionLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const targetId = link.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        setActiveLink(targetId);
+
+        if (window.innerWidth <= 850) {
+          bannerNav.classList.remove("menu-open");
+          menuToggle.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+
+    function updateActiveSectionOnScroll() {
+      if (window.innerWidth <= 850) return;
+
+      let currentSectionId = contentSections[0].id;
+
+      contentSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 180) {
+          currentSectionId = section.id;
+        }
       });
 
-      if (window.innerWidth > 850) {
-        aboutLink.classList.add("active-section-link");
-      }
+      setActiveLink(currentSectionId);
+    }
+
+    window.addEventListener("scroll", updateActiveSectionOnScroll);
+    window.addEventListener("load", () => {
+      setActiveLink("about-me-section");
+      updateActiveSectionOnScroll();
     });
   </script>
 
