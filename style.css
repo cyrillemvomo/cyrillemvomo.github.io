@@ -201,11 +201,25 @@ body {
     align-items: flex-start;
   }
 
+  .panel-heading-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .panel-heading {
     margin: 0 0 4px 0;
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1.2;
+  }
+
+  .panel-indicator {
+    display: none;
+    font-size: 1.05rem;
+    line-height: 1;
+    color: #9ca3af;
+    transform: translateY(-1px);
   }
 
   .panel-wave {
@@ -360,6 +374,10 @@ body {
   body.dark-mode .past-item p {
     color: #8f8f8f;
   }
+
+  body.dark-mode .panel-indicator {
+    color: #9ca3af;
+  }
   
   body.dark-mode .menu-toggle span {
     background: white;
@@ -385,6 +403,14 @@ body {
     .panel-toggle {
       cursor: pointer;
       margin-bottom: 10px;
+    }
+
+    .panel-indicator {
+      display: inline-block;
+    }
+
+    .news-panel.mobile-open .panel-indicator {
+      transform: translateY(-1px) rotate(45deg);
     }
 
     .scroll-list {
