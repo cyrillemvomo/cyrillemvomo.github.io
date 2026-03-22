@@ -8,23 +8,24 @@ body {
   }
   
   .top-banner {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    z-index: 1000;
-    background: rgba(245, 245, 245, 0.62);
+    z-index: 9999;
+    background: rgba(245, 245, 245, 0.72);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, box-shadow 0.3s ease;
   }
 
   .top-banner.scrolled {
-    background: rgba(245, 245, 245, 0.48);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    background: rgba(245, 245, 245, 0.52);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   }
   
   .banner-container {
@@ -99,6 +100,8 @@ body {
   }
   
   .page-container {
+    position: relative;
+    z-index: 1;
     max-width: 1100px;
     margin: 0 auto;
     padding: 24px 32px 64px 32px;
@@ -312,17 +315,17 @@ body {
   }
   
   body.dark-mode .top-banner {
-    background: rgba(28, 28, 28, 0.58);
+    background: rgba(28, 28, 28, 0.66);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   body.dark-mode .top-banner.scrolled {
-    background: rgba(18, 18, 18, 0.42);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+    background: rgba(18, 18, 18, 0.46);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.30);
   }
   
   body.dark-mode .banner-left h1,
