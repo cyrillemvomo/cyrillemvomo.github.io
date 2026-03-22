@@ -146,6 +146,7 @@ body {
   .content-subsection {
     scroll-margin-top: 120px;
     margin-bottom: 42px;
+    min-height: 55vh;
   }
 
   .content-subsection:last-child {
@@ -255,6 +256,10 @@ body {
     .hero-section {
       grid-template-columns: 1fr;
       row-gap: 36px;
+    }
+
+    .content-subsection {
+      min-height: auto;
     }
   }
   
