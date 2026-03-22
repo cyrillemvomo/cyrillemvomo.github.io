@@ -143,14 +143,17 @@ body {
     color: #1f2937;
   }
 
+  /* WEB VERSION ONLY FIX */
   .content-subsection {
     scroll-margin-top: 120px;
-    margin-bottom: 42px;
-    min-height: 55vh;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
 
   .content-subsection:last-child {
     margin-bottom: 0;
+    border-bottom: none;
   }
 
   .content-subsection h2 {
@@ -246,6 +249,10 @@ body {
     color: crimson;
     text-decoration: underline;
   }
+
+  body.dark-mode .content-subsection {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
   
   body.dark-mode .menu-toggle span {
     background: white;
@@ -259,7 +266,9 @@ body {
     }
 
     .content-subsection {
-      min-height: auto;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 42px;
     }
   }
   
