@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <header class="top-banner">
+  <header class="top-banner" id="top-banner">
     <div class="banner-container">
       <div class="banner-left">
         <h1>Cyrille E. Mvomo</h1>
@@ -40,23 +40,6 @@
           <a href="#">Service</a>
           <span id="theme-toggle" class="toggle">☾</span>
         </nav>
-      </div>
-    </div>
-
-    <div id="mobile-menu-panel" class="mobile-menu-panel">
-      <div class="mobile-menu-header">
-        <div class="mobile-menu-name">Cyrille E. Mvomo</div>
-        <button id="menu-close" class="menu-close" aria-label="Close menu">←</button>
-      </div>
-
-      <div class="mobile-menu-links">
-        <a href="#">About</a>
-        <a href="#">CV</a>
-        <a href="#">News</a>
-        <a href="#">Research</a>
-        <a href="#">Teaching</a>
-        <a href="#">Service</a>
-        <button id="mobile-theme-toggle" class="mobile-theme-toggle" type="button">Dark mode ☾</button>
       </div>
     </div>
   </header>
@@ -109,48 +92,36 @@
 
   <script>
     const themeToggle = document.getElementById("theme-toggle");
-    const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
     const body = document.body;
 
-    function toggleTheme() {
+    themeToggle.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
       themeToggle.classList.toggle("active");
-      updateMobileThemeLabel();
-    }
-
-    function updateMobileThemeLabel() {
-      mobileThemeToggle.textContent = body.classList.contains("dark-mode")
-        ? "Light mode ☀"
-        : "Dark mode ☾";
-    }
-
-    themeToggle.addEventListener("click", toggleTheme);
-    mobileThemeToggle.addEventListener("click", toggleTheme);
-
-    const menuToggle = document.getElementById("menu-toggle");
-    const menuClose = document.getElementById("menu-close");
-    const mobileMenuPanel = document.getElementById("mobile-menu-panel");
-
-    function openMenu() {
-      mobileMenuPanel.classList.add("menu-open");
-      menuToggle.setAttribute("aria-expanded", "true");
-      body.classList.add("menu-open");
-    }
-
-    function closeMenu() {
-      mobileMenuPanel.classList.remove("menu-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      body.classList.remove("menu-open");
-    }
-
-    menuToggle.addEventListener("click", openMenu);
-    menuClose.addEventListener("click", closeMenu);
-
-    document.querySelectorAll(".mobile-menu-links a").forEach(link => {
-      link.addEventListener("click", closeMenu);
     });
 
-    updateMobileThemeLabel();
+    const menuToggle = document.getElementById("menu-toggle");
+    const topBanner = document.getElementById("top-banner");
+    const bannerNav = document.getElementById("banner-nav");
+
+    menuToggle.addEventListener("click", () => {
+      topBanner.classList.toggle("menu-open");
+      bannerNav.classList.toggle("menu-open");
+      menuToggle.classList.toggle("menu-open");
+
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!expanded));
+    });
+
+    document.querySelectorAll(".banner-right a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 850) {
+          topBanner.classList.remove("menu-open");
+          bannerNav.classList.remove("menu-open");
+          menuToggle.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
   </script>
 
 </body>

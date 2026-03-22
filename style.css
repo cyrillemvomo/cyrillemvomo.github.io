@@ -6,10 +6,6 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
   }
   
-  body.menu-open {
-    overflow: hidden;
-  }
-  
   .top-banner {
     position: sticky;
     top: 0;
@@ -17,6 +13,7 @@ body {
     background: rgba(0, 0, 0, 0.03);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(6px);
+    transition: background 0.3s ease, min-height 0.3s ease;
   }
   
   .banner-container {
@@ -74,19 +71,45 @@ body {
     border: none;
     padding: 0;
     cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
   }
   
   .menu-toggle span {
     display: block;
-    width: 24px;
+    position: absolute;
+    left: 0;
+    width: 30px;
     height: 2px;
-    margin: 5px 0;
     background: #1f2937;
-    transition: background 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease, background 0.25s ease;
   }
   
-  .mobile-menu-panel {
-    display: none;
+  .menu-toggle span:nth-child(1) {
+    top: 2px;
+  }
+  
+  .menu-toggle span:nth-child(2) {
+    top: 11px;
+  }
+  
+  .menu-toggle span:nth-child(3) {
+    top: 20px;
+  }
+  
+  .menu-toggle.menu-open span:nth-child(1) {
+    top: 11px;
+    transform: rotate(45deg);
+  }
+  
+  .menu-toggle.menu-open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.menu-open span:nth-child(3) {
+    top: 11px;
+    transform: rotate(-45deg);
   }
   
   .page-container {
@@ -156,6 +179,7 @@ body {
     font-weight: 700;
   }
   
+  /* Text links inside description */
   .text-link {
     color: crimson;
     text-decoration: none;
@@ -228,98 +252,59 @@ body {
   @media (max-width: 850px) {
     .banner-container {
       padding: 14px 20px;
+      align-items: flex-start;
     }
   
     .banner-left h1 {
       font-size: 1.35rem;
     }
   
+    .menu-toggle {
+      display: block;
+      margin-top: 2px;
+    }
+  
     .banner-right {
       display: none;
     }
   
-    .menu-toggle {
-      display: block;
+    .top-banner.menu-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 100vh;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: none;
     }
   
-    .mobile-menu-panel {
-      display: none;
-      padding: 14px 20px 24px 20px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-      background: #ffffff;
-    }
-  
-    .mobile-menu-panel.menu-open {
-      display: block;
-    }
-  
-    .mobile-menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-  
-    .mobile-menu-name {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #1f2937;
-    }
-  
-    .menu-close {
-      background: none;
-      border: none;
-      color: #1f2937;
-      font-size: 1.8rem;
-      line-height: 1;
-      cursor: pointer;
-      padding: 0;
-    }
-  
-    .mobile-menu-links {
-      display: flex;
-      flex-direction: column;
+    .top-banner.menu-open .banner-container {
       align-items: flex-start;
-      gap: 18px;
     }
   
-    .mobile-menu-links a,
-    .mobile-theme-toggle {
-      background: none;
-      border: none;
-      padding: 0;
-      color: #1f2937;
-      text-decoration: none;
-      font-family: inherit;
-      font-size: 1.15rem;
-      font-weight: 700;
-      cursor: pointer;
+    .top-banner.menu-open .banner-right {
+      display: flex;
+      position: absolute;
+      top: 68px;
+      right: 20px;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 22px;
+      background: transparent;
     }
   
-    .mobile-menu-links a:hover,
-    .mobile-theme-toggle:hover {
-      color: crimson;
-      text-decoration: underline;
+    .top-banner.menu-open .banner-right a,
+    .top-banner.menu-open .toggle {
+      font-size: 1.35rem;
+      text-align: right;
     }
   
     .page-container {
       padding: 24px 20px 48px 20px;
     }
   
-    body.dark-mode .mobile-menu-panel {
-      background: #000000;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-  
-    body.dark-mode .mobile-menu-name,
-    body.dark-mode .menu-close,
-    body.dark-mode .mobile-menu-links a,
-    body.dark-mode .mobile-theme-toggle {
-      color: white;
-    }
-  
-    body.dark-mode .mobile-menu-links a:hover,
-    body.dark-mode .mobile-theme-toggle:hover {
-      color: crimson;
+    body.dark-mode .top-banner.menu-open {
+      background: rgba(0, 0, 0, 0.92);
     }
   }
