@@ -13,9 +13,18 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    backdrop-filter: blur(6px);
+    background: rgba(245, 245, 245, 0.62);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .top-banner.scrolled {
+    background: rgba(245, 245, 245, 0.48);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
   }
   
   .banner-container {
@@ -303,8 +312,17 @@ body {
   }
   
   body.dark-mode .top-banner {
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(28, 28, 28, 0.58);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  body.dark-mode .top-banner.scrolled {
+    background: rgba(18, 18, 18, 0.42);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
   }
   
   body.dark-mode .banner-left h1,

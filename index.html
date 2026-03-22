@@ -211,6 +211,7 @@
   <script>
     const toggle = document.getElementById("theme-toggle");
     const body = document.body;
+    const topBanner = document.querySelector(".top-banner");
 
     toggle.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
@@ -293,6 +294,10 @@
       setActiveLink(currentSectionId);
     }
 
+    function updateBannerOnScroll() {
+      topBanner.classList.toggle("scrolled", window.scrollY > 8);
+    }
+
     const panelToggles = document.querySelectorAll(".panel-toggle");
 
     panelToggles.forEach((toggleButton) => {
@@ -306,9 +311,11 @@
     });
 
     window.addEventListener("scroll", updateActiveSectionOnScroll);
+    window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("load", () => {
       setActiveLink("about-me-section");
       updateActiveSectionOnScroll();
+      updateBannerOnScroll();
     });
   </script>
 
