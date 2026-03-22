@@ -32,7 +32,7 @@
         </button>
 
         <nav id="banner-nav" class="banner-right">
-          <a href="#">About</a>
+          <a href="#about-me-section" id="about-link">About</a>
           <a href="#">CV</a>
           <a href="#">News</a>
           <a href="#">Research</a>
@@ -66,26 +66,36 @@
       </div>
 
       <div class="description-column">
-        <p>
-          Hi! I’m <strong>Cyrille Mvomo</strong>, a PhD candidate at
-          <a href="https://www.mcgill.ca/" target="_blank" class="text-link">McGill University</a>.
-          My work focuses on <strong>digital mobility</strong>, <strong>wearable sensing</strong>,
-          and <strong>Parkinson’s disease</strong>, with an interest in clinically meaningful and
-          mechanistically grounded digital biomarkers.
-        </p>
+        <section id="about-me-section" class="content-subsection">
+          <h2>About Me</h2>
+          <div class="crimson-wave" aria-hidden="true">﹏﹏﹏</div>
 
-        <p>
-          My research lies at the intersection of <strong>biomedical engineering</strong>,
-          <strong>movement science</strong>, and <strong>artificial intelligence</strong>.
-          I study how wearable systems can improve the assessment of mobility in real-world settings,
-          and how these tools can support monitoring, neurorehabilitation, and precision health.
-        </p>
+          <p>
+            Hi! I’m <strong>Cyrille Mvomo</strong>, a PhD candidate at
+            <a href="https://www.mcgill.ca/" target="_blank" class="text-link">McGill University</a>.
+            My work focuses on <strong>digital mobility</strong>, <strong>wearable sensing</strong>,
+            and <strong>Parkinson’s disease</strong>, with an interest in clinically meaningful and
+            mechanistically grounded digital biomarkers.
+          </p>
+        </section>
 
-        <p>
-          I am particularly interested in <strong>gait analysis</strong>, <strong>construct validity</strong>,
-          <strong>uncertainty-aware AI</strong>, and the translation of digital mobility outcomes
-          into research and clinical practice.
-        </p>
+        <section class="content-subsection">
+          <h2>Research Summary</h2>
+          <div class="crimson-wave" aria-hidden="true">﹏﹏﹏</div>
+
+          <p>
+            My research lies at the intersection of <strong>biomedical engineering</strong>,
+            <strong>movement science</strong>, and <strong>artificial intelligence</strong>.
+            I study how wearable systems can improve the assessment of mobility in real-world settings,
+            and how these tools can support monitoring, neurorehabilitation, and precision health.
+          </p>
+
+          <p>
+            I am particularly interested in <strong>gait analysis</strong>, <strong>construct validity</strong>,
+            <strong>uncertainty-aware AI</strong>, and the translation of digital mobility outcomes
+            into research and clinical practice.
+          </p>
+        </section>
       </div>
     </section>
   </main>
@@ -108,6 +118,22 @@
 
       const expanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", String(!expanded));
+    });
+
+    const aboutLink = document.getElementById("about-link");
+    const aboutSection = document.getElementById("about-me-section");
+
+    aboutLink.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      aboutSection.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      if (window.innerWidth > 850) {
+        aboutLink.classList.add("active-section-link");
+      }
     });
   </script>
 
