@@ -32,6 +32,10 @@ body {
     color: #1f2937;
   }
   
+  .banner-right-wrapper {
+    position: relative;
+  }
+  
   .banner-right {
     display: flex;
     align-items: center;
@@ -58,6 +62,23 @@ body {
   
   .toggle.active {
     text-decoration: none;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    background: #1f2937;
+    transition: background 0.3s ease;
   }
   
   .page-container {
@@ -168,7 +189,6 @@ body {
     color: #9ca3af;
   }
   
-  /* 🔥 THIS IS THE FIX */
   body.dark-mode .profile-details strong {
     color: white;
   }
@@ -186,10 +206,46 @@ body {
     text-decoration: underline;
   }
   
+  body.dark-mode .menu-toggle span {
+    background: white;
+  }
+  
   /* Responsive */
   @media (max-width: 900px) {
     .hero-section {
       grid-template-columns: 1fr;
       row-gap: 36px;
+    }
+  }
+  
+  @media (max-width: 850px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .banner-right {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 220px;
+      padding: 16px 18px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+  
+    .banner-right.menu-open {
+      display: flex;
+    }
+  
+    body.dark-mode .banner-right {
+      background: #111111;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
   }
