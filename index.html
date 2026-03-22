@@ -19,6 +19,8 @@
 <body>
 
   <header class="top-banner">
+    <div id="scroll-line" class="scroll-line"></div>
+
     <div class="banner-container">
       <div class="banner-left">
         <h1>Cyrille E. Mvomo</h1>
@@ -333,12 +335,24 @@
       });
     });
 
+    const scrollLine = document.getElementById("scroll-line");
+
+    function updateScrollLine() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollLine.style.width = scrollPercent + "%";
+    }
+
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
+    window.addEventListener("scroll", updateScrollLine);
+
     window.addEventListener("load", () => {
       setActiveLink("about-me-section");
       updateActiveSectionOnScroll();
       updateBannerOnScroll();
+      updateScrollLine();
     });
   </script>
 
