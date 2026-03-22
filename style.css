@@ -66,48 +66,19 @@ body {
   
   .menu-toggle {
     display: none;
-    width: 32px;
-    height: 26px;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    position: relative;
   }
   
   .menu-toggle span {
-    position: absolute;
-    left: 0;
-    width: 32px;
+    display: block;
+    width: 24px;
     height: 2px;
+    margin: 5px 0;
     background: #1f2937;
-    transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease;
-  }
-  
-  .menu-toggle span:nth-child(1) {
-    top: 3px;
-  }
-  
-  .menu-toggle span:nth-child(2) {
-    top: 12px;
-  }
-  
-  .menu-toggle span:nth-child(3) {
-    top: 21px;
-  }
-  
-  .menu-toggle.menu-open span:nth-child(1) {
-    top: 12px;
-    transform: rotate(45deg);
-  }
-  
-  .menu-toggle.menu-open span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .menu-toggle.menu-open span:nth-child(3) {
-    top: 12px;
-    transform: rotate(-45deg);
+    transition: background 0.3s ease;
   }
   
   .page-container {
@@ -218,7 +189,6 @@ body {
     color: #9ca3af;
   }
   
-  /* 🔥 THIS IS THE FIX */
   body.dark-mode .profile-details strong {
     color: white;
   }
@@ -249,68 +219,33 @@ body {
   }
   
   @media (max-width: 850px) {
-    .banner-container {
-      padding: 14px 20px;
-      align-items: flex-start;
-    }
-  
-    .banner-left h1 {
-      font-size: 1.35rem;
-    }
-  
     .menu-toggle {
       display: block;
-      margin-top: 2px;
     }
   
     .banner-right {
       display: none;
-    }
-  
-    .top-banner.menu-open {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.90);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: none;
-      padding-bottom: 20px;
-    }
-  
-    .top-banner.menu-open .banner-container {
-      align-items: flex-start;
-    }
-  
-    .top-banner.menu-open .banner-right-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-    }
-  
-    .top-banner.menu-open .banner-right {
-      display: flex;
-      position: static;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 220px;
+      padding: 16px 18px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border-radius: 10px;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 20px;
-      margin-top: 58px;
-      padding-right: 20px;
-      background: transparent;
+      align-items: flex-start;
+      gap: 14px;
     }
   
-    .top-banner.menu-open .banner-right a,
-    .top-banner.menu-open .toggle {
-      font-size: 1.3rem;
-      text-align: right;
+    .banner-right.menu-open {
+      display: flex;
     }
   
-    .page-container {
-      padding: 24px 20px 48px 20px;
-    }
-  
-    body.dark-mode .top-banner.menu-open {
-      background: rgba(0, 0, 0, 0.90);
+    body.dark-mode .banner-right {
+      background: #111111;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
   }
