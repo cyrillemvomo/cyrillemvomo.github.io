@@ -42,6 +42,23 @@
         </nav>
       </div>
     </div>
+
+    <div id="mobile-menu-panel" class="mobile-menu-panel">
+      <div class="mobile-menu-header">
+        <div class="mobile-menu-name">Cyrille E. Mvomo</div>
+        <button id="menu-close" class="menu-close" aria-label="Close menu">←</button>
+      </div>
+
+      <div class="mobile-menu-links">
+        <a href="#">About</a>
+        <a href="#">CV</a>
+        <a href="#">News</a>
+        <a href="#">Research</a>
+        <a href="#">Teaching</a>
+        <a href="#">Service</a>
+        <button id="mobile-theme-toggle" class="mobile-theme-toggle" type="button">Dark mode ☾</button>
+      </div>
+    </div>
   </header>
 
   <main class="page-container">
@@ -91,24 +108,49 @@
   </main>
 
   <script>
-    const toggle = document.getElementById("theme-toggle");
+    const themeToggle = document.getElementById("theme-toggle");
+    const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
     const body = document.body;
 
-    toggle.addEventListener("click", () => {
+    function toggleTheme() {
       body.classList.toggle("dark-mode");
-      toggle.classList.toggle("active");
-    });
+      themeToggle.classList.toggle("active");
+      updateMobileThemeLabel();
+    }
+
+    function updateMobileThemeLabel() {
+      mobileThemeToggle.textContent = body.classList.contains("dark-mode")
+        ? "Light mode ☀"
+        : "Dark mode ☾";
+    }
+
+    themeToggle.addEventListener("click", toggleTheme);
+    mobileThemeToggle.addEventListener("click", toggleTheme);
 
     const menuToggle = document.getElementById("menu-toggle");
-    const bannerNav = document.getElementById("banner-nav");
+    const menuClose = document.getElementById("menu-close");
+    const mobileMenuPanel = document.getElementById("mobile-menu-panel");
 
-    menuToggle.addEventListener("click", () => {
-      bannerNav.classList.toggle("menu-open");
-      menuToggle.classList.toggle("menu-open");
+    function openMenu() {
+      mobileMenuPanel.classList.add("menu-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      body.classList.add("menu-open");
+    }
 
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", String(!expanded));
+    function closeMenu() {
+      mobileMenuPanel.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      body.classList.remove("menu-open");
+    }
+
+    menuToggle.addEventListener("click", openMenu);
+    menuClose.addEventListener("click", closeMenu);
+
+    document.querySelectorAll(".mobile-menu-links a").forEach(link => {
+      link.addEventListener("click", closeMenu);
     });
+
+    updateMobileThemeLabel();
   </script>
 
 </body>
