@@ -6,7 +6,7 @@
 
   <title>Cyrille Mvomo</title>
 
-  <!-- Courier Prime font -->
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -18,116 +18,84 @@
 </head>
 <body>
 
-  <header class="top-banner" id="top-banner">
-    <div class="banner-container">
-      <div class="banner-left">
-        <h1>Cyrille E. Mvomo</h1>
+<header class="top-banner" id="top-banner">
+  <div class="banner-container">
+
+    <div class="banner-left">
+      <h1>Cyrille E. Mvomo</h1>
+    </div>
+
+    <div class="banner-right-wrapper">
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="banner-right" id="banner-nav">
+        <a href="#">About</a>
+        <a href="#">CV</a>
+        <a href="#">News</a>
+        <a href="#">Research</a>
+        <a href="#">Teaching</a>
+        <a href="#">Service</a>
+        <span id="theme-toggle" class="toggle">☾</span>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<main class="page-container">
+  <section class="hero-section">
+
+    <div class="profile-column">
+      <img src="profile.jpg" alt="Cyrille" class="profile-photo" />
+
+      <div class="icon-row">
+        <a href="mailto:cyrille.mvomo@mail.mcgill.ca"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://github.com/cyrillemvomo" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://scholar.google.com" target="_blank"><i class="fa-solid fa-graduation-cap"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://orcid.org" target="_blank"><i class="fa-brands fa-orcid"></i></a>
+        <a href="https://researchgate.net" target="_blank"><i class="fa-brands fa-researchgate"></i></a>
       </div>
 
-      <div class="banner-right-wrapper">
-        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" type="button">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <nav class="banner-right" id="banner-nav">
-          <a href="#">About</a>
-          <a href="#">CV</a>
-          <a href="#">News</a>
-          <a href="#">Research</a>
-          <a href="#">Teaching</a>
-          <a href="#">Service</a>
-          <span id="theme-toggle" class="toggle">☾</span>
-        </nav>
+      <div class="profile-details">
+        <p>Montreal, Canada</p>
+        <p><strong>McGill University</strong></p>
+        <p>Sir Arthur Currie Room 101</p>
       </div>
     </div>
-  </header>
 
-  <main class="page-container">
-    <section class="hero-section">
-      <div class="profile-column">
-        <img src="profile.jpg" alt="Cyrille E. Mvomo" class="profile-photo" />
+    <div class="description-column">
+      <p>
+        Hi! I’m <strong>Cyrille Mvomo</strong>, a PhD candidate at
+        <a href="https://www.mcgill.ca/" target="_blank" class="text-link">McGill University</a>.
+      </p>
+    </div>
 
-        <div class="icon-row">
-          <a href="mailto:cyrille.mvomo@mail.mcgill.ca" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-          <a href="https://github.com/cyrillemvomo" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://scholar.google.com/citations?user=v-sf1K8AAAAJ&hl=en&oi=ao" target="_blank" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-          <a href="https://www.linkedin.com/in/cyrille-mvomo" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://orcid.org/0000-0003-3828-3360" target="_blank" aria-label="ORCID"><i class="fa-brands fa-orcid"></i></a>
-          <a href="https://www.researchgate.net/profile/Cyrille-Mvomo" target="_blank" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-        </div>
+  </section>
+</main>
 
-        <div class="profile-details">
-          <p>Montreal, Canada</p>
-          <p><strong>McGill University</strong></p>
-          <p>Sir Arthur Currie Room 101</p>
-        </div>
-      </div>
+<script>
+const body = document.body;
+const themeToggle = document.getElementById("theme-toggle");
+const topBanner = document.getElementById("top-banner");
+const menuToggle = document.getElementById("menu-toggle");
 
-      <div class="description-column">
-        <p>
-          Hi! I’m <strong>Cyrille Mvomo</strong>, a PhD candidate at
-          <a href="https://www.mcgill.ca/" target="_blank" class="text-link">McGill University</a>.
-          My work focuses on <strong>digital mobility</strong>, <strong>wearable sensing</strong>,
-          and <strong>Parkinson’s disease</strong>, with an interest in clinically meaningful and
-          mechanistically grounded digital biomarkers.
-        </p>
+/* Theme */
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  themeToggle.classList.toggle("active");
+});
 
-        <p>
-          My research lies at the intersection of <strong>biomedical engineering</strong>,
-          <strong>movement science</strong>, and <strong>artificial intelligence</strong>.
-          I study how wearable systems can improve the assessment of mobility in real-world settings,
-          and how these tools can support monitoring, neurorehabilitation, and precision health.
-        </p>
-
-        <p>
-          I am particularly interested in <strong>gait analysis</strong>, <strong>construct validity</strong>,
-          <strong>uncertainty-aware AI</strong>, and the translation of digital mobility outcomes
-          into research and clinical practice.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <script>
-    const body = document.body;
-    const themeToggle = document.getElementById("theme-toggle");
-    const topBanner = document.getElementById("top-banner");
-    const menuToggle = document.getElementById("menu-toggle");
-    const navLinks = document.querySelectorAll("#banner-nav a");
-
-    themeToggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      themeToggle.classList.toggle("active");
-    });
-
-    menuToggle.addEventListener("click", () => {
-      topBanner.classList.toggle("menu-open");
-      menuToggle.classList.toggle("menu-open");
-
-      const isOpen = topBanner.classList.contains("menu-open");
-      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 850) {
-          topBanner.classList.remove("menu-open");
-          menuToggle.classList.remove("menu-open");
-          menuToggle.setAttribute("aria-expanded", "false");
-        }
-      });
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 850) {
-        topBanner.classList.remove("menu-open");
-        menuToggle.classList.remove("menu-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
-  </script>
+/* Mobile menu */
+menuToggle.addEventListener("click", () => {
+  topBanner.classList.toggle("menu-open");
+  menuToggle.classList.toggle("menu-open");
+});
+</script>
 
 </body>
 </html>

@@ -1,24 +1,22 @@
 body {
     margin: 0;
-    font-family: "Courier Prime", "Courier New", Courier, monospace;
+    font-family: "Courier Prime", monospace;
     background: #ffffff;
     color: #1f2937;
-    transition: background 0.3s ease, color 0.3s ease;
   }
   
+  /* HEADER */
   .top-banner {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(0,0,0,0.03);
     backdrop-filter: blur(6px);
-    transition: background 0.3s ease;
   }
   
   .banner-container {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: auto;
     padding: 12px 32px;
     display: flex;
     justify-content: space-between;
@@ -27,27 +25,19 @@ body {
   
   .banner-left h1 {
     margin: 0;
-    font-size: 1.80rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #1f2937;
-  }
-  
-  .banner-right-wrapper {
-    position: relative;
+    font-size: 1.8rem;
   }
   
   .banner-right {
     display: flex;
-    align-items: center;
     gap: 24px;
+    align-items: center;
   }
   
   .banner-right a {
-    color: #1f2937;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1rem;
+    color: #1f2937;
   }
   
   .banner-right a:hover {
@@ -57,204 +47,109 @@ body {
   
   .toggle {
     cursor: pointer;
-    font-size: 1.15rem;
     text-decoration: line-through;
   }
   
-  .toggle.active {
-    text-decoration: none;
-  }
-  
+  /* HAMBURGER */
   .menu-toggle {
     display: none;
-    width: 32px;
-    height: 26px;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    width: 30px;
+    height: 24px;
     position: relative;
+    border: none;
+    background: none;
   }
   
   .menu-toggle span {
     position: absolute;
-    left: 0;
-    width: 32px;
+    width: 30px;
     height: 2px;
     background: #1f2937;
-    transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease;
+    left: 0;
+    transition: 0.25s;
   }
   
-  .menu-toggle span:nth-child(1) {
-    top: 3px;
-  }
+  .menu-toggle span:nth-child(1){top:2px;}
+  .menu-toggle span:nth-child(2){top:11px;}
+  .menu-toggle span:nth-child(3){top:20px;}
   
-  .menu-toggle span:nth-child(2) {
-    top: 12px;
-  }
-  
-  .menu-toggle span:nth-child(3) {
-    top: 21px;
-  }
-  
-  .menu-toggle.menu-open span:nth-child(1) {
-    top: 12px;
+  .menu-toggle.menu-open span:nth-child(1){
+    top:11px;
     transform: rotate(45deg);
   }
-  
-  .menu-toggle.menu-open span:nth-child(2) {
-    opacity: 0;
+  .menu-toggle.menu-open span:nth-child(2){
+    opacity:0;
   }
-  
-  .menu-toggle.menu-open span:nth-child(3) {
-    top: 12px;
+  .menu-toggle.menu-open span:nth-child(3){
+    top:11px;
     transform: rotate(-45deg);
   }
   
+  /* MAIN */
   .page-container {
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 24px 32px 64px 32px;
+    margin: auto;
+    padding: 40px;
   }
   
   .hero-section {
     display: grid;
     grid-template-columns: 280px 1fr;
-    column-gap: 56px;
-    align-items: center;
-  }
-  
-  .profile-column {
-    text-align: center;
+    gap: 50px;
   }
   
   .profile-photo {
     width: 200px;
-    height: 200px;
-    object-fit: cover;
     border-radius: 50%;
-    display: block;
-    margin: 0 auto 22px auto;
-    border: 4px solid rgba(0, 0, 0, 0.08);
   }
   
   .icon-row {
     display: flex;
+    gap: 15px;
     justify-content: center;
-    gap: 18px;
-    margin-bottom: 24px;
   }
   
   .icon-row a {
     color: #1f2937;
-    font-size: 1.25rem;
-    text-decoration: none;
-    transition: color 0.2s ease, opacity 0.2s ease;
   }
   
   .icon-row a:hover {
     color: crimson;
-    opacity: 1;
   }
   
   .profile-details p {
-    margin: 6px 0;
-    font-size: 1rem;
-    line-height: 1.5;
     color: #9ca3af;
-  }
-  
-  .profile-details strong {
-    color: #1f2937;
-  }
-  
-  .description-column p {
-    margin: 0 0 24px 0;
-    font-size: 1.05rem;
-    line-height: 1.8;
-  }
-  
-  .description-column strong {
-    font-weight: 700;
   }
   
   .text-link {
     color: crimson;
-    text-decoration: none;
-    font-weight: 700;
   }
   
   .text-link:hover {
-    color: crimson;
     text-decoration: underline;
   }
   
-  /* Dark mode */
+  /* DARK MODE */
   body.dark-mode {
-    background: #000000;
+    background: black;
     color: white;
   }
   
-  body.dark-mode .top-banner {
-    background: rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  
-  body.dark-mode .banner-left h1,
-  body.dark-mode .banner-right a,
-  body.dark-mode .description-column p {
+  body.dark-mode a,
+  body.dark-mode h1 {
     color: white;
-  }
-  
-  body.dark-mode .icon-row a {
-    color: white;
-  }
-  
-  body.dark-mode .icon-row a:hover {
-    color: crimson;
-  }
-  
-  body.dark-mode .profile-details p {
-    color: #9ca3af;
-  }
-  
-  body.dark-mode .profile-details strong {
-    color: white;
-  }
-  
-  body.dark-mode .profile-photo {
-    border: 4px solid rgba(255, 255, 255, 0.12);
-  }
-  
-  body.dark-mode .text-link {
-    color: crimson;
-  }
-  
-  body.dark-mode .text-link:hover {
-    color: crimson;
-    text-decoration: underline;
   }
   
   body.dark-mode .menu-toggle span {
     background: white;
   }
   
-  /* Responsive */
-  @media (max-width: 900px) {
-    .hero-section {
-      grid-template-columns: 1fr;
-      row-gap: 36px;
-    }
+  body.dark-mode .profile-details strong {
+    color: white;
   }
   
-  @media (max-width: 850px) {
-    .banner-container {
-      padding: 14px 20px;
-    }
-  
-    .banner-left h1 {
-      font-size: 1.35rem;
-    }
+  /* MOBILE */
+  @media (max-width: 850px){
   
     .menu-toggle {
       display: block;
@@ -264,38 +159,28 @@ body {
       display: none;
     }
   
+    /* 🔥 KEY FIX: no full screen */
     .top-banner.menu-open {
-      position: fixed;
-      top: 0;
-      left: 0;
+      position: absolute;
       width: 100%;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.90);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(8px);
-      border-bottom: none;
+      padding-bottom: 20px;
     }
   
     .top-banner.menu-open .banner-right {
       display: flex;
-      position: absolute;
-      top: 72px;
-      right: 20px;
       flex-direction: column;
       align-items: flex-end;
       gap: 20px;
-    }
-  
-    .top-banner.menu-open .banner-right a,
-    .top-banner.menu-open .toggle {
-      font-size: 1.3rem;
-      text-align: right;
-    }
-  
-    .page-container {
-      padding: 24px 20px 48px 20px;
+      margin-top: 10px;
     }
   
     body.dark-mode .top-banner.menu-open {
-      background: rgba(0, 0, 0, 0.90);
+      background: rgba(0,0,0,0.92);
+    }
+  
+    .hero-section {
+      grid-template-columns: 1fr;
     }
   }
