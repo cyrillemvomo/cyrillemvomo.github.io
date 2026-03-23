@@ -209,7 +209,7 @@ body {
 
 .research-summary-media {
   float: right;
-  width: 280px;
+  width: 80px;
   aspect-ratio: 1 / 1;
   margin: 0 0 14px 18px;
   border-radius: 12px;
@@ -714,7 +714,6 @@ body {
   width: 100%;
   min-height: 180px;
   overflow: hidden;
-  background: #ffffff !important;
 }
 
 .visitors-map-wrapper iframe,
