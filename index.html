@@ -250,6 +250,46 @@
     const body = document.body;
     const topBanner = document.querySelector(".top-banner");
 
+    function setFavicon() {
+      const faviconSvg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+          <defs>
+            <clipPath id="circleClip">
+              <circle cx="32" cy="32" r="30"></circle>
+            </clipPath>
+          </defs>
+          <rect width="64" height="64" fill="transparent"></rect>
+          <circle cx="32" cy="32" r="31" fill="#ffffff"></circle>
+          <image
+            href="profile.jpg"
+            x="1"
+            y="1"
+            width="62"
+            height="62"
+            preserveAspectRatio="xMidYMid slice"
+            clip-path="url(#circleClip)"
+          ></image>
+        </svg>
+      `;
+
+      const faviconHref = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(faviconSvg)}`;
+
+      const existingIcons = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]');
+      existingIcons.forEach((icon) => icon.remove());
+
+      const iconLink = document.createElement("link");
+      iconLink.rel = "icon";
+      iconLink.type = "image/svg+xml";
+      iconLink.href = faviconHref;
+      document.head.appendChild(iconLink);
+
+      const shortcutIconLink = document.createElement("link");
+      shortcutIconLink.rel = "shortcut icon";
+      shortcutIconLink.type = "image/svg+xml";
+      shortcutIconLink.href = faviconHref;
+      document.head.appendChild(shortcutIconLink);
+    }
+
     toggle.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
       toggle.classList.toggle("active");
@@ -665,10 +705,12 @@
           </div>
 
           <div class="publication-content">
-            <h3 class="publication-title">${escapeHtml(publication.title)}</h3>
-            <p class="publication-authors">${renderAuthors(publication)}</p>
-            <p class="publication-journal">${escapeHtml(publication.journal)}, ${publication.year}</p>
-            <p class="publication-summary">${escapeHtml(publication.summary)}</p>
+            <div class="publication-main-copy">
+              <h3 class="publication-title">${escapeHtml(publication.title)}</h3>
+              <p class="publication-authors">${renderAuthors(publication)}</p>
+              <p class="publication-journal">${escapeHtml(publication.journal)}, ${publication.year}</p>
+              <p class="publication-summary">${escapeHtml(publication.summary)}</p>
+            </div>
 
             <div class="publication-actions">
               ${actions.map((action) => `<a href="${action.link}" class="publication-action">${action.label}</a>`).join("")}
@@ -683,6 +725,24 @@
           </div>
         </article>
       `;
+    }
+
+    function syncPublicationVisualHeights() {
+      if (window.innerWidth <= 900) {
+        document.querySelectorAll(".publication-visual").forEach((visual) => {
+          visual.style.height = "";
+        });
+        return;
+      }
+
+      document.querySelectorAll(".publication-card").forEach((card) => {
+        const visual = card.querySelector(".publication-visual");
+        const mainCopy = card.querySelector(".publication-main-copy");
+
+        if (!visual || !mainCopy) return;
+
+        visual.style.height = `${Math.ceil(mainCopy.offsetHeight)}px`;
+      });
     }
 
     function renderPublications() {
@@ -708,6 +768,8 @@
           </div>
         </div>
       `).join("");
+
+      syncPublicationVisualHeights();
     }
 
     viewByDateButton.addEventListener("click", () => {
@@ -740,14 +802,17 @@
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
+    window.addEventListener("resize", syncPublicationVisualHeights);
 
     window.addEventListener("load", () => {
+      setFavicon();
       setActiveLink("about-me-section");
       updateActiveSectionOnScroll();
       updateBannerOnScroll();
       updateScrollLine();
       updateFooterDate();
       renderPublications();
+      syncPublicationVisualHeights();
     });
   </script>
 
