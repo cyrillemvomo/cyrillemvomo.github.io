@@ -361,8 +361,9 @@ body {
 
 .publications-note {
   margin: 0 0 16px 0;
-  font-size: 0.88rem;
-  line-height: 1.4;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  font-weight: 400;
   color: #b6b6b6;
 }
 
@@ -462,17 +463,17 @@ body {
 }
 
 .publication-title {
-  margin: 0 0 5px 0;
-  font-size: 0.98rem;
-  line-height: 1.3;
-  font-weight: 700;
+  margin: 0 0 3px 0;
+  font-size: 1.06rem;
+  line-height: 1.22;
+  font-weight: 400;
   color: #6c5ce7;
 }
 
 .publication-authors {
-  margin: 0 0 4px 0;
+  margin: 0 0 2px 0;
   font-size: 0.89rem;
-  line-height: 1.45;
+  line-height: 1.3;
   color: #9ca3af;
 }
 
@@ -511,18 +512,19 @@ body {
 }
 
 .publication-journal {
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   font-size: 0.89rem;
-  line-height: 1.45;
+  line-height: 1.3;
   font-style: italic;
   color: #111827;
 }
 
 .publication-summary {
   margin: 0 0 8px 0;
-  font-size: 0.79rem;
-  line-height: 1.5;
-  color: #9ca3af;
+  font-size: 0.81rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: #111827;
 }
 
 .publication-actions {
@@ -720,7 +722,6 @@ body.dark-mode .panel-indicator {
 
 body.dark-mode .publications-subcontrols span,
 body.dark-mode .publications-note,
-body.dark-mode .publication-summary,
 body.dark-mode .publication-authors {
   color: #9ca3af;
 }
@@ -762,7 +763,8 @@ body.dark-mode .author-more {
   text-decoration-color: rgba(255, 255, 255, 0.24);
 }
 
-body.dark-mode .publication-journal {
+body.dark-mode .publication-journal,
+body.dark-mode .publication-summary {
   color: white;
 }
 
