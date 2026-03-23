@@ -367,8 +367,8 @@ body {
 }
 
 .publications-full-bleed {
-  width: calc(100% + 336px);
-  margin-left: -336px;
+  width: 100%;
+  margin-left: 0;
 }
 
 .publication-group {
