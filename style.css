@@ -434,15 +434,15 @@ body {
 
 .publication-card {
   position: relative;
-  min-height: 150px;
+  min-height: 132px;
 }
 
 .publication-visual {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 2px;
   left: 0;
   width: clamp(290px, 25vw, 340px);
+  height: 132px;
   transform: translateX(calc(-100% - 26px));
   border-radius: 10px;
   overflow: hidden;

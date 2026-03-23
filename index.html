@@ -578,39 +578,6 @@
         .replaceAll("'", "&#39;");
     }
 
-    function buildPublicationVisual(label, year) {
-      const svg = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
-          <defs>
-            <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#efeaff">
-                <animate attributeName="stop-color" values="#efeaff;#e3ddff;#efeaff" dur="5s" repeatCount="indefinite"/>
-              </stop>
-              <stop offset="50%" stop-color="#d8d1ff">
-                <animate attributeName="stop-color" values="#d8d1ff;#cfc6ff;#d8d1ff" dur="5s" repeatCount="indefinite"/>
-              </stop>
-              <stop offset="100%" stop-color="#b7a8ff">
-                <animate attributeName="stop-color" values="#b7a8ff;#9f8cff;#b7a8ff" dur="5s" repeatCount="indefinite"/>
-              </stop>
-            </linearGradient>
-          </defs>
-
-          <rect width="800" height="560" fill="url(#g)"/>
-          <rect x="48" y="48" width="704" height="464" rx="22" fill="rgba(255,255,255,0.55)" stroke="rgba(108,92,231,0.18)"/>
-          <rect x="88" y="112" width="290" height="180" rx="18" fill="rgba(108,92,231,0.15)"/>
-          <rect x="408" y="112" width="224" height="18" rx="9" fill="rgba(108,92,231,0.24)"/>
-          <rect x="408" y="150" width="188" height="14" rx="7" fill="rgba(108,92,231,0.18)"/>
-          <rect x="88" y="332" width="544" height="14" rx="7" fill="rgba(108,92,231,0.14)"/>
-          <rect x="88" y="364" width="586" height="14" rx="7" fill="rgba(108,92,231,0.12)"/>
-          <rect x="88" y="396" width="522" height="14" rx="7" fill="rgba(108,92,231,0.10)"/>
-
-          <text x="88" y="86" font-family="Courier Prime, Courier New, monospace" font-size="28" font-weight="700" fill="#6c5ce7">${escapeHtml(year)}</text>
-          <text x="88" y="464" font-family="Courier Prime, Courier New, monospace" font-size="34" font-weight="700" fill="#3a2ea8">${escapeHtml(label)}</text>
-        </svg>
-      `;
-      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-    }
-
     function sortByMostRecent(items) {
       return [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
     }
@@ -694,7 +661,7 @@
       return `
         <article class="publication-card">
           <div class="publication-visual">
-            <img src="${buildPublicationVisual(publication.topic, publication.year)}" alt="${escapeHtml(publication.title)} visual" />
+            <img src="paper_toy_image.gif" alt="${escapeHtml(publication.title)} visual" />
           </div>
 
           <div class="publication-content">
