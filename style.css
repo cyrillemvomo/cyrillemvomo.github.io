@@ -434,7 +434,6 @@ body {
 
 .publication-card {
   position: relative;
-  min-height: 132px;
 }
 
 .publication-visual {
@@ -442,7 +441,6 @@ body {
   top: 2px;
   left: 0;
   width: clamp(290px, 25vw, 340px);
-  height: 132px;
   transform: translateX(calc(-100% - 26px));
   border-radius: 10px;
   overflow: hidden;
@@ -460,6 +458,10 @@ body {
 .publication-content {
   min-width: 0;
   padding-bottom: 2px;
+}
+
+.publication-main-copy {
+  margin-bottom: 8px;
 }
 
 .publication-title {
@@ -520,7 +522,7 @@ body {
 }
 
 .publication-summary {
-  margin: 0 0 8px 0;
+  margin: 0;
   font-size: 0.68rem;
   line-height: 1.4;
   font-weight: 400;
@@ -899,7 +901,7 @@ body.dark-mode .menu-toggle span {
   .publication-visual {
     position: static;
     width: 100%;
-    height: auto;
+    height: auto !important;
     min-height: 180px;
     transform: none;
     margin-bottom: 12px;
