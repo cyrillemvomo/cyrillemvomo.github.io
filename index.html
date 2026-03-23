@@ -37,7 +37,7 @@
           <a href="#about-me-section" class="section-link active-section-link">About</a>
           <a href="#news-section" class="section-link">News</a>
           <a href="#publications-section" class="section-link">Publications</a>
-          <a href="#">Curriculum Vitae</a>
+          <a href="#curriculum-vitae-section" class="section-link">Curriculum Vitae</a>
           <span id="theme-toggle" class="toggle">☾</span>
         </nav>
       </div>
@@ -201,6 +201,32 @@
           <p class="publications-note">(* indicates equal contribution and ** indicates mentee student)</p>
 
           <div id="publications-container" class="publications-full-bleed"></div>
+        </section>
+
+        <section id="curriculum-vitae-section" class="content-subsection">
+          <h2>Curriculum Vitae</h2>
+          <div class="crimson-wave" aria-hidden="true">﹏</div>
+
+          <div class="cv-controls">
+            <a href="CV.pdf" class="cv-action" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i>
+              <span>Download PDF</span>
+            </a>
+            <button id="cv-fullscreen-button" class="cv-action" type="button">
+              <i class="fa-solid fa-expand" aria-hidden="true"></i>
+              <span>Full Screen</span>
+            </button>
+          </div>
+
+          <div id="cv-viewer-wrapper" class="cv-viewer-wrapper">
+            <iframe
+              id="cv-viewer"
+              src="CV.pdf#toolbar=1&navpanes=0&view=FitH"
+              title="Curriculum Vitae PDF viewer"
+              class="cv-viewer"
+              loading="lazy">
+            </iframe>
+          </div>
         </section>
       </div>
     </section>
@@ -783,6 +809,26 @@
         groupToggleButton.setAttribute("aria-expanded", String(isOpen));
       }
     });
+
+    const cvViewerWrapper = document.getElementById("cv-viewer-wrapper");
+    const cvFullscreenButton = document.getElementById("cv-fullscreen-button");
+
+    if (cvFullscreenButton && cvViewerWrapper) {
+      cvFullscreenButton.addEventListener("click", async () => {
+        try {
+          if (document.fullscreenElement) {
+            await document.exitFullscreen();
+            return;
+          }
+
+          if (cvViewerWrapper.requestFullscreen) {
+            await cvViewerWrapper.requestFullscreen();
+          }
+        } catch (error) {
+          console.error("Fullscreen request failed:", error);
+        }
+      });
+    }
 
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
