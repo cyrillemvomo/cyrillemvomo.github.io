@@ -442,7 +442,7 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  width: clamp(180px, 19vw, 220px);
+  width: clamp(290px, 25vw, 340px);
   transform: translateX(calc(-100% - 26px));
   border-radius: 10px;
   overflow: hidden;
