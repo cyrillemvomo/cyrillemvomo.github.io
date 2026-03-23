@@ -244,8 +244,11 @@
           </ul>
 
           <h3 class="visitors-title">Visitors</h3>
-          <div class="visitors-map-wrapper">
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=tE3-3apC-7Bibrr-sXCUOnfALFGOqDMCGYxQvzyzCBM&cl=ffffff&w=a"></script>
+          <div
+            id="visitors-map-wrapper"
+            class="visitors-map-wrapper"
+            style="background: #ffffff; border-radius: 10px;">
+            <div id="visitors-map-embed"></div>
           </div>
         </section>
       </div>
@@ -321,9 +324,29 @@
       };
     }
 
+    const visitorsMapWrapper = document.getElementById("visitors-map-wrapper");
+    const visitorsMapEmbed = document.getElementById("visitors-map-embed");
+
+    function loadVisitorsMap() {
+      if (!visitorsMapWrapper || !visitorsMapEmbed) return;
+
+      const isDarkMode = body.classList.contains("dark-mode");
+      visitorsMapWrapper.style.background = isDarkMode ? "#000000" : "#ffffff";
+
+      visitorsMapEmbed.innerHTML = "";
+
+      const mapScript = document.createElement("script");
+      mapScript.type = "text/javascript";
+      mapScript.id = "clustrmaps";
+      mapScript.src = `//clustrmaps.com/map_v2.js?d=tE3-3apC-7Bibrr-sXCUOnfALFGOqDMCGYxQvzyzCBM&cl=${isDarkMode ? "ffffff" : "000000"}&w=a&t=${isDarkMode ? "dark" : "light"}`;
+
+      visitorsMapEmbed.appendChild(mapScript);
+    }
+
     toggle.addEventListener("click", () => {
       body.classList.toggle("dark-mode");
       toggle.classList.toggle("active");
+      loadVisitorsMap();
     });
 
     const menuToggle = document.getElementById("menu-toggle");
@@ -864,6 +887,7 @@
       updateFooterDate();
       renderPublications();
       syncPublicationVisualHeights();
+      loadVisitorsMap();
     });
   </script>
 
