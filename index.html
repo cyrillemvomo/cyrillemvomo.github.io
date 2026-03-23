@@ -330,7 +330,7 @@
     function loadVisitorsMap() {
       if (!visitorsMapWrapper || !visitorsMapEmbed) return;
 
-      const isDarkMode = body.classList.contains("dark-mode");
+      // const isDarkMode = body.classList.contains("dark-mode");
       visitorsMapWrapper.style.background = isDarkMode ? "#000000" : "#ffffff";
 
       visitorsMapEmbed.innerHTML = "";
@@ -338,7 +338,8 @@
       const mapScript = document.createElement("script");
       mapScript.type = "text/javascript";
       mapScript.id = "clustrmaps";
-      mapScript.src = `//clustrmaps.com/map_v2.js?d=tE3-3apC-7Bibrr-sXCUOnfALFGOqDMCGYxQvzyzCBM&cl=${isDarkMode ? "ffffff" : "000000"}&w=a&t=${isDarkMode ? "dark" : "light"}`;
+      // mapScript.src = `//clustrmaps.com/map_v2.js?d=tE3-3apC-7Bibrr-sXCUOnfALFGOqDMCGYxQvzyzCBM&cl=${isDarkMode ? "ffffff" : "000000"}&w=a&t=${isDarkMode ? "dark" : "light"}`;
+      mapScript.src = `//clustrmaps.com/map_v2.js?d=tE3-3apC-7Bibrr-sXCUOnfALFGOqDMCGYxQvzyzCBM&cl=d3d3d3&w=a&t=light`;
 
       visitorsMapEmbed.appendChild(mapScript);
     }
