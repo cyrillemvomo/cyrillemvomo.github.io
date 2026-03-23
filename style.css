@@ -647,6 +647,48 @@ body {
   display: block;
 }
 
+.misc-list {
+  margin: 0 0 22px 0;
+  padding-left: 22px;
+}
+
+.misc-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.misc-list li:last-child {
+  margin-bottom: 0;
+}
+
+.visitors-title {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 12px auto;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(108, 92, 231, 0.12);
+  color: #6c5ce7;
+  font-size: 0.78rem;
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+}
+
+.visitors-map-wrapper {
+  width: 100%;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.visitors-map-wrapper iframe,
+.visitors-map-wrapper canvas,
+.visitors-map-wrapper img,
+.visitors-map-wrapper div {
+  max-width: 100%;
+}
+
 .bottom-banner {
   position: fixed !important;
   left: 0;
@@ -843,6 +885,11 @@ body.dark-mode .cv-viewer-wrapper {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+body.dark-mode .visitors-title {
+  background: rgba(108, 92, 231, 0.18);
+  color: #a29bfe;
+}
+
 body.dark-mode .bottom-banner {
   background: rgba(28, 28, 28, 0.66);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -966,6 +1013,10 @@ body.dark-mode .menu-toggle span {
 
   .cv-viewer-wrapper {
     height: 80vh;
+  }
+
+  .visitors-map-wrapper {
+    min-height: 150px;
   }
 
   .bottom-banner-container {
