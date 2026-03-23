@@ -87,6 +87,9 @@
           <div class="crimson-wave" aria-hidden="true">﹏</div>
 
           <p>
+            <span class="research-summary-media">
+              <img src="toy_image_research_program.jpg" alt="Illustration of my research program" />
+            </span>
             My research lies at the intersection of <strong>biomedical engineering</strong>,
             <strong>movement science</strong>, and <strong>artificial intelligence</strong>.
             I study how wearable systems can improve the assessment of mobility in real-world settings,
@@ -98,6 +101,8 @@
             <strong>uncertainty-aware AI</strong>, and the translation of digital mobility outcomes
             into research and clinical practice.
           </p>
+
+          <div class="video-title-badge">My TED Talk<br>(With Subtitles!)</div>
 
           <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 8px;">
             <iframe
@@ -734,7 +739,7 @@
             <div class="publication-main-copy">
               <h3 class="publication-title">${escapeHtml(publication.title)}</h3>
               <p class="publication-authors">${renderAuthors(publication)}</p>
-              <p class="publication-journal">${escapeHtml(publication.journal)}, ${publication.year}</p>
+              <p class="publication-journal"><strong>${escapeHtml(publication.journal)}, ${publication.year}</strong></p>
               <p class="publication-summary">${escapeHtml(publication.summary)}</p>
             </div>
 
