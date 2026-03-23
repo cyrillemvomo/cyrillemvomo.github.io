@@ -193,9 +193,16 @@
           <h2>Publications</h2>
           <div class="crimson-wave" aria-hidden="true">﹏</div>
 
-          <p>
-            Papers coming.
-          </p>
+          <div class="publications-subcontrols">
+            <span>Show by:</span>
+            <button id="view-by-date" class="pub-view-toggle active" type="button">Date</button>
+            <span>/</span>
+            <button id="view-by-topic" class="pub-view-toggle" type="button">Research Topic</button>
+          </div>
+
+          <p class="publications-note">(* indicates equal contribution and ◇ indicates mentee student)</p>
+
+          <div id="publications-container" class="publications-full-bleed"></div>
         </section>
 
         <section id="teaching-section" class="content-subsection">
@@ -373,6 +380,396 @@
       footerDateText.textContent = `© Copyright ${currentYear} Cyrille E. Mvomo. Last updated: ${currentDate}.`;
     }
 
+    const publications = [
+      {
+        id: "pub-2026-1",
+        title: "Uncertainty-Aware Wearable Forecasting for Daily Mobility in Parkinson’s Disease",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+          { name: "Sara Perfetto◇", link: "https://example.com/sara-perfetto" },
+          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+        ],
+        journal: "IEEE Transactions on Biomedical Engineering",
+        year: 2026,
+        date: "2026-10-18",
+        topic: "Uncertainty-Aware AI",
+        summary: "This fictive study introduces a personalized forecasting framework for real-world mobility fluctuations in Parkinson’s disease. The model combines wearable sensing with uncertainty modulation to improve interpretability and robustness. Results suggest that uncertainty-aware conditioning can support clinically meaningful monitoring in everyday settings.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 24,
+        citationLink: "https://scholar.google.com/scholar?q=Uncertainty-Aware+Wearable+Forecasting+for+Daily+Mobility+in+Parkinson%E2%80%99s+Disease",
+        awards: ["🏆 Best Paper Award (top 0.6%)"]
+      },
+      {
+        id: "pub-2026-2",
+        title: "Digital Mobility Outcomes as Explainable Biomarkers of Disease Progression",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
+          { name: "Clara Guedes◇", link: "https://example.com/clara-guedes" },
+          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
+          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+        ],
+        journal: "npj Digital Medicine",
+        year: 2026,
+        date: "2026-05-02",
+        topic: "Digital Mobility Outcomes",
+        summary: "This toy paper examines whether digital mobility outcomes can function as explainable indicators of pathology rather than simple performance markers. It highlights convergent validity with mechanistic and clinical measures. The work frames mobility biomarkers as tools for both monitoring and scientific explanation.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 17,
+        citationLink: "https://scholar.google.com/scholar?q=Digital+Mobility+Outcomes+as+Explainable+Biomarkers+of+Disease+Progression",
+        awards: ["🥇 Outstanding Student-Led Paper"]
+      },
+      {
+        id: "pub-2025-1",
+        title: "Real-World Gait Complexity and Neural Signatures of Locomotor Control",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Alexandra Potvin-Desrochers*", link: "https://example.com/alexandra-potvin" },
+          { name: "Dahlia Leibovich*", link: "https://example.com/dahlia-leibovich" },
+          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+        ],
+        journal: "Movement Disorders",
+        year: 2025,
+        date: "2025-11-07",
+        topic: "Parkinson’s Disease",
+        summary: "This fictive article links gait complexity metrics to brain-based signatures of locomotor control in Parkinson’s disease. The results support the idea that specific mobility features are more mechanistically informative than others. The paper provides a template for combining wearable and neural data in translational mobility research.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 31,
+        citationLink: "https://scholar.google.com/scholar?q=Real-World+Gait+Complexity+and+Neural+Signatures+of+Locomotor+Control",
+        awards: []
+      },
+      {
+        id: "pub-2025-2",
+        title: "Towards Transparent Mobility Monitoring with Lower-Back Inertial Sensors",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Sara Perfetto◇", link: "https://example.com/sara-perfetto" },
+          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
+          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" }
+        ],
+        journal: "Sensors",
+        year: 2025,
+        date: "2025-04-14",
+        topic: "Wearable Sensing",
+        summary: "This toy paper presents a transparent framework for extracting clinically interpretable mobility metrics from a single lower-back sensor. It emphasizes traceability from raw signals to outcome measures. The study illustrates how simple sensor setups can still produce rich and useful mobility information.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 12,
+        citationLink: "https://scholar.google.com/scholar?q=Towards+Transparent+Mobility+Monitoring+with+Lower-Back+Inertial+Sensors",
+        awards: ["🎖️ Editor’s Choice Selection"]
+      },
+      {
+        id: "pub-2024-1",
+        title: "Wearable Sensing for Longitudinal Mobility Monitoring in Free-Living Contexts",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+          { name: "Clara Guedes◇", link: "https://example.com/clara-guedes" },
+          { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
+          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+        ],
+        journal: "Journal of NeuroEngineering and Rehabilitation",
+        year: 2024,
+        date: "2024-09-22",
+        topic: "Wearable Sensing",
+        summary: "This fictive work evaluates continuous mobility monitoring outside the laboratory using wearable sensors deployed over multiple weeks. It shows how ecologically valid data can complement traditional clinic-based assessment. The paper also discusses challenges related to noise, adherence, and real-world variability.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 28,
+        citationLink: "https://scholar.google.com/scholar?q=Wearable+Sensing+for+Longitudinal+Mobility+Monitoring+in+Free-Living+Contexts",
+        awards: []
+      },
+      {
+        id: "pub-2024-2",
+        title: "Construct Validity of AI-Derived Gait Biomarkers Across Clinical States",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
+          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
+          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
+        ],
+        journal: "Artificial Intelligence in Medicine",
+        year: 2024,
+        date: "2024-02-09",
+        topic: "Digital Mobility Outcomes",
+        summary: "This toy study tests whether AI-derived gait biomarkers remain valid across different clinical states and medication conditions. It argues that performance alone is insufficient without mechanistic alignment. The paper proposes a construct validity lens for evaluating digital health algorithms.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 19,
+        citationLink: "https://scholar.google.com/scholar?q=Construct+Validity+of+AI-Derived+Gait+Biomarkers+Across+Clinical+States",
+        awards: ["🏅 Early Career Spotlight Paper"]
+      },
+      {
+        id: "pub-2023-1",
+        title: "Identifying Interpretable Sources of Prediction Confidence in Human Movement Models",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Sara Perfetto◇", link: "https://example.com/sara-perfetto" },
+          { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
+          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+        ],
+        journal: "Pattern Recognition Letters",
+        year: 2023,
+        date: "2023-08-30",
+        topic: "Uncertainty-Aware AI",
+        summary: "This fictive article focuses on model confidence in human movement analytics and asks when confidence can be trusted. It separates interpretable uncertainty sources from opaque prediction behavior. The work serves as an accessible entry point to uncertainty-aware modeling for rehabilitation and mobility research.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 14,
+        citationLink: "https://scholar.google.com/scholar?q=Identifying+Interpretable+Sources+of+Prediction+Confidence+in+Human+Movement+Models",
+        awards: []
+      },
+      {
+        id: "pub-2023-2",
+        title: "Mobility Phenotyping in Parkinson’s Disease with Explainable Sensor Features",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
+          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
+          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
+        ],
+        journal: "Gait & Posture",
+        year: 2023,
+        date: "2023-03-11",
+        topic: "Parkinson’s Disease",
+        summary: "This toy paper introduces an explainable feature-based framework for mobility phenotyping in Parkinson’s disease. Rather than relying only on black-box classification, it prioritizes sensor features that map to recognizable movement phenomena. The study highlights how explainability can improve trust and scientific usefulness.",
+        paperLink: "#",
+        videoLink: "#",
+        codeLink: "#",
+        citations: 22,
+        citationLink: "https://scholar.google.com/scholar?q=Mobility+Phenotyping+in+Parkinson%E2%80%99s+Disease+with+Explainable+Sensor+Features",
+        awards: ["🏆 Best Student Presentation Paper"]
+      }
+    ];
+
+    const topicOrder = [
+      "Wearable Sensing",
+      "Parkinson’s Disease",
+      "Uncertainty-Aware AI",
+      "Digital Mobility Outcomes"
+    ];
+
+    const publicationsContainer = document.getElementById("publications-container");
+    const viewByDateButton = document.getElementById("view-by-date");
+    const viewByTopicButton = document.getElementById("view-by-topic");
+
+    let publicationViewMode = "date";
+    const expandedAuthorCards = new Set();
+
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function buildPublicationVisual(label, year) {
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+          <defs>
+            <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#efeaff">
+                <animate attributeName="stop-color" values="#efeaff;#e3ddff;#efeaff" dur="5s" repeatCount="indefinite"/>
+              </stop>
+              <stop offset="50%" stop-color="#d8d1ff">
+                <animate attributeName="stop-color" values="#d8d1ff;#cfc6ff;#d8d1ff" dur="5s" repeatCount="indefinite"/>
+              </stop>
+              <stop offset="100%" stop-color="#b7a8ff">
+                <animate attributeName="stop-color" values="#b7a8ff;#9f8cff;#b7a8ff" dur="5s" repeatCount="indefinite"/>
+              </stop>
+            </linearGradient>
+          </defs>
+
+          <rect width="800" height="560" fill="url(#g)"/>
+          <rect x="48" y="48" width="704" height="464" rx="22" fill="rgba(255,255,255,0.55)" stroke="rgba(108,92,231,0.18)"/>
+          <rect x="88" y="112" width="290" height="180" rx="18" fill="rgba(108,92,231,0.15)"/>
+          <rect x="408" y="112" width="224" height="18" rx="9" fill="rgba(108,92,231,0.24)"/>
+          <rect x="408" y="150" width="188" height="14" rx="7" fill="rgba(108,92,231,0.18)"/>
+          <rect x="88" y="332" width="544" height="14" rx="7" fill="rgba(108,92,231,0.14)"/>
+          <rect x="88" y="364" width="586" height="14" rx="7" fill="rgba(108,92,231,0.12)"/>
+          <rect x="88" y="396" width="522" height="14" rx="7" fill="rgba(108,92,231,0.10)"/>
+
+          <text x="88" y="86" font-family="Courier Prime, Courier New, monospace" font-size="28" font-weight="700" fill="#6c5ce7">${escapeHtml(year)}</text>
+          <text x="88" y="464" font-family="Courier Prime, Courier New, monospace" font-size="34" font-weight="700" fill="#3a2ea8">${escapeHtml(label)}</text>
+        </svg>
+      `;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function sortByMostRecent(items) {
+      return [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+
+    function groupPublications() {
+      if (publicationViewMode === "date") {
+        const yearMap = {};
+
+        sortByMostRecent(publications).forEach((publication) => {
+          const key = String(publication.year);
+          if (!yearMap[key]) {
+            yearMap[key] = [];
+          }
+          yearMap[key].push(publication);
+        });
+
+        return Object.keys(yearMap)
+          .sort((a, b) => Number(b) - Number(a))
+          .map((year) => ({
+            key: year,
+            label: year,
+            publications: yearMap[year]
+          }));
+      }
+
+      return topicOrder.map((topic) => ({
+        key: topic,
+        label: topic,
+        publications: sortByMostRecent(publications.filter((publication) => publication.topic === topic))
+      }));
+    }
+
+    function renderAuthor(author) {
+      const classes = ["author-name"];
+      if (author.me) classes.push("me");
+      if (author.link && !author.me) classes.push("linked");
+
+      const safeName = escapeHtml(author.name);
+      const classString = classes.join(" ");
+
+      if (author.me) {
+        return `<span class="${classString}">${safeName}</span>`;
+      }
+
+      if (author.link) {
+        return `<a href="${author.link}" target="_blank" class="${classString}">${safeName}</a>`;
+      }
+
+      return `<span class="${classString}">${safeName}</span>`;
+    }
+
+    function renderAuthors(publication) {
+      const isExpanded = expandedAuthorCards.has(publication.id);
+      const visibleAuthors = isExpanded ? publication.authors : publication.authors.slice(0, 3);
+      const authorMarkup = visibleAuthors
+        .map((author, index) => {
+          const separator = index < visibleAuthors.length - 1 ? `<span class="author-separator">, </span>` : "";
+          return `${renderAuthor(author)}${separator}`;
+        })
+        .join("");
+
+      if (publication.authors.length <= 3 || isExpanded) {
+        return authorMarkup;
+      }
+
+      const hiddenCount = publication.authors.length - 3;
+      return `${authorMarkup}<button type="button" class="author-more" data-publication-id="${publication.id}">+ ${hiddenCount} more author(s)</button>`;
+    }
+
+    function renderPublicationCard(publication) {
+      const actions = [
+        { label: "PAPER", link: publication.paperLink },
+        { label: "VIDEO SUMMARY", link: publication.videoLink },
+        { label: "CODE", link: publication.codeLink }
+      ];
+
+      const awardsMarkup = publication.awards.length
+        ? `<div class="publication-awards">${publication.awards.map((award) => `<p class="publication-award">${award}</p>`).join("")}</div>`
+        : "";
+
+      return `
+        <article class="publication-card">
+          <div class="publication-visual">
+            <img src="${buildPublicationVisual(publication.topic, publication.year)}" alt="${escapeHtml(publication.title)} visual" />
+          </div>
+
+          <div class="publication-content">
+            <h3 class="publication-title">${escapeHtml(publication.title)}</h3>
+            <p class="publication-authors">${renderAuthors(publication)}</p>
+            <p class="publication-journal">${escapeHtml(publication.journal)}, ${publication.year}</p>
+            <p class="publication-summary">${escapeHtml(publication.summary)}</p>
+
+            <div class="publication-actions">
+              ${actions.map((action) => `<a href="${action.link}" class="publication-action">${action.label}</a>`).join("")}
+            </div>
+
+            <div class="publication-metrics">
+              <span class="metric-label"><i class="fa-solid fa-quote-left" aria-hidden="true"></i> Citations</span>
+              <a href="${publication.citationLink}" target="_blank" class="metric-value">${publication.citations}</a>
+            </div>
+
+            ${awardsMarkup}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderPublications() {
+      viewByDateButton.classList.toggle("active", publicationViewMode === "date");
+      viewByTopicButton.classList.toggle("active", publicationViewMode === "topic");
+
+      const groups = groupPublications();
+
+      publicationsContainer.innerHTML = groups.map((group) => `
+        <div class="publication-group">
+          <button type="button" class="publication-group-toggle" aria-expanded="false">
+            <div class="publication-group-header">
+              <div class="publication-group-line"></div>
+              <div class="publication-group-label-row">
+                <span class="publication-group-indicator" aria-hidden="true">+</span>
+                <span class="publication-group-label">${escapeHtml(group.label)}</span>
+              </div>
+            </div>
+          </button>
+
+          <div class="publication-list">
+            ${group.publications.map((publication) => renderPublicationCard(publication)).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    viewByDateButton.addEventListener("click", () => {
+      publicationViewMode = "date";
+      renderPublications();
+    });
+
+    viewByTopicButton.addEventListener("click", () => {
+      publicationViewMode = "topic";
+      renderPublications();
+    });
+
+    publicationsContainer.addEventListener("click", (event) => {
+      const authorMoreButton = event.target.closest(".author-more");
+      if (authorMoreButton) {
+        const publicationId = authorMoreButton.getAttribute("data-publication-id");
+        expandedAuthorCards.add(publicationId);
+        renderPublications();
+        return;
+      }
+
+      const groupToggleButton = event.target.closest(".publication-group-toggle");
+      if (groupToggleButton && window.innerWidth <= 900) {
+        const group = groupToggleButton.closest(".publication-group");
+        const isOpen = group.classList.toggle("mobile-open");
+        groupToggleButton.setAttribute("aria-expanded", String(isOpen));
+      }
+    });
+
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
@@ -383,6 +780,7 @@
       updateBannerOnScroll();
       updateScrollLine();
       updateFooterDate();
+      renderPublications();
     });
   </script>
 
