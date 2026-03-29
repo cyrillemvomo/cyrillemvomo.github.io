@@ -19,16 +19,13 @@
 <body>
 
   <div class="background-video-wrapper" aria-hidden="true">
-    <video
-      id="background-video"
+    <img
+      src="Edited_BG_Video.gif"
       class="background-video"
-      muted
-      playsinline
-      preload="auto"
-      webkit-playsinline
-    >
-      <source src="Edited_BG_Video.mp4" type="video/mp4" />
-    </video>
+      alt=""
+      loading="eager"
+      decoding="async"
+    />
   </div>
 
   <header class="top-banner">
@@ -274,7 +271,6 @@
   <script>
     const body = document.body;
     const topBanner = document.querySelector(".top-banner");
-    const backgroundVideo = document.getElementById("background-video");
 
     function setFavicon() {
       const img = new Image();
@@ -457,53 +453,6 @@
       const currentDate = dateFormatter.format(lastUpdatedDate);
 
       footerDateText.textContent = `© Copyright ${currentYear} Cyrille E. Mvomo. Last updated: ${currentDate}.`;
-    }
-
-    function syncBackgroundVideoToScroll() {
-      if (!backgroundVideo || !Number.isFinite(backgroundVideo.duration) || backgroundVideo.duration <= 0) {
-        return;
-      }
-
-      const scrollTop = window.scrollY;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = maxScroll > 0 ? scrollTop / maxScroll : 0;
-      const targetTime = scrollProgress * backgroundVideo.duration;
-
-      if (Math.abs(backgroundVideo.currentTime - targetTime) > 0.03) {
-        backgroundVideo.currentTime = targetTime;
-      }
-    }
-
-    function initializeBackgroundVideo() {
-      if (!backgroundVideo) return;
-
-      backgroundVideo.pause();
-
-      const tryPrimeVideo = () => {
-        const playPromise = backgroundVideo.play();
-
-        if (playPromise && typeof playPromise.then === "function") {
-          playPromise
-            .then(() => {
-              backgroundVideo.pause();
-              backgroundVideo.currentTime = 0;
-              syncBackgroundVideoToScroll();
-            })
-            .catch(() => {
-              backgroundVideo.currentTime = 0;
-              syncBackgroundVideoToScroll();
-            });
-        } else {
-          backgroundVideo.currentTime = 0;
-          syncBackgroundVideoToScroll();
-        }
-      };
-
-      if (backgroundVideo.readyState >= 1) {
-        tryPrimeVideo();
-      } else {
-        backgroundVideo.addEventListener("loadedmetadata", tryPrimeVideo, { once: true });
-      }
     }
 
     const publications = [
@@ -908,9 +857,7 @@
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
-    window.addEventListener("scroll", syncBackgroundVideoToScroll);
     window.addEventListener("resize", syncPublicationVisualHeights);
-    window.addEventListener("resize", syncBackgroundVideoToScroll);
 
     window.addEventListener("load", () => {
       setFavicon();
@@ -919,10 +866,8 @@
       updateBannerOnScroll();
       updateScrollLine();
       updateFooterDate();
-      initializeBackgroundVideo();
       renderPublications();
       syncPublicationVisualHeights();
-      syncBackgroundVideoToScroll();
     });
   </script>
 
