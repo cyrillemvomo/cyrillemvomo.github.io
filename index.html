@@ -18,6 +18,19 @@
 </head>
 <body>
 
+  <div class="background-video-wrapper" aria-hidden="true">
+    <video
+      id="background-video"
+      class="background-video"
+      muted
+      playsinline
+      preload="auto"
+      webkit-playsinline
+    >
+      <source src="Edited_BG_Video.mp4" type="video/mp4" />
+    </video>
+  </div>
+
   <header class="top-banner">
     <div id="scroll-line" class="scroll-line"></div>
 
@@ -38,7 +51,6 @@
           <a href="#news-section" class="section-link">News</a>
           <a href="#publications-section" class="section-link">Publications</a>
           <a href="#curriculum-vitae-section" class="section-link">Curriculum Vitae</a>
-          <span id="theme-toggle" class="toggle">☾</span>
         </nav>
       </div>
     </div>
@@ -260,9 +272,9 @@
   </footer>
 
   <script>
-    const toggle = document.getElementById("theme-toggle");
     const body = document.body;
     const topBanner = document.querySelector(".top-banner");
+    const backgroundVideo = document.getElementById("background-video");
 
     function setFavicon() {
       const img = new Image();
@@ -321,11 +333,6 @@
         document.head.appendChild(shortcutIconLink);
       };
     }
-
-    toggle.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      toggle.classList.toggle("active");
-    });
 
     const menuToggle = document.getElementById("menu-toggle");
     const bannerNav = document.getElementById("banner-nav");
@@ -450,6 +457,53 @@
       const currentDate = dateFormatter.format(lastUpdatedDate);
 
       footerDateText.textContent = `© Copyright ${currentYear} Cyrille E. Mvomo. Last updated: ${currentDate}.`;
+    }
+
+    function syncBackgroundVideoToScroll() {
+      if (!backgroundVideo || !Number.isFinite(backgroundVideo.duration) || backgroundVideo.duration <= 0) {
+        return;
+      }
+
+      const scrollTop = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+      const targetTime = scrollProgress * backgroundVideo.duration;
+
+      if (Math.abs(backgroundVideo.currentTime - targetTime) > 0.03) {
+        backgroundVideo.currentTime = targetTime;
+      }
+    }
+
+    function initializeBackgroundVideo() {
+      if (!backgroundVideo) return;
+
+      backgroundVideo.pause();
+
+      const tryPrimeVideo = () => {
+        const playPromise = backgroundVideo.play();
+
+        if (playPromise && typeof playPromise.then === "function") {
+          playPromise
+            .then(() => {
+              backgroundVideo.pause();
+              backgroundVideo.currentTime = 0;
+              syncBackgroundVideoToScroll();
+            })
+            .catch(() => {
+              backgroundVideo.currentTime = 0;
+              syncBackgroundVideoToScroll();
+            });
+        } else {
+          backgroundVideo.currentTime = 0;
+          syncBackgroundVideoToScroll();
+        }
+      };
+
+      if (backgroundVideo.readyState >= 1) {
+        tryPrimeVideo();
+      } else {
+        backgroundVideo.addEventListener("loadedmetadata", tryPrimeVideo, { once: true });
+      }
     }
 
     const publications = [
@@ -854,7 +908,9 @@
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
+    window.addEventListener("scroll", syncBackgroundVideoToScroll);
     window.addEventListener("resize", syncPublicationVisualHeights);
+    window.addEventListener("resize", syncBackgroundVideoToScroll);
 
     window.addEventListener("load", () => {
       setFavicon();
@@ -863,8 +919,10 @@
       updateBannerOnScroll();
       updateScrollLine();
       updateFooterDate();
+      initializeBackgroundVideo();
       renderPublications();
       syncPublicationVisualHeights();
+      syncBackgroundVideoToScroll();
     });
   </script>
 
