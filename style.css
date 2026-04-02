@@ -776,6 +776,52 @@ body::before {
   white-space: nowrap;
 }
 
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(8px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    filter 0.8s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.profile-photo.reveal-on-scroll {
+  transform: translateY(24px) scale(0.96);
+}
+
+.profile-photo.reveal-on-scroll.revealed {
+  transform: translateY(0) scale(1);
+}
+
+.publication-card.reveal-on-scroll,
+.timeline-item.reveal-on-scroll {
+  transform: translateY(20px);
+}
+
+.publication-card.reveal-on-scroll.revealed,
+.timeline-item.reveal-on-scroll.revealed {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 900px) {
   .hero-section {
     grid-template-columns: 1fr;
