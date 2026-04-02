@@ -271,6 +271,7 @@
   <script>
     const body = document.body;
     const topBanner = document.querySelector(".top-banner");
+    let revealObserver = null;
 
     function setFavicon() {
       const img = new Image();
@@ -761,6 +762,25 @@
       });
     }
 
+    function createRevealObserver() {
+      if (revealObserver) {
+        revealObserver.disconnect();
+      }
+
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          } else {
+            entry.target.classList.remove("revealed");
+          }
+        });
+      }, {
+        threshold: 0.08,
+        rootMargin: "0px 0px -4% 0px"
+      });
+    }
+
     function applyScrollReveal(scope = document) {
       const revealSelectors = [
         ".profile-photo",
@@ -780,8 +800,8 @@
         scope.querySelectorAll(selector).forEach((element, index) => {
           if (!element.classList.contains("reveal-on-scroll")) {
             element.classList.add("reveal-on-scroll");
-            element.style.setProperty("--reveal-delay", `${Math.min(index * 70, 420)}ms`);
           }
+          element.style.setProperty("--reveal-delay", `${Math.min(index * 50, 260)}ms`);
         });
       });
 
@@ -792,20 +812,12 @@
         return;
       }
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -8% 0px"
-      });
+      if (!revealObserver) {
+        createRevealObserver();
+      }
 
-      scope.querySelectorAll(".reveal-on-scroll:not(.revealed)").forEach((element) => {
-        observer.observe(element);
+      scope.querySelectorAll(".reveal-on-scroll").forEach((element) => {
+        revealObserver.observe(element);
       });
     }
 
@@ -887,7 +899,14 @@
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
-    window.addEventListener("resize", syncPublicationVisualHeights);
+    window.addEventListener("resize", () => {
+      syncPublicationVisualHeights();
+
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        createRevealObserver();
+        applyScrollReveal();
+      }
+    });
 
     window.addEventListener("load", () => {
       setFavicon();
@@ -896,6 +915,7 @@
       updateBannerOnScroll();
       updateScrollLine();
       updateFooterDate();
+      createRevealObserver();
       renderPublications();
       applyScrollReveal();
       syncPublicationVisualHeights();
