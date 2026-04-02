@@ -761,6 +761,54 @@
       });
     }
 
+    function applyScrollReveal(scope = document) {
+      const revealSelectors = [
+        ".profile-photo",
+        ".icon-row",
+        ".profile-details",
+        ".content-subsection",
+        ".timeline-item",
+        ".publication-group",
+        ".publication-card",
+        ".cv-controls",
+        ".cv-viewer-wrapper",
+        ".misc-list li",
+        ".visitors-title"
+      ];
+
+      revealSelectors.forEach((selector) => {
+        scope.querySelectorAll(selector).forEach((element, index) => {
+          if (!element.classList.contains("reveal-on-scroll")) {
+            element.classList.add("reveal-on-scroll");
+            element.style.setProperty("--reveal-delay", `${Math.min(index * 70, 420)}ms`);
+          }
+        });
+      });
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        scope.querySelectorAll(".reveal-on-scroll").forEach((element) => {
+          element.classList.add("revealed");
+        });
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px"
+      });
+
+      scope.querySelectorAll(".reveal-on-scroll:not(.revealed)").forEach((element) => {
+        observer.observe(element);
+      });
+    }
+
     function renderPublications() {
       viewByDateButton.classList.toggle("active", publicationViewMode === "date");
       viewByTopicButton.classList.toggle("active", publicationViewMode === "topic");
@@ -785,6 +833,7 @@
         </div>
       `).join("");
 
+      applyScrollReveal(publicationsContainer);
       syncPublicationVisualHeights();
     }
 
@@ -848,6 +897,7 @@
       updateScrollLine();
       updateFooterDate();
       renderPublications();
+      applyScrollReveal();
       syncPublicationVisualHeights();
     });
   </script>
