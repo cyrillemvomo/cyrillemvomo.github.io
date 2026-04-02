@@ -778,12 +778,12 @@ body::before {
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(24px);
-  filter: blur(8px);
+  transform: translateY(20px);
+  filter: blur(6px);
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease,
-    filter 0.8s ease;
+    opacity 0.58s ease,
+    transform 0.58s ease,
+    filter 0.58s ease;
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform, filter;
 }
@@ -795,7 +795,7 @@ body::before {
 }
 
 .profile-photo.reveal-on-scroll {
-  transform: translateY(24px) scale(0.96);
+  transform: translateY(20px) scale(0.97);
 }
 
 .profile-photo.reveal-on-scroll.revealed {
@@ -804,7 +804,7 @@ body::before {
 
 .publication-card.reveal-on-scroll,
 .timeline-item.reveal-on-scroll {
-  transform: translateY(20px);
+  transform: translateY(16px);
 }
 
 .publication-card.reveal-on-scroll.revealed,
