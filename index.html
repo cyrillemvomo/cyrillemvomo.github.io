@@ -435,9 +435,25 @@
       scrollLine.style.width = scrollPercent + "%";
     }
 
+    // function updateFooterDate() {
+    //   const footerDateText = document.getElementById("footer-date-text");
+    //   footerDateText.textContent = "© Copyright 2026 Cyrille E. Mvomo. Last updated: March 29, 2026.";
+    // }
     function updateFooterDate() {
       const footerDateText = document.getElementById("footer-date-text");
-      footerDateText.textContent = "© Copyright 2026 Cyrille E. Mvomo. Last updated: March 29, 2026.";
+
+      const today = new Date();
+
+      const year = today.getFullYear();
+
+      const formattedDate = today.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+
+      footerDateText.textContent =
+        `© Copyright ${year} Cyrille E. Mvomo. Last updated: ${formattedDate}.`;
     }
 
     const publications = [
