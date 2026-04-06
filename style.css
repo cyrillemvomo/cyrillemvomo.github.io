@@ -257,9 +257,9 @@ body::before {
 
 .research-summary-media {
   float: right;
-  width: 500px;
+  width: 450px;
   /* aspect-ratio: 16 / 12; */
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem 1rem;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.46), 0 6px 12px rgba(0, 0, 0, 0.28);
