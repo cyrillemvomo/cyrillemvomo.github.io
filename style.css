@@ -257,7 +257,7 @@ body::before {
 
 .research-summary-media {
   float: right;
-  width: 450px;
+  width: 500px;
   /* aspect-ratio: 16 / 12; */
   margin: 0 0 1rem 1rem;
   border-radius: 12px;
