@@ -931,20 +931,10 @@
         { label: "PAPER", link: publication.paperLink },
         { label: "VIDEO SUMMARY", link: publication.videoLink },
         { label: "CODE", link: publication.codeLink }
-      ].filter((action) => action.link);
+      ];
 
-      const awards = Array.isArray(publication.awards) ? publication.awards : [];
-      const awardsMarkup = awards.length
-        ? `<div class="publication-awards">${awards.map((award) => `<p class="publication-award">${award}</p>`).join("")}</div>`
-        : "";
-
-      const citationMarkup = publication.citationLink && publication.citations
-        ? `
-            <div class="publication-metrics">
-              <span class="metric-label"><i class="fa-solid fa-quote-left" aria-hidden="true"></i> Citations</span>
-              <a href="${publication.citationLink}" target="_blank" class="metric-value">${publication.citations}</a>
-            </div>
-          `
+      const awardsMarkup = publication.awards.length
+        ? `<div class="publication-awards">${publication.awards.map((award) => `<p class="publication-award">${award}</p>`).join("")}</div>`
         : "";
 
       return `
@@ -965,7 +955,10 @@
               ${actions.map((action) => `<a href="${action.link}" class="publication-action">${action.label}</a>`).join("")}
             </div>
 
-            ${citationMarkup}
+            <div class="publication-metrics">
+              <span class="metric-label"><i class="fa-solid fa-quote-left" aria-hidden="true"></i> Citations</span>
+              <a href="${publication.citationLink}" target="_blank" class="metric-value">${publication.citations}</a>
+            </div>
 
             ${awardsMarkup}
           </div>
