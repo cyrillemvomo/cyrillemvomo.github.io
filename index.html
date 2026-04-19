@@ -49,7 +49,7 @@
         <nav id="banner-nav" class="banner-right">
           <a href="#about-me-section" class="section-link active-section-link">About</a>
           <a href="#news-section" class="section-link">News</a>
-          <!-- <a href="#publications-section" class="section-link">Publications</a> -->
+          <a href="#publications-section" class="section-link">Publications</a>
           <a href="#curriculum-vitae-section" class="section-link">Curriculum Vitae</a>
         </nav>
       </div>
@@ -178,8 +178,8 @@
           </div>
         </section>
 
-        <!-- <section id="publications-section" class="content-subsection">
-          <h2>Publications</h2>
+        <section id="publications-section" class="content-subsection">
+          <h2>Selected Publications</h2>
           <div class="crimson-wave" aria-hidden="true">﹏</div>
 
           <div class="publications-subcontrols">
@@ -189,10 +189,10 @@
             <button id="view-by-topic" class="pub-view-toggle" type="button">Research Topic</button>
           </div>
 
-          <p class="publications-note">(* indicates equal contribution and ** indicates mentee student)</p>
+          <p class="publications-note">(* indicates equal contribution and ** indicates mentee student, see CV for full list)</p>
 
           <div id="publications-container" class="publications-full-bleed"></div>
-        </section> -->
+        </section>
 
         <section id="curriculum-vitae-section" class="content-subsection">
           <h2>Curriculum Vitae</h2>
@@ -610,26 +610,229 @@
     const publications = [
       {
         id: "pub-2022-1",
-        title: "Does 	locomotor perturbation training induce a change in relative sensory contribution to balance? A pilot study",
+        title: "Does locomotor perturbation training induce a change in relative sensory contribution to balance? A pilot study",
         authors: [
           { name: "Cyrille E. Mvomo", me: true },
           { name: "Deepak Ravi", link: "https://scholar.google.com/citations?user=Pvpi1DgAAAAJ&hl=en" },
           { name: "Friederike Schulte", link: "https://scholar.google.com/citations?user=vXL_IJoAAAAJ&hl=en&oi=ao" },
           { name: "Lorenz Assländer", link: "https://scholar.google.com/citations?user=fJMory8AAAAJ&hl=en&oi=ao" },
-          { name: "Chris Awai Easthope", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
+          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" }
         ],
         journal: "RehabWeek 2022",
         year: 2022,
         date: "2022-07-25",
         topic: "Precision Mobility Intervention",
-        summary: "In this pilot study, we combine computational neuroscience with wearable technologies to evaluate the effect of an intervention in older adults. Specifically, we apply an independent channel model to assess the impact of a perturbation-based training session on a smart treadmill (CAREN) using a novel VR-based sensory integration balance test.",
+        summary: "In this study, we apply an independent channel model to assess the impact of a perturbation-based training session on a smart treadmill (CAREN) using a novel VR-based sensory integration balance test.",
         paperLink: "https://www.researchgate.net/publication/368292867_Does_locomotor_perturbation_training_induce_a_change_in_relative_sensory_contribution_to_balance_A_pilot_study?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImxvZ2luIiwicGFnZSI6InByb2ZpbGUifX0",
-        videoLink: "",
-        codeLink: "",
-        // citations: 0,
-        // citationLink: "https://www.researchgate.net/publication/368292867_Does_locomotor_perturbation_training_induce_a_change_in_relative_sensory_contribution_to_balance_A_pilot_study?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImxvZ2luIiwicGFnZSI6InByb2ZpbGUifX0",
-        awards: []
-      },      
+        awards: ["🥇 Top Venue in Rehabilitation Engineering"]
+      }, 
+      {
+        id: "pub-2023-1",
+        title: "Relative importance of the visual system for balance control is reflected in the continuous margins of stability while walking",
+        authors: [
+          { name: "Saskia Neumann", link: "https://scholar.google.com/citations?user=VFVpDoEAAAAJ&hl=de" },
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Deepak Ravi", link: "https://scholar.google.com/citations?user=Pvpi1DgAAAAJ&hl=en" },
+          { name: "Friederike Schulte", link: "https://scholar.google.com/citations?user=vXL_IJoAAAAJ&hl=en&oi=ao" },
+          { name: "Lorenz Assländer", link: "https://scholar.google.com/citations?user=fJMory8AAAAJ&hl=en&oi=ao" },
+          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" }
+        ],
+        journal: "ISB 2023",
+        year: 2023,
+        date: "2023-07-30",
+        topic: "Mechanistic Phenotyping",
+        summary: "In this study, we apply an independent channel model to examine the interplay between altered static sensory reliance for balance and dynamic stability during walking, using a smart treadmill (CAREN) and a virtual reality–based sensory integration balance test.",
+        paperLink: "https://media.isbweb.org/images/documents/2025/archive_matterials_challis/fukuoka2023/isb_jsb2023_program_-_abstract_book_compressed_part2.pdf",
+        awards: ["🥇 Top Venue in Movement Biomechanics"]
+      },
+      {
+        id: "pub-2024-1",
+        title: "Long-term, high-level aerobic training and the age-related decline in cortical thickness",
+        authors: [
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Kevin Shoemaker", link: "https://scholar.google.com/citations?user=KbCWqMMAAAAJ&hl=en" },
+          { name: "Mallar Chakravarty", link: "https://scholar.google.com/citations?user=KnO8dEcAAAAJ&hl=en" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "SfN 2024",
+        year: 2024,
+        date: "2024-09-05",
+        topic: "Mechanistic Phenotyping",
+        summary: "In this study, we analyze a neuroimaging dataset to examine the interplay between mobility capacity and age-related alterations in brain structure.",
+        paperLink: "https://www.sfn.org/-/media/SfN/Documents/NEW-SfN/Meetings/Neuroscience-2024/Abstracts-and-Sessions/Abstract-PDFs/SFN24_Abstracts-PDF-Posters_WED_PM.pdf",
+        awards: ["🥇 Top Venue in Neurosciences"]
+      },
+      {
+        id: "pub-2024-2",
+        title: "Influence of Fatigue in Parkinson’s Disease on the Variability of Gait Measures",
+        authors: [
+          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Henri 	Lajeunesse", link: "https://www.researchgate.net/profile/Henri-Lajeunesse-2" },
+          { name: "Frederike Parent-L’Ecuyer", link: "https://www.researchgate.net/profile/Frederike_Parent-Lecuyer" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "MDS 2024",
+        year: 2024,
+        date: "2024-09-27",
+        topic: "Mechanistic Phenotyping",
+        summary: "In this study, we use wearable sensors to examine the sensitivity of gait-related digital mobility outcomes to participant-reported fatigue in Parkinson’s disease.",
+        paperLink: "https://doi.org/10.1002/mds.29947",
+        awards: ["🥇 Top Venue in Parkinson's Disease"]
+      },
+      {
+        id: "pub-2024-3",
+        title: "Model-Based Gait Outcomes to Track Parkinson’s 	Disease Progression ?",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
+          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
+          { name: "Henri 	Lajeunesse", link: "https://www.researchgate.net/profile/Henri-Lajeunesse-2" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "MDS 2024",
+        year: 2024,
+        date: "2024-09-27",
+        topic: "Wearable Fingerprinting",
+        summary: "In this study, we apply data mining techniques to multimodal data (wearable, clinical, patient-reported outcomes, and neuroimaging) to examine the sensitivity of gait-related digital mobility outcomes to mobility decline in Parkinson’s disease.",
+        paperLink: "https://doi.org/10.1002/mds.29953",
+        awards: ["🏆🏆 Travel Awards | 🥇 Top Venue in Parkinson's Disease"]
+      },
+      {
+        id: "pub-2024-3",
+        title: "Model-Based Gait Outcomes to Track Parkinson’s Disease Progression?",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
+          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
+          { name: "Henri 	Lajeunesse", link: "https://www.researchgate.net/profile/Henri-Lajeunesse-2" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "MDS 2024",
+        year: 2024,
+        date: "2024-09-27",
+        topic: "Wearable Fingerprinting",
+        summary: "In this study, we apply data mining techniques to multimodal data (wearable, clinical, patient-reported outcomes, and neuroimaging) to examine the sensitivity of gait-related digital mobility outcomes to mobility decline in Parkinson’s disease.",
+        paperLink: "https://doi.org/10.1002/mds.29953",
+        awards: ["🏆🏆 Travel Awards | 🥇 Top Venue in Parkinson's Disease"]
+      },
+      {
+        id: "pub-2025-1",
+        title: "Physical activity and sedentary behavior monitoring in people with Parkinson's disease and fatigue",
+        authors: [
+          { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
+          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
+          { name: "Henri 	Lajeunesse", link: "https://www.researchgate.net/profile/Henri-Lajeunesse-2" },
+          { name: "Frederike Parent-L’Ecuyer", link: "https://www.researchgate.net/profile/Frederike_Parent-Lecuyer" },
+          { name: "Tomoha Ogawa**", link: "https://www.mcgill.ca/hbcl/team" },
+          { name: "Jae Young Park**", link: "https://www.mcgill.ca/hbcl/team" },
+          { name: "Madeleine Sharp", link: "https://scholar.google.com/citations?user=7EIrGjwAAAAJ&hl=en" },
+          { name: "Marie-Hélène Pennestri", link: "https://scholar.google.com/citations?user=VALPSAkAAAAJ&hl=fr" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Bruno da Costa", link: "https://scholar.google.com/citations?user=cJqYIroAAAAJ&hl=en" },
+          { name: "Audrey Parent", link: "https://www.researchgate.net/profile/Audrey-Parent" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "ISPGR 2025",
+        year: 2025,
+        date: "2025-06-29",
+        topic: "Wearable Fingerprinting",
+        summary: "In this study, we examine the sensitivity of real-world digital mobility outcomes to perceived fatigue in Parkinson’s disease.",
+        paperLink: "https://ispgr.org/wp-content/uploads/2025/06/ISPGR-World-Congress-2025_AbstractProceedings.pdf"
+      },
+      {
+        id: "pub-2025-2",
+        title: "Visual Dependence for Postural Control is Increased in Older Adults",
+        authors: [
+          { name: "Saskia Neumann", link: "https://scholar.google.com/citations?user=VFVpDoEAAAAJ&hl=de" },
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Deepak Ravi", link: "https://scholar.google.com/citations?user=Pvpi1DgAAAAJ&hl=en" },
+          { name: "Friederike Schulte", link: "https://scholar.google.com/citations?user=vXL_IJoAAAAJ&hl=en&oi=ao" },
+          { name: "Lorenz Assländer*", link: "https://scholar.google.com/citations?user=fJMory8AAAAJ&hl=en&oi=ao" },
+          { name: "Chris Easthope Awai*", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" }
+        ],
+        journal: "Aging and Disease",
+        year: 2025,
+        date: "2025-11-11",
+        topic: "Mechanistic Phenotyping",
+        summary: "In this study, we apply an independent channel model to examine the relative sensory contribution to balance in older adults using a virtual reality–based sensory integration balance test.",
+        paperLink: "https://www.aginganddisease.org/EN/10.14336/AD.2025.1119"
+      },
+      {
+        id: "pub-2025-3",
+        title: "Monitoring Parkinson’s Disease In-the-Wild",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
+          { name: "Dahlia Leibovich", link: "https://www.researchgate.net/scientific-contributions/Dahlia-Leibovich-2291376477" },
+          { name: "Clara Guedes", link: "https://ca.linkedin.com/in/clara-guedes-b78887211" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Philippe C. Dixon", link: "https://scholar.google.com/citations?user=zsitUZkAAAAJ&hl=en" },
+          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "BHI 2025",
+        year: 2025,
+        date: "2025-10-25",
+        topic: "Wearable Fingerprinting",
+        summary: "In this study, we apply data mining techniques to multimodal datasets to uncover the etiological meaning of digital mobility outcomes across laboratory and real-world settings in Parkinson’s disease.",
+        paperLink: "https://ieeexplore.ieee.org/document/11269453/",
+        awards: ["🏆🏆🏆 Travel Awards | 🥇 Top Venue in Health Informatics | 🗣️ Selected for Oral Presentation (500+ Submissions) | 🏆 Best Paper Award (3rd Place, ~Top 0.6%)"]
+      },
+      {
+        id: "pub-2026-1",
+        title: "Gait-Related Digital Mobility Outcomes in Parkinson’s Disease: New Insights into Convergent Validity?",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
+          { name: "Dahlia Leibovich", link: "https://www.researchgate.net/scientific-contributions/Dahlia-Leibovich-2291376477" },
+          { name: "Clara Guedes", link: "https://ca.linkedin.com/in/clara-guedes-b78887211" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
+          { name: "Philippe C. Dixon", link: "https://scholar.google.com/citations?user=zsitUZkAAAAJ&hl=en" },
+          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
+        ],
+        journal: "To Appear",
+        year: 2026,
+        date: "2026-03-06",
+        topic: "Wearable Fingerprinting",
+        summary: "In this study, we apply data mining techniques to multimodal datasets to examine the interplay between etiology and validity of digital mobility outcomes in Parkinson’s disease, from controlled laboratory settings to real-world environments.",
+        paperLink: "https://www.medrxiv.org/content/10.64898/2026.03.07.26347847v1",
+        awards: ["🏆 Invited contribution to BHI’25 Special Issue in IEEE-TBME"]
+      },
+      {
+        id: "pub-2026-2",
+        title: "Exploring the Link Between Belief in Neuromyths and Academic Performance in Undergraduate Science Students",
+        authors: [
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jean-Christophe Boivin", link: "https://www.researchgate.net/scientific-contributions/Jean-Christophe-Boivin-2210428555" },
+          { name: "Hilary Sweatman", link: "https://scholar.google.com/citations?user=SLswKdwAAAAJ&hl=en" },
+          { name: "Kira Smith", link: "https://ca.linkedin.com/in/kiraebsmith" },
+          { name: "Armin Yazdani", link: "https://scholar.google.com/citations?user=xZhnxrkAAAAJ&hl=en" },
+          { name: "Marcy Slapcoff", link: "https://www.researchgate.net/scientific-contributions/Marcy-Slapcoff-2231619054" }
+        ],
+        journal: "SALTISE 2026",
+        year: 2026,
+        date: "2026-06-01",
+        topic: "Neuroeducation",
+        summary: "In this study, we explore the relationship between belief in misconceptions about the brain and final grades among undergraduate science students at McGill University.",
+        awards: ["🗣️ Selected for Oral Presentation"]
+      }
+
     ];
 
     const topicOrder = [
