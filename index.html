@@ -409,10 +409,6 @@
       scrollLine.style.width = scrollPercent + "%";
     }
 
-    // function updateFooterDate() {
-    //   const footerDateText = document.getElementById("footer-date-text");
-    //   footerDateText.textContent = "© Copyright 2026 Cyrille E. Mvomo. Last updated: March 29, 2026.";
-    // }
     function updateFooterDate() {
       const footerDateText = document.getElementById("footer-date-text");
 
@@ -430,188 +426,218 @@
         `© Copyright ${year} Cyrille E. Mvomo. Last updated: ${formattedDate}.`;
     }
 
+    // const publications = [
+    //   {
+    //     id: "pub-2026-1",
+    //     title: "Uncertainty-Aware Wearable Forecasting for Daily Mobility in Parkinson’s Disease",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+    //       { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
+    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+    //     ],
+    //     journal: "IEEE Transactions on Biomedical Engineering",
+    //     year: 2026,
+    //     date: "2026-10-18",
+    //     topic: "Uncertainty-Aware AI",
+    //     summary: "This fictive study introduces a personalized forecasting framework for real-world mobility fluctuations in Parkinson’s disease. The model combines wearable sensing with uncertainty modulation to improve interpretability and robustness. Results suggest that uncertainty-aware conditioning can support clinically meaningful monitoring in everyday settings.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 24,
+    //     citationLink: "https://scholar.google.com/scholar?q=Uncertainty-Aware+Wearable+Forecasting+for+Daily+Mobility+in+Parkinson%E2%80%99s+Disease",
+    //     awards: ["🏆 Best Paper Award (top 0.6%)"]
+    //   },
+    //   {
+    //     id: "pub-2026-2",
+    //     title: "Digital Mobility Outcomes as Explainable Biomarkers of Disease Progression",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
+    //       { name: "Clara Guedes**", link: "https://example.com/clara-guedes" },
+    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
+    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+    //     ],
+    //     journal: "npj Digital Medicine",
+    //     year: 2026,
+    //     date: "2026-05-02",
+    //     topic: "Digital Mobility Outcomes",
+    //     summary: "This toy paper examines whether digital mobility outcomes can function as explainable indicators of pathology rather than simple performance markers. It highlights convergent validity with mechanistic and clinical measures. The work frames mobility biomarkers as tools for both monitoring and scientific explanation.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 17,
+    //     citationLink: "https://scholar.google.com/scholar?q=Digital+Mobility+Outcomes+as+Explainable+Biomarkers+of+Disease+Progression",
+    //     awards: ["🥇 Outstanding Student-Led Paper"]
+    //   },
+    //   {
+    //     id: "pub-2025-1",
+    //     title: "Real-World Gait Complexity and Neural Signatures of Locomotor Control",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Alexandra Potvin-Desrochers*", link: "https://example.com/alexandra-potvin" },
+    //       { name: "Dahlia Leibovich*", link: "https://example.com/dahlia-leibovich" },
+    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+    //     ],
+    //     journal: "Movement Disorders",
+    //     year: 2025,
+    //     date: "2025-11-07",
+    //     topic: "Parkinson’s Disease",
+    //     summary: "This fictive article links gait complexity metrics to brain-based signatures of locomotor control in Parkinson’s disease. The results support the idea that specific mobility features are more mechanistically informative than others. The paper provides a template for combining wearable and neural data in translational mobility research.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 31,
+    //     citationLink: "https://scholar.google.com/scholar?q=Real-World+Gait+Complexity+and+Neural+Signatures+of+Locomotor+Control",
+    //     awards: []
+    //   },
+    //   {
+    //     id: "pub-2025-2",
+    //     title: "Towards Transparent Mobility Monitoring with Lower-Back Inertial Sensors",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
+    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
+    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" }
+    //     ],
+    //     journal: "Sensors",
+    //     year: 2025,
+    //     date: "2025-04-14",
+    //     topic: "Wearable Sensing",
+    //     summary: "This toy paper presents a transparent framework for extracting clinically interpretable mobility metrics from a single lower-back sensor. It emphasizes traceability from raw signals to outcome measures. The study illustrates how simple sensor setups can still produce rich and useful mobility information.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 12,
+    //     citationLink: "https://scholar.google.com/scholar?q=Towards+Transparent+Mobility+Monitoring+with+Lower-Back+Inertial+Sensors",
+    //     awards: ["🎖️ Editor’s Choice Selection"]
+    //   },
+    //   {
+    //     id: "pub-2024-1",
+    //     title: "Wearable Sensing for Longitudinal Mobility Monitoring in Free-Living Contexts",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+    //       { name: "Clara Guedes**", link: "https://example.com/clara-guedes" },
+    //       { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
+    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+    //     ],
+    //     journal: "Journal of NeuroEngineering and Rehabilitation",
+    //     year: 2024,
+    //     date: "2024-09-22",
+    //     topic: "Wearable Sensing",
+    //     summary: "This fictive work evaluates continuous mobility monitoring outside the laboratory using wearable sensors deployed over multiple weeks. It shows how ecologically valid data can complement traditional clinic-based assessment. The paper also discusses challenges related to noise, adherence, and real-world variability.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 28,
+    //     citationLink: "https://scholar.google.com/scholar?q=Wearable+Sensing+for+Longitudinal+Mobility+Monitoring+in+Free-Living+Contexts",
+    //     awards: []
+    //   },
+    //   {
+    //     id: "pub-2024-2",
+    //     title: "Construct Validity of AI-Derived Gait Biomarkers Across Clinical States",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
+    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
+    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
+    //     ],
+    //     journal: "Artificial Intelligence in Medicine",
+    //     year: 2024,
+    //     date: "2024-02-09",
+    //     topic: "Digital Mobility Outcomes",
+    //     summary: "This toy study tests whether AI-derived gait biomarkers remain valid across different clinical states and medication conditions. It argues that performance alone is insufficient without mechanistic alignment. The paper proposes a construct validity lens for evaluating digital health algorithms.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 19,
+    //     citationLink: "https://scholar.google.com/scholar?q=Construct+Validity+of+AI-Derived+Gait+Biomarkers+Across+Clinical+States",
+    //     awards: ["🏅 Early Career Spotlight Paper"]
+    //   },
+    //   {
+    //     id: "pub-2023-1",
+    //     title: "Identifying Interpretable Sources of Prediction Confidence in Human Movement Models",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
+    //       { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
+    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+    //     ],
+    //     journal: "Pattern Recognition Letters",
+    //     year: 2023,
+    //     date: "2023-08-30",
+    //     topic: "Uncertainty-Aware AI",
+    //     summary: "This fictive article focuses on model confidence in human movement analytics and asks when confidence can be trusted. It separates interpretable uncertainty sources from opaque prediction behavior. The work serves as an accessible entry point to uncertainty-aware modeling for rehabilitation and mobility research.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 14,
+    //     citationLink: "https://scholar.google.com/scholar?q=Identifying+Interpretable+Sources+of+Prediction+Confidence+in+Human+Movement+Models",
+    //     awards: []
+    //   },
+    //   {
+    //     id: "pub-2023-2",
+    //     title: "Mobility Phenotyping in Parkinson’s Disease with Explainable Sensor Features",
+    //     authors: [
+    //       { name: "Cyrille E. Mvomo", me: true },
+    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
+    //       { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
+    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
+    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
+    //     ],
+    //     journal: "Gait & Posture",
+    //     year: 2023,
+    //     date: "2023-03-11",
+    //     topic: "Parkinson’s Disease",
+    //     summary: "This toy paper introduces an explainable feature-based framework for mobility phenotyping in Parkinson’s disease. Rather than relying only on black-box classification, it prioritizes sensor features that map to recognizable movement phenomena. The study highlights how explainability can improve trust and scientific usefulness.",
+    //     paperLink: "#",
+    //     videoLink: "#",
+    //     codeLink: "#",
+    //     citations: 22,
+    //     citationLink: "https://scholar.google.com/scholar?q=Mobility+Phenotyping+in+Parkinson%E2%80%99s+Disease+with+Explainable+Sensor+Features",
+    //     awards: ["🏆 Best Student Presentation Paper"]
+    //   }
+    // ];
+
+    // const topicOrder = [
+    //   "Wearable Sensing",
+    //   "Parkinson’s Disease",
+    //   "Uncertainty-Aware AI",
+    //   "Digital Mobility Outcomes"
+    // ];
     const publications = [
       {
-        id: "pub-2026-1",
-        title: "Uncertainty-Aware Wearable Forecasting for Daily Mobility in Parkinson’s Disease",
+        id: "pub-2022-1",
+        title: "Does 	locomotor perturbation training induce a change in relative sensory contribution to balance? A pilot study",
         authors: [
           { name: "Cyrille E. Mvomo", me: true },
-          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-          { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
-          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
+          { name: "Deepak Ravi", link: "https://scholar.google.com/citations?user=Pvpi1DgAAAAJ&hl=en" },
+          { name: "Friederike Schulte", link: "https://scholar.google.com/citations?user=vXL_IJoAAAAJ&hl=en&oi=ao" },
+          { name: "Lorenz Assländer", link: "https://scholar.google.com/citations?user=fJMory8AAAAJ&hl=en&oi=ao" },
+          { name: "Chris Awai Easthope", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
         ],
-        journal: "IEEE Transactions on Biomedical Engineering",
-        year: 2026,
-        date: "2026-10-18",
-        topic: "Uncertainty-Aware AI",
-        summary: "This fictive study introduces a personalized forecasting framework for real-world mobility fluctuations in Parkinson’s disease. The model combines wearable sensing with uncertainty modulation to improve interpretability and robustness. Results suggest that uncertainty-aware conditioning can support clinically meaningful monitoring in everyday settings.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 24,
-        citationLink: "https://scholar.google.com/scholar?q=Uncertainty-Aware+Wearable+Forecasting+for+Daily+Mobility+in+Parkinson%E2%80%99s+Disease",
-        awards: ["🏆 Best Paper Award (top 0.6%)"]
-      },
-      {
-        id: "pub-2026-2",
-        title: "Digital Mobility Outcomes as Explainable Biomarkers of Disease Progression",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
-          { name: "Clara Guedes**", link: "https://example.com/clara-guedes" },
-          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
-          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-        ],
-        journal: "npj Digital Medicine",
-        year: 2026,
-        date: "2026-05-02",
-        topic: "Digital Mobility Outcomes",
-        summary: "This toy paper examines whether digital mobility outcomes can function as explainable indicators of pathology rather than simple performance markers. It highlights convergent validity with mechanistic and clinical measures. The work frames mobility biomarkers as tools for both monitoring and scientific explanation.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 17,
-        citationLink: "https://scholar.google.com/scholar?q=Digital+Mobility+Outcomes+as+Explainable+Biomarkers+of+Disease+Progression",
-        awards: ["🥇 Outstanding Student-Led Paper"]
-      },
-      {
-        id: "pub-2025-1",
-        title: "Real-World Gait Complexity and Neural Signatures of Locomotor Control",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Alexandra Potvin-Desrochers*", link: "https://example.com/alexandra-potvin" },
-          { name: "Dahlia Leibovich*", link: "https://example.com/dahlia-leibovich" },
-          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-        ],
-        journal: "Movement Disorders",
-        year: 2025,
-        date: "2025-11-07",
-        topic: "Parkinson’s Disease",
-        summary: "This fictive article links gait complexity metrics to brain-based signatures of locomotor control in Parkinson’s disease. The results support the idea that specific mobility features are more mechanistically informative than others. The paper provides a template for combining wearable and neural data in translational mobility research.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 31,
-        citationLink: "https://scholar.google.com/scholar?q=Real-World+Gait+Complexity+and+Neural+Signatures+of+Locomotor+Control",
+        journal: "RehabWeek 2022",
+        year: 2022,
+        date: "2022-07-25",
+        topic: "Precision Mobility Intervention",
+        summary: "In this pilot study, we combine computational neuroscience with wearable technologies to evaluate the effect of an intervention in older adults. Specifically, we apply an independent channel model to assess the impact of a perturbation-based training session on a smart treadmill (CAREN) using a novel VR-based sensory integration balance test.",
+        paperLink: "https://www.researchgate.net/publication/368292867_Does_locomotor_perturbation_training_induce_a_change_in_relative_sensory_contribution_to_balance_A_pilot_study?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImxvZ2luIiwicGFnZSI6InByb2ZpbGUifX0",
+        videoLink: "",
+        codeLink: "",
+        // citations: 0,
+        // citationLink: "https://www.researchgate.net/publication/368292867_Does_locomotor_perturbation_training_induce_a_change_in_relative_sensory_contribution_to_balance_A_pilot_study?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImxvZ2luIiwicGFnZSI6InByb2ZpbGUifX0",
         awards: []
-      },
-      {
-        id: "pub-2025-2",
-        title: "Towards Transparent Mobility Monitoring with Lower-Back Inertial Sensors",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
-          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
-          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" }
-        ],
-        journal: "Sensors",
-        year: 2025,
-        date: "2025-04-14",
-        topic: "Wearable Sensing",
-        summary: "This toy paper presents a transparent framework for extracting clinically interpretable mobility metrics from a single lower-back sensor. It emphasizes traceability from raw signals to outcome measures. The study illustrates how simple sensor setups can still produce rich and useful mobility information.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 12,
-        citationLink: "https://scholar.google.com/scholar?q=Towards+Transparent+Mobility+Monitoring+with+Lower-Back+Inertial+Sensors",
-        awards: ["🎖️ Editor’s Choice Selection"]
-      },
-      {
-        id: "pub-2024-1",
-        title: "Wearable Sensing for Longitudinal Mobility Monitoring in Free-Living Contexts",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-          { name: "Clara Guedes**", link: "https://example.com/clara-guedes" },
-          { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
-          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-        ],
-        journal: "Journal of NeuroEngineering and Rehabilitation",
-        year: 2024,
-        date: "2024-09-22",
-        topic: "Wearable Sensing",
-        summary: "This fictive work evaluates continuous mobility monitoring outside the laboratory using wearable sensors deployed over multiple weeks. It shows how ecologically valid data can complement traditional clinic-based assessment. The paper also discusses challenges related to noise, adherence, and real-world variability.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 28,
-        citationLink: "https://scholar.google.com/scholar?q=Wearable+Sensing+for+Longitudinal+Mobility+Monitoring+in+Free-Living+Contexts",
-        awards: []
-      },
-      {
-        id: "pub-2024-2",
-        title: "Construct Validity of AI-Derived Gait Biomarkers Across Clinical States",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
-          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
-          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
-        ],
-        journal: "Artificial Intelligence in Medicine",
-        year: 2024,
-        date: "2024-02-09",
-        topic: "Digital Mobility Outcomes",
-        summary: "This toy study tests whether AI-derived gait biomarkers remain valid across different clinical states and medication conditions. It argues that performance alone is insufficient without mechanistic alignment. The paper proposes a construct validity lens for evaluating digital health algorithms.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 19,
-        citationLink: "https://scholar.google.com/scholar?q=Construct+Validity+of+AI-Derived+Gait+Biomarkers+Across+Clinical+States",
-        awards: ["🏅 Early Career Spotlight Paper"]
-      },
-      {
-        id: "pub-2023-1",
-        title: "Identifying Interpretable Sources of Prediction Confidence in Human Movement Models",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
-          { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
-          { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-        ],
-        journal: "Pattern Recognition Letters",
-        year: 2023,
-        date: "2023-08-30",
-        topic: "Uncertainty-Aware AI",
-        summary: "This fictive article focuses on model confidence in human movement analytics and asks when confidence can be trusted. It separates interpretable uncertainty sources from opaque prediction behavior. The work serves as an accessible entry point to uncertainty-aware modeling for rehabilitation and mobility research.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 14,
-        citationLink: "https://scholar.google.com/scholar?q=Identifying+Interpretable+Sources+of+Prediction+Confidence+in+Human+Movement+Models",
-        awards: []
-      },
-      {
-        id: "pub-2023-2",
-        title: "Mobility Phenotyping in Parkinson’s Disease with Explainable Sensor Features",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-          { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
-          { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
-          { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
-        ],
-        journal: "Gait & Posture",
-        year: 2023,
-        date: "2023-03-11",
-        topic: "Parkinson’s Disease",
-        summary: "This toy paper introduces an explainable feature-based framework for mobility phenotyping in Parkinson’s disease. Rather than relying only on black-box classification, it prioritizes sensor features that map to recognizable movement phenomena. The study highlights how explainability can improve trust and scientific usefulness.",
-        paperLink: "#",
-        videoLink: "#",
-        codeLink: "#",
-        citations: 22,
-        citationLink: "https://scholar.google.com/scholar?q=Mobility+Phenotyping+in+Parkinson%E2%80%99s+Disease+with+Explainable+Sensor+Features",
-        awards: ["🏆 Best Student Presentation Paper"]
-      }
+      },      
     ];
 
     const topicOrder = [
-      "Wearable Sensing",
-      "Parkinson’s Disease",
-      "Uncertainty-Aware AI",
-      "Digital Mobility Outcomes"
+      "Mechanistic Phenotyping",
+      "Wearable Fingerprinting",
+      "Precision Mobility Intervention",
+      "Neuroeducation"
     ];
-
     const publicationsContainer = document.getElementById("publications-container");
     const viewByDateButton = document.getElementById("view-by-date");
     const viewByTopicButton = document.getElementById("view-by-topic");
