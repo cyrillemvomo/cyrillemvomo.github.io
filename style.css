@@ -536,7 +536,7 @@ body::before {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.36);
-  background: #121212;
+  background: #ffffff;
 
   display: flex;
   align-items: center;
