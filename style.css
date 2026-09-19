@@ -1689,3 +1689,47 @@ body::before {
     min-width: 0;
   }
 }
+
+/* Desktop profile alignment: center the profile column directly beneath the name */
+@media (min-width: 901px) {
+  .banner-left {
+    flex: 0 0 360px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner-left h1 {
+    width: max-content;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 24px;
+  }
+
+  .icon-row {
+    gap: 21px;
+    margin-bottom: 26px;
+  }
+
+  .icon-row a {
+    font-size: 1.4rem;
+  }
+
+  .profile-details p {
+    margin: 7px 0;
+    font-size: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .pronunciation-link {
+    margin-top: 16px;
+  }
+
+  .pronunciation-link a {
+    font-size: 1.1rem;
+  }
+}
