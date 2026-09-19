@@ -2262,15 +2262,11 @@ body::before {
 
   /* Keep the scroll affordance visible even when macOS hides overlay scrollbars. */
   .publication-group:has(.publication-card:nth-child(2)) .publication-group-label-row::before {
-    content: "SCROLL FOR MORE ↓";
+    content: "↓ scroll";
     margin-right: auto;
-    padding: 0.4em 0.7em;
-    border: 1px solid rgba(162, 155, 254, 0.35);
-    border-radius: 0.6em;
-    background: rgba(108, 92, 231, 0.2);
-    color: #c0baff;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    color: #9ca3af;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 }
