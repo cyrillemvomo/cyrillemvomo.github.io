@@ -2388,3 +2388,16 @@ body::before {
     .top-banner, .bottom-banner { transition: none; }
   }
 }
+
+/* Render decoded GIF frames as the fixed background, driven by the page scroll. */
+.background-scroll-canvas {
+  display: none;
+}
+
+.background-video-wrapper.scroll-ready .background-scroll-canvas {
+  display: block;
+}
+
+.background-video-wrapper.scroll-ready .background-video-poster {
+  display: none;
+}

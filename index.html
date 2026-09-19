@@ -24,11 +24,12 @@
   <div class="background-video-wrapper" aria-hidden="true">
     <img
       src="Edited_BG_Video.gif"
-      class="background-video"
+      class="background-video background-video-poster"
       alt=""
       loading="eager"
       decoding="async"
     />
+    <canvas class="background-video background-scroll-canvas" aria-hidden="true"></canvas>
   </div>
 
   <header class="top-banner">
@@ -327,6 +328,138 @@
     }
     updateWelcomeState();
     cycleWelcomeRoles();
+
+    // Synchronize the original animated GIF with scrolling AFTER the welcome experience.
+    // A normal <img> cannot seek inside a GIF, so render the GIF frames on a canvas.
+    async function initializeScrollBackground() {
+      const wrapper = document.querySelector(".background-video-wrapper");
+      const canvas = wrapper.querySelector(".background-scroll-canvas");
+      const ctx = canvas.getContext("2d", { alpha: false });
+      if (!ctx) return;
+
+      try {
+        const response = await fetch("Edited_BG_Video.gif");
+        if (!response.ok) throw new Error("Background GIF could not be loaded");
+        const bytes = await response.arrayBuffer();
+        const signature = String.fromCharCode(...new Uint8Array(bytes, 0, 6));
+        if (signature !== "GIF87a" && signature !== "GIF89a") {
+          throw new Error("Edited_BG_Video.gif is not an animated GIF");
+        }
+
+        let frameCount;
+        let drawFrame;
+        let release;
+
+        if ("ImageDecoder" in window && await ImageDecoder.isTypeSupported("image/gif")) {
+          // Native decoding: no video export or third-party script needed in supported browsers.
+          const decoder = new ImageDecoder({
+            type: "image/gif",
+            data: new Uint8Array(bytes),
+            preferAnimation: true
+          });
+          await decoder.tracks.ready;
+          frameCount = decoder.tracks.selectedTrack.frameCount;
+          const firstFrame = await decoder.decode({ frameIndex: 0 });
+          canvas.width = firstFrame.image.displayWidth;
+          canvas.height = firstFrame.image.displayHeight;
+          firstFrame.image.close();
+          let drawRequest = 0;
+          drawFrame = async (index) => {
+            const request = ++drawRequest;
+            const { image } = await decoder.decode({ frameIndex: index });
+            if (request === drawRequest) {
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+              ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+            }
+            image.close();
+          };
+          release = () => decoder.close();
+        } else {
+          // Safari fallback: decode and composite the same GIF frames in JavaScript.
+          const { parseGIF, decompressFrames } = await import(
+            "https://cdn.jsdelivr.net/npm/gifuct-js@2.1.2/+esm"
+          );
+          const gif = parseGIF(bytes);
+          const frames = decompressFrames(gif, true);
+          frameCount = frames.length;
+          canvas.width = gif.lsd.width;
+          canvas.height = gif.lsd.height;
+
+          const composition = document.createElement("canvas");
+          composition.width = canvas.width;
+          composition.height = canvas.height;
+          const compositeCtx = composition.getContext("2d");
+          const patches = document.createElement("canvas");
+          const patchCtx = patches.getContext("2d");
+          const bitmaps = [];
+          let previous = null;
+          let restorePrevious = null;
+
+          for (const frame of frames) {
+            if (previous?.disposalType === 2) {
+              const p = previous.dims;
+              compositeCtx.clearRect(p.left, p.top, p.width, p.height);
+            } else if (previous?.disposalType === 3 && restorePrevious) {
+              compositeCtx.clearRect(0, 0, composition.width, composition.height);
+              compositeCtx.drawImage(restorePrevious, 0, 0);
+            }
+            if (frame.disposalType === 3) {
+              restorePrevious = document.createElement("canvas");
+              restorePrevious.width = composition.width;
+              restorePrevious.height = composition.height;
+              restorePrevious.getContext("2d").drawImage(composition, 0, 0);
+            }
+            const { left, top, width, height } = frame.dims;
+            patches.width = width;
+            patches.height = height;
+            patchCtx.putImageData(new ImageData(frame.patch, width, height), 0, 0);
+            compositeCtx.drawImage(patches, left, top);
+            bitmaps.push(await createImageBitmap(composition));
+            previous = frame;
+          }
+          drawFrame = (index) => {
+            ctx.drawImage(bitmaps[index], 0, 0, canvas.width, canvas.height);
+          };
+          release = () => bitmaps.forEach((bitmap) => bitmap.close());
+        }
+
+        if (frameCount < 2) {
+          release();
+          return;
+        }
+
+        let lastFrame = -1;
+        let scheduled = false;
+        function renderAtScrollPosition() {
+          scheduled = false;
+          // Hold the first frame throughout the welcome experience and reach the
+          // last frame exactly when the visitor reaches the bottom of the page.
+          const start = aboutSection.getBoundingClientRect().top + window.scrollY;
+          const end = Math.max(start + 1, document.documentElement.scrollHeight - window.innerHeight);
+          const progress = Math.min(1, Math.max(0, (window.scrollY - start) / (end - start)));
+          const index = Math.min(frameCount - 1, Math.floor(progress * (frameCount - 1)));
+          if (index === lastFrame) return;
+          lastFrame = index;
+          Promise.resolve(drawFrame(index)).catch((error) => {
+            console.error("Could not render background GIF frame:", error);
+          });
+        }
+        function scheduleFrame() {
+          if (scheduled) return;
+          scheduled = true;
+          requestAnimationFrame(renderAtScrollPosition);
+        }
+        await drawFrame(0);
+        wrapper.classList.add("scroll-ready");
+        renderAtScrollPosition();
+        window.addEventListener("scroll", scheduleFrame, { passive: true });
+        window.addEventListener("resize", scheduleFrame);
+      } catch (error) {
+        // Retain the original background image if GIF decoding is unavailable.
+        console.error("Scroll-controlled background unavailable:", error);
+      }
+    }
+    initializeScrollBackground();
 
     function setFavicon() {
       const img = new Image();
