@@ -2487,9 +2487,13 @@ body::before {
     margin-top: 1.25rem;
   }
 
-  /* Keep the hamburger accessible on the welcome screen while hiding only the banner name. */
+  /* On the phone welcome, hide only the banner name; keep the hamburger on top and tappable. */
   body.welcome-active .top-banner {
-    transform: none;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 2147483647;
     background: transparent;
     border-bottom-color: transparent;
     box-shadow: none;
@@ -2500,6 +2504,25 @@ body::before {
 
   body.welcome-active .banner-left h1 {
     visibility: hidden;
+  }
+
+  body.welcome-active .banner-right-wrapper {
+    display: block !important;
+    visibility: visible !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  body.welcome-active .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.55));
+  }
+
+  body.welcome-active .menu-toggle span {
+    background: #ffffff !important;
   }
 
   body.welcome-active .bottom-banner {
