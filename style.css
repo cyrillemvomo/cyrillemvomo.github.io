@@ -2557,3 +2557,34 @@ body::before {
   max-height: none;
   object-fit: contain;
 }
+
+/* Condensed publication descriptions and tighter copy spacing on desktop only. */
+.publication-summary-desktop {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .publication-summary-desktop {
+    display: block;
+  }
+
+  .publication-summary-mobile {
+    display: none;
+  }
+
+  .publication-authors {
+    margin-bottom: 0;
+  }
+
+  .publication-journal {
+    margin-bottom: 0.07vw;
+  }
+
+  .publication-main-copy {
+    margin-bottom: 0.28vw;
+  }
+
+  .publication-summary {
+    line-height: 1.3;
+  }
+}
