@@ -2401,3 +2401,111 @@ body::before {
 .background-video-wrapper.scroll-ready .background-video-poster {
   display: none;
 }
+
+
+/* Phone welcome: full-screen McGill landing, followed by the existing profile and content. */
+@media (max-width: 850px) {
+  body {
+    padding-top: 0;
+  }
+
+  .page-container {
+    padding-top: 0;
+  }
+
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Place the landing ahead of the profile without changing desktop markup or layout. */
+  .description-column {
+    display: contents;
+  }
+
+  .welcome-section {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    grid-row: 1;
+    align-items: center;
+    width: 100vw;
+    max-width: none;
+    min-height: 100svh;
+    min-height: 100dvh;
+    margin: 0 0 0 calc(50% - 50vw);
+    padding: max(5rem, env(safe-area-inset-top)) 7vw max(4rem, env(safe-area-inset-bottom));
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0.53)),
+      url("assets/images/mcgillart.png") center center / cover no-repeat;
+  }
+
+  .welcome-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  }
+
+  .welcome-content h2 {
+    margin: 0 0 0.6em;
+    font-family: 'Spectral', serif;
+    font-size: clamp(2.2rem, 9vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: #ffffff;
+  }
+
+  .welcome-identity {
+    margin: 0 !important;
+    font-size: clamp(1.3rem, 5.8vw, 2rem) !important;
+    line-height: 1.45 !important;
+    font-weight: 500;
+    color: #ffffff !important;
+  }
+
+  .welcome-role {
+    display: inline-block;
+    min-width: 0.5ch;
+    text-decoration: underline;
+    text-decoration-color: #a29bfe;
+    text-decoration-thickness: 0.12em;
+    text-underline-offset: 0.2em;
+  }
+
+  .welcome-caret {
+    display: inline-block;
+    height: 1em;
+    margin-left: 0.08em;
+    border-right: 0.085em solid #ffffff;
+    vertical-align: -0.16em;
+    animation: welcome-caret-blink 1s step-end infinite;
+  }
+
+  .profile-column {
+    grid-row: 2;
+    margin-top: 1.25rem;
+  }
+
+  /* Keep the first phone screen exclusively for the McGill photo and animated introduction. */
+  body.welcome-active .top-banner {
+    transform: translateY(-110%);
+    pointer-events: none;
+  }
+
+  body.welcome-active .bottom-banner {
+    transform: translateY(110%);
+    pointer-events: none;
+  }
+
+  .top-banner,
+  .bottom-banner {
+    transition: transform 0.4s ease, background 0.3s ease, border-color 0.3s ease,
+      backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .welcome-caret { animation: none; }
+    .top-banner, .bottom-banner { transition: none; }
+  }
+}
