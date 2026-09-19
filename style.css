@@ -2310,7 +2310,7 @@ body::before {
     align-items: center;
     min-height: calc(100svh - 7.222222vw);
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 1.944444vw;
     padding: 3.5vw 0;
   }
 
