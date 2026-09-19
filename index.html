@@ -1026,6 +1026,20 @@
       });
     }
 
+    function syncPublicationListHeights() {
+      document.querySelectorAll(".publication-list").forEach((list) => {
+        if (window.innerWidth <= 900) {
+          list.style.maxHeight = "";
+          return;
+        }
+
+        const firstCard = list.querySelector(".publication-card");
+        if (!firstCard) return;
+
+        list.style.maxHeight = `${Math.ceil(firstCard.offsetHeight)}px`;
+      });
+    }
+
     function createRevealObserver() {
       if (revealObserver) {
         revealObserver.disconnect();
@@ -1111,6 +1125,7 @@
 
       applyScrollReveal(publicationsContainer);
       syncPublicationVisualHeights();
+      syncPublicationListHeights();
     }
 
     viewByDateButton.addEventListener("click", () => {
@@ -1165,6 +1180,7 @@
     window.addEventListener("scroll", updateScrollLine);
     window.addEventListener("resize", () => {
       syncPublicationVisualHeights();
+      syncPublicationListHeights();
 
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         createRevealObserver();
@@ -1183,6 +1199,7 @@
       renderPublications();
       applyScrollReveal();
       syncPublicationVisualHeights();
+      syncPublicationListHeights();
     });
   </script>
 
