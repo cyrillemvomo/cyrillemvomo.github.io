@@ -1738,3 +1738,239 @@ body::before {
     font-size: 1.2rem;
   }
 }
+
+/* Fluid desktop scaling: preserve the reference desktop composition across larger and smaller web viewports */
+@media (min-width: 901px) {
+  html {
+    font-size: clamp(14px, 1.111111vw, 40px);
+  }
+
+  body {
+    padding-top: 5vw;
+    padding-bottom: 2.5vw;
+  }
+
+  .banner-container,
+  .page-container,
+  .bottom-banner-container {
+    width: 81.944444vw;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .banner-container {
+    box-sizing: content-box;
+    padding: 0.833333vw 2.222222vw;
+    grid-template-columns: 25vw minmax(0, 1fr);
+    column-gap: 3.888889vw;
+  }
+
+  .banner-right {
+    gap: 1.666667vw;
+  }
+
+  .page-container {
+    box-sizing: content-box;
+    padding: 1.666667vw 2.222222vw 4.444444vw 2.222222vw;
+  }
+
+  .hero-section {
+    grid-template-columns: 25vw minmax(0, 1fr);
+    column-gap: 3.888889vw;
+  }
+
+  .profile-column {
+    top: 7.222222vw;
+  }
+
+  .profile-photo {
+    width: 18.402778vw;
+    height: 18.402778vw;
+    margin-bottom: 1.805556vw;
+    border-width: 0.277778vw;
+  }
+
+  .icon-row {
+    gap: 1.597222vw;
+    margin-bottom: 1.944444vw;
+  }
+
+  .profile-details p {
+    margin-top: 0.555556vw;
+    margin-bottom: 0.555556vw;
+  }
+
+  .pronunciation-link {
+    margin-top: 1.25vw;
+  }
+
+  .content-subsection {
+    scroll-margin-top: 8.333333vw;
+    margin-bottom: 1.944444vw;
+    padding-bottom: 1.388889vw;
+  }
+
+  .content-subsection h2 {
+    margin-bottom: 0.277778vw;
+  }
+
+  .crimson-wave {
+    margin-bottom: 1.25vw;
+  }
+
+  .research-summary-media {
+    width: 34.722222vw;
+    margin: 0 0 1.111111vw 1.111111vw;
+    border-radius: 0.833333vw;
+  }
+
+  .video-title-badge {
+    margin-bottom: 0.833333vw;
+    padding: 0.555556vw 1.111111vw;
+    border-radius: 0.694444vw;
+  }
+
+  .news-attending-grid {
+    gap: 2.361111vw;
+  }
+
+  .panel-toggle {
+    margin-bottom: 0.972222vw;
+  }
+
+  .panel-heading-line {
+    gap: 0.694444vw;
+  }
+
+  .scroll-list {
+    max-height: 17.361111vw;
+    padding-right: 0.555556vw;
+  }
+
+  .timeline-item {
+    gap: 0.972222vw;
+    margin-bottom: 0.833333vw;
+  }
+
+  .date-chip {
+    padding: 0.486111vw 0.833333vw;
+    border-radius: 0.694444vw;
+  }
+
+  .description-column p {
+    margin-bottom: 1.666667vw;
+  }
+
+  .publications-subcontrols {
+    gap: 0.347222vw;
+    margin-bottom: 0.277778vw;
+  }
+
+  .publications-note {
+    margin-bottom: 1.111111vw;
+  }
+
+  .publication-group {
+    margin-bottom: 1.944444vw;
+  }
+
+  .publication-group-header {
+    margin-bottom: 0.972222vw;
+  }
+
+  .publication-group-label-row {
+    gap: 0.555556vw;
+    margin-top: 0.555556vw;
+  }
+
+  .publication-list {
+    gap: 1.111111vw;
+    max-height: 36.111111vw;
+    padding-right: 0.555556vw;
+  }
+
+  .publication-card {
+    grid-template-columns: 13.194444vw minmax(0, 1fr);
+    column-gap: 1.527778vw;
+  }
+
+  .publication-visual {
+    padding: 0.555556vw;
+    border-radius: 0.694444vw;
+  }
+
+  .publication-main-copy {
+    margin-bottom: 0.555556vw;
+  }
+
+  .publication-title {
+    margin-bottom: 0.208333vw;
+  }
+
+  .publication-authors {
+    margin-bottom: 0.138889vw;
+  }
+
+  .publication-journal {
+    margin-bottom: 0.277778vw;
+  }
+
+  .publication-actions {
+    gap: 0.416667vw;
+    margin-bottom: 0.486111vw;
+  }
+
+  .publication-action {
+    padding: 0.347222vw 0.625vw;
+    border-radius: 0.555556vw;
+  }
+
+  .publication-metrics {
+    margin-bottom: 0.416667vw;
+  }
+
+  .metric-label {
+    gap: 0.416667vw;
+    padding: 0.347222vw 0.555556vw;
+    border-radius: 0.555556vw 0 0 0.555556vw;
+  }
+
+  .metric-value {
+    padding: 0.347222vw 0.625vw;
+    border-radius: 0 0.555556vw 0.555556vw 0;
+  }
+
+  .publication-awards {
+    gap: 0.208333vw;
+  }
+
+  .cv-controls {
+    gap: 0.694444vw;
+    margin-bottom: 0.972222vw;
+  }
+
+  .cv-action {
+    gap: 0.555556vw;
+    padding: 0.486111vw 0.833333vw;
+    border-radius: 0.555556vw;
+  }
+
+  .cv-viewer-wrapper {
+    border-radius: 0.694444vw;
+  }
+
+  .misc-list {
+    margin-bottom: 1.527778vw;
+    padding-left: 1.527778vw;
+  }
+
+  .misc-list li {
+    margin-bottom: 1.111111vw;
+  }
+
+  .bottom-banner-container {
+    box-sizing: content-box;
+    padding: 0.486111vw 2.222222vw;
+  }
+}
