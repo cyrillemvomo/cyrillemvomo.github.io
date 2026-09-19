@@ -1597,6 +1597,6 @@ body::before {
 
 @media (max-width: 850px) {
   #cv-fullscreen-button {
-    display: none;
+    display: none !important;
   }
 }
