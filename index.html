@@ -19,7 +19,7 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="welcome-active">
 
   <div class="background-video-wrapper" aria-hidden="true">
     <img
@@ -81,6 +81,13 @@
       </div>
 
       <div class="description-column">
+        <section id="welcome-section" class="welcome-section" aria-label="Welcome">
+          <div class="welcome-content">
+            <h2>Cyrille E. Mvomo</h2>
+            <p class="welcome-identity">I am a <span id="welcome-role" class="welcome-role">researcher</span><span class="welcome-caret" aria-hidden="true"></span></p>
+          </div>
+        </section>
+
         <section id="about-me-section" class="content-subsection">
           <h2>About</h2>
           <div class="crimson-wave" aria-hidden="true">﹏</div>
@@ -253,7 +260,71 @@
   <script>
     const body = document.body;
     const topBanner = document.querySelector(".top-banner");
+    const welcomeSection = document.getElementById("welcome-section");
+    const aboutSection = document.getElementById("about-me-section");
+    const welcomeRole = document.getElementById("welcome-role");
+    const desktopWelcomeQuery = window.matchMedia("(min-width: 901px)");
+    let welcomeScrollTransitioning = false;
     let revealObserver = null;
+
+    function updateWelcomeState() {
+      const onWelcome = desktopWelcomeQuery.matches &&
+        window.scrollY < Math.min(100, window.innerHeight * 0.12);
+      body.classList.toggle("welcome-active", onWelcome);
+    }
+
+    function moveFromWelcomeToAbout() {
+      if (welcomeScrollTransitioning) return;
+      welcomeScrollTransitioning = true;
+      aboutSection.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start"
+      });
+      window.setTimeout(() => { welcomeScrollTransitioning = false; }, 1100);
+    }
+
+    window.addEventListener("wheel", (event) => {
+      if (!desktopWelcomeQuery.matches || event.ctrlKey || event.deltaY <= 0) return;
+      if (window.scrollY >= Math.min(100, window.innerHeight * 0.12) && !welcomeScrollTransitioning) return;
+      event.preventDefault();
+      moveFromWelcomeToAbout();
+    }, { passive: false });
+
+    window.addEventListener("keydown", (event) => {
+      if (!desktopWelcomeQuery.matches || !body.classList.contains("welcome-active")) return;
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+      if (!["ArrowDown", "PageDown", " "].includes(event.key)) return;
+      const target = event.target;
+      if (target instanceof HTMLElement && target.closest("input, textarea, select, button, a, [contenteditable]")) return;
+      event.preventDefault();
+      moveFromWelcomeToAbout();
+    });
+
+    function cycleWelcomeRoles() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const roles = ["researcher", "educator", "clinician"];
+      let roleIndex = 0;
+      let deleting = true;
+      let charIndex = roles[0].length;
+      function tick() {
+        const word = roles[roleIndex];
+        charIndex += deleting ? -1 : 1;
+        welcomeRole.textContent = word.slice(0, charIndex);
+        if (!deleting && charIndex === word.length) {
+          deleting = true;
+          window.setTimeout(tick, 1850);
+        } else if (deleting && charIndex === 0) {
+          roleIndex = (roleIndex + 1) % roles.length;
+          deleting = false;
+          window.setTimeout(tick, 320);
+        } else {
+          window.setTimeout(tick, deleting ? 62 : 105);
+        }
+      }
+      window.setTimeout(tick, 1800);
+    }
+    updateWelcomeState();
+    cycleWelcomeRoles();
 
     function setFavicon() {
       const img = new Image();
@@ -1175,10 +1246,12 @@
       });
     }
 
+    window.addEventListener("scroll", updateWelcomeState);
     window.addEventListener("scroll", updateActiveSectionOnScroll);
     window.addEventListener("scroll", updateBannerOnScroll);
     window.addEventListener("scroll", updateScrollLine);
     window.addEventListener("resize", () => {
+      updateWelcomeState();
       syncPublicationVisualHeights();
       syncPublicationListHeights();
 
@@ -1189,6 +1262,7 @@
     });
 
     window.addEventListener("load", () => {
+      updateWelcomeState();
       setFavicon();
       setActiveLink("about-me-section");
       updateActiveSectionOnScroll();
