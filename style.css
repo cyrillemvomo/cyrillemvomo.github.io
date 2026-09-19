@@ -2259,14 +2259,4 @@ body::before {
   .publication-list::-webkit-scrollbar-thumb:active {
     background: #c0baff;
   }
-
-  /* Keep the scroll affordance visible even when macOS hides overlay scrollbars. */
-  .publication-group:has(.publication-card:nth-child(2)) .publication-group-label-row::before {
-    content: "↓ scroll";
-    margin-right: auto;
-    color: #9ca3af;
-    font-size: 0.68rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-  }
 }
