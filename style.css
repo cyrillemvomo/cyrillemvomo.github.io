@@ -1001,8 +1001,18 @@ body::before {
 
   .research-summary-media {
     float: none;
-    width: min(100%, 260px);
-    margin: 0 auto 16px auto;
+    width: min(92%, 340px);
+    margin: 0 auto 24px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+
+  .research-summary-media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
   }
 
   .cv-viewer-wrapper {
