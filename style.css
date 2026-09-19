@@ -2231,3 +2231,46 @@ body::before {
     padding: 0.375rem 0.75rem calc(0.375rem + env(safe-area-inset-bottom));
   }
 }
+
+/* Desktop publication lists: make the year/topic scrollbars easy to see */
+@media (min-width: 901px) {
+  .publication-list {
+    scrollbar-gutter: stable;
+    scrollbar-width: auto;
+    scrollbar-color: #a29bfe rgba(255, 255, 255, 0.14);
+  }
+
+  .publication-list::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .publication-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+  }
+
+  .publication-list::-webkit-scrollbar-thumb {
+    background: #a29bfe;
+    border: 2px solid rgba(28, 28, 28, 0.66);
+    border-radius: 10px;
+  }
+
+  .publication-list::-webkit-scrollbar-thumb:hover,
+  .publication-list::-webkit-scrollbar-thumb:active {
+    background: #c0baff;
+  }
+
+  /* Keep the scroll affordance visible even when macOS hides overlay scrollbars. */
+  .publication-group:has(.publication-card:nth-child(2)) .publication-group-label-row::before {
+    content: "SCROLL FOR MORE ↓";
+    margin-right: auto;
+    padding: 0.4em 0.7em;
+    border: 1px solid rgba(162, 155, 254, 0.35);
+    border-radius: 0.6em;
+    background: rgba(108, 92, 231, 0.2);
+    color: #c0baff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+}
