@@ -23,7 +23,7 @@
 
   <div class="background-video-wrapper" aria-hidden="true">
     <img
-      src="Edited_BG_Video.gif"
+      src="Edited_BG_Video_first_frame.png"
       class="background-video background-video-poster"
       alt=""
       loading="eager"
@@ -473,7 +473,7 @@
         window.addEventListener("scroll", updateScrollBackgroundTarget, { passive: true });
         window.addEventListener("resize", updateScrollBackgroundTarget);
       } catch (error) {
-        // Retain the original background image if GIF decoding is unavailable.
+        // Retain the static first frame if GIF decoding is unavailable.
         console.error("Scroll-controlled background unavailable:", error);
       }
     }
