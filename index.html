@@ -266,12 +266,14 @@
     const welcomeArticle = document.getElementById("welcome-article");
     const welcomeRole = document.getElementById("welcome-role");
     const desktopWelcomeQuery = window.matchMedia("(min-width: 901px)");
+    const phoneWelcomeQuery = window.matchMedia("(max-width: 850px)");
     let welcomeScrollTransitioning = false;
     let revealObserver = null;
 
     function updateWelcomeState() {
-      const onWelcome = desktopWelcomeQuery.matches &&
-        window.scrollY < Math.min(100, window.innerHeight * 0.12);
+      const onWelcome = phoneWelcomeQuery.matches
+        ? window.scrollY < 8
+        : desktopWelcomeQuery.matches && window.scrollY < Math.min(100, window.innerHeight * 0.12);
       body.classList.toggle("welcome-active", onWelcome);
     }
 
