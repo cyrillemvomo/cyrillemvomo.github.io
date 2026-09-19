@@ -84,7 +84,7 @@
         <section id="welcome-section" class="welcome-section" aria-label="Welcome">
           <div class="welcome-content">
             <h2>Cyrille E. Mvomo</h2>
-            <p class="welcome-identity">I am a <span id="welcome-role" class="welcome-role">researcher</span><span class="welcome-caret" aria-hidden="true"></span></p>
+            <p class="welcome-identity">I am <span id="welcome-article">a </span><span id="welcome-role" class="welcome-role">researcher</span><span class="welcome-caret" aria-hidden="true"></span></p>
           </div>
         </section>
 
@@ -262,6 +262,7 @@
     const topBanner = document.querySelector(".top-banner");
     const welcomeSection = document.getElementById("welcome-section");
     const aboutSection = document.getElementById("about-me-section");
+    const welcomeArticle = document.getElementById("welcome-article");
     const welcomeRole = document.getElementById("welcome-role");
     const desktopWelcomeQuery = window.matchMedia("(min-width: 901px)");
     let welcomeScrollTransitioning = false;
@@ -315,6 +316,7 @@
           window.setTimeout(tick, 1850);
         } else if (deleting && charIndex === 0) {
           roleIndex = (roleIndex + 1) % roles.length;
+          welcomeArticle.textContent = roles[roleIndex] === "educator" ? "an " : "a ";
           deleting = false;
           window.setTimeout(tick, 320);
         } else {
