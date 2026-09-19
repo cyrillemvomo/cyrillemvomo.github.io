@@ -1974,3 +1974,260 @@ body::before {
     padding: 0.486111vw 2.222222vw;
   }
 }
+
+/* Phone scaling: preserve the iPhone 11 portrait composition across phone widths */
+@media (max-width: 600px) {
+  html {
+    font-size: clamp(12.5px, 3.8647343vw, 18px);
+  }
+
+  body {
+    padding-top: 3.625rem;
+    padding-bottom: 3rem;
+  }
+
+  .top-banner {
+    border-bottom-width: 0.0625rem;
+  }
+
+  .scroll-line {
+    height: 0.125rem;
+  }
+
+  .banner-container {
+    min-height: 2.375rem;
+    padding: 0.625rem 1rem;
+    gap: 1rem;
+  }
+
+  .banner-left h1 {
+    font-size: 1.52rem;
+  }
+
+  .menu-toggle {
+    padding: 0.375rem 0 0.375rem 0.5rem;
+  }
+
+  .menu-toggle span {
+    width: 1.5625rem;
+    height: 0.125rem;
+    margin: 0.3125rem 0;
+  }
+
+  .banner-right {
+    top: calc(100% + 0.5rem);
+    min-width: 12.25rem;
+    padding: 0.625rem;
+    gap: 0.25rem;
+    border-width: 0.0625rem;
+    border-radius: 0.875rem;
+    box-shadow: 0 1rem 2.25rem rgba(0, 0, 0, 0.42);
+  }
+
+  .banner-right a {
+    padding: 0.625rem 0.6875rem;
+    border-radius: 0.5625rem;
+  }
+
+  .page-container {
+    padding: 1.125rem 0.625rem 4.875rem 0.625rem;
+  }
+
+  .hero-section {
+    row-gap: 1.25rem;
+  }
+
+  .profile-column {
+    padding: 1.25rem 1rem;
+    border-width: 0.0625rem;
+    border-radius: 1.125rem;
+    box-shadow: 0 0.875rem 2.125rem rgba(0, 0, 0, 0.28);
+  }
+
+  .profile-photo {
+    width: 9.25rem;
+    height: 9.25rem;
+    margin-bottom: 1rem;
+    border-width: 0.1875rem;
+  }
+
+  .icon-row {
+    gap: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .profile-details p {
+    margin: 0.25rem 0;
+  }
+
+  .pronunciation-link {
+    margin-top: 0.625rem;
+  }
+
+  .content-subsection {
+    margin-bottom: 1.125rem;
+    padding: 1.125rem 0.9375rem 1.25rem 0.9375rem;
+    border-width: 0.0625rem;
+    border-radius: 1.125rem;
+    box-shadow: 0 0.875rem 2.125rem rgba(0, 0, 0, 0.26);
+  }
+
+  .content-subsection:last-child {
+    border-width: 0.0625rem;
+  }
+
+  .content-subsection h2,
+  .panel-heading {
+    font-size: 1.345rem;
+  }
+
+  .crimson-wave {
+    margin: 0.125rem 0 1rem 0;
+  }
+
+  .description-column p {
+    margin-bottom: 1.125rem;
+  }
+
+  .research-summary-media {
+    margin: 0.125rem 0 1.25rem 0;
+    padding: 0.375rem;
+    border-width: 0.0625rem;
+    border-radius: 0.875rem;
+    box-shadow: 0 1rem 1.875rem rgba(0, 0, 0, 0.34);
+  }
+
+  .research-summary-media img {
+    border-radius: 0.5625rem;
+  }
+
+  .video-title-badge {
+    margin: 0.5rem auto 0.875rem auto;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .news-attending-grid {
+    gap: 0.75rem;
+  }
+
+  .news-panel {
+    padding: 0.875rem;
+    border-width: 0.0625rem;
+    border-radius: 0.875rem;
+  }
+
+  .panel-indicator,
+  .publication-group-indicator {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .scroll-list {
+    margin-top: 0.625rem;
+  }
+
+  .news-panel.mobile-open .scroll-list {
+    padding-right: 0.25rem;
+  }
+
+  .timeline-item {
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .date-chip {
+    padding: 0.375rem 0.5625rem;
+    border-radius: 0.5rem;
+  }
+
+  .publications-subcontrols {
+    gap: 0.375rem;
+    margin-bottom: 0.4375rem;
+  }
+
+  .publications-note {
+    margin-bottom: 0.875rem;
+  }
+
+  .publication-group {
+    margin-bottom: 0.75rem;
+  }
+
+  .publication-group-toggle {
+    padding: 0.6875rem 0.75rem;
+    border-width: 0.0625rem;
+    border-radius: 0.75rem;
+  }
+
+  .publication-list,
+  .publication-group.mobile-open .publication-list {
+    gap: 0.625rem;
+    margin-top: 0.625rem;
+  }
+
+  .publication-card {
+    padding: 0.625rem;
+    border-width: 0.0625rem;
+    border-radius: 0.875rem;
+    box-shadow: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.18);
+  }
+
+  .publication-visual {
+    margin-bottom: 0.75rem;
+    padding: 0.4375rem;
+    border-radius: 0.625rem;
+  }
+
+  .publication-visual img {
+    max-height: 13.75rem;
+  }
+
+  .publication-main-copy {
+    margin-bottom: 0.625rem;
+  }
+
+  .publication-title {
+    margin-bottom: 0.375rem;
+  }
+
+  .publication-authors {
+    margin-bottom: 0.25rem;
+  }
+
+  .publication-journal {
+    margin-bottom: 0.375rem;
+  }
+
+  .publication-actions {
+    gap: 0.4375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-action {
+    padding: 0.375rem 0.5625rem;
+  }
+
+  .cv-controls {
+    gap: 0.5rem;
+  }
+
+  .cv-action {
+    padding: 0.5rem 0.6875rem;
+  }
+
+  .cv-viewer-wrapper {
+    border-radius: 0.75rem;
+  }
+
+  .misc-list {
+    padding-left: 1.125rem;
+  }
+
+  .misc-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .bottom-banner-container {
+    padding: 0.375rem 0.75rem calc(0.375rem + env(safe-area-inset-bottom));
+  }
+}
