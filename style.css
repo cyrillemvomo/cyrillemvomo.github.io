@@ -533,9 +533,33 @@ body::before {
   .publication-list {
     max-height: 520px;
     overflow-y: auto;
-    margin-left: clamp(-366px, calc(-25vw - 26px), -316px);
-    padding-left: calc(clamp(290px, 25vw, 340px) + 26px);
+    margin-left: 0;
+    padding-left: 0;
     padding-right: 8px;
+  }
+
+  .publication-card {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: start;
+  }
+
+  .publication-visual {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 120px;
+    min-width: 120px;
+    transform: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #ffffff;
+  }
+
+  .publication-visual img {
+    display: none;
   }
 }
 
