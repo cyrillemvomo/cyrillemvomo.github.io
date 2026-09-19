@@ -521,9 +521,6 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-height: 520px;
-  overflow-y: auto;
-  padding-right: 8px;
 }
 
 .publication-card {
