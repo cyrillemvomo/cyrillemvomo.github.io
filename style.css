@@ -1594,3 +1594,9 @@ body::before {
     padding: 10px;
   }
 }
+
+@media (max-width: 850px) {
+  #cv-fullscreen-button {
+    display: none;
+  }
+}
