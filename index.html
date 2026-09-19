@@ -414,14 +414,40 @@
       scrollLine.style.width = scrollPercent + "%";
     }
 
-    function updateFooterDate() {
+    async function getResourceLastModified(resource) {
+      try {
+        const response = await fetch(resource, {
+          method: "HEAD",
+          cache: "no-store"
+        });
+
+        const lastModified = response.headers.get("Last-Modified");
+        if (!lastModified) return null;
+
+        const date = new Date(lastModified);
+        return Number.isNaN(date.getTime()) ? null : date;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    async function updateFooterDate() {
       const footerDateText = document.getElementById("footer-date-text");
+      const year = new Date().getFullYear();
 
-      const today = new Date();
+      const resourceDates = await Promise.all([
+        getResourceLastModified("index.html"),
+        getResourceLastModified("style.css"),
+        getResourceLastModified("CV.pdf")
+      ]);
 
-      const year = today.getFullYear();
+      const validDates = resourceDates.filter(Boolean);
+      const fallbackDate = new Date(document.lastModified);
+      const lastUpdated = validDates.length
+        ? new Date(Math.max(...validDates.map((date) => date.getTime())))
+        : fallbackDate;
 
-      const formattedDate = today.toLocaleDateString("en-US", {
+      const formattedDate = lastUpdated.toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric"
