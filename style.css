@@ -2487,10 +2487,19 @@ body::before {
     margin-top: 1.25rem;
   }
 
-  /* Keep the first phone screen exclusively for the McGill photo and animated introduction. */
+  /* Keep the hamburger accessible on the welcome screen while hiding only the banner name. */
   body.welcome-active .top-banner {
-    transform: translateY(-110%);
-    pointer-events: none;
+    transform: none;
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    pointer-events: auto;
+  }
+
+  body.welcome-active .banner-left h1 {
+    visibility: hidden;
   }
 
   body.welcome-active .bottom-banner {
