@@ -2282,6 +2282,7 @@ body::before {
     position: absolute;
     top: 0;
     height: 100svh;
+    height: calc(100dvh + 7.222222vw);
     pointer-events: none;
   }
 
@@ -2309,6 +2310,7 @@ body::before {
     display: flex;
     align-items: center;
     min-height: calc(100svh - 7.222222vw);
+    min-height: 100dvh;
     width: 100%;
     margin-bottom: 1.944444vw;
     padding: 3.5vw 0;
