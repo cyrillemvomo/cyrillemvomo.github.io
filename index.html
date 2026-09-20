@@ -797,253 +797,9 @@
         `© Copyright ${year} Cyrille E. Mvomo. Last updated: ${formattedDate}.`;
     }
 
-    // const publications = [
-    //   {
-    //     id: "pub-2026-1",
-    //     title: "Uncertainty-Aware Wearable Forecasting for Daily Mobility in Parkinson’s Disease",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-    //       { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
-    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-    //     ],
-    //     journal: "IEEE Transactions on Biomedical Engineering",
-    //     year: 2026,
-    //     date: "2026-10-18",
-    //     topic: "Uncertainty-Aware AI",
-    //     summary: "This fictive study introduces a personalized forecasting framework for real-world mobility fluctuations in Parkinson’s disease. The model combines wearable sensing with uncertainty modulation to improve interpretability and robustness. Results suggest that uncertainty-aware conditioning can support clinically meaningful monitoring in everyday settings.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 24,
-    //     citationLink: "https://scholar.google.com/scholar?q=Uncertainty-Aware+Wearable+Forecasting+for+Daily+Mobility+in+Parkinson%E2%80%99s+Disease",
-    //     awards: ["🏆 Best Paper Award (top 0.6%)"]
-    //   },
-    //   {
-    //     id: "pub-2026-2",
-    //     title: "Digital Mobility Outcomes as Explainable Biomarkers of Disease Progression",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
-    //       { name: "Clara Guedes**", link: "https://example.com/clara-guedes" },
-    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
-    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-    //     ],
-    //     journal: "npj Digital Medicine",
-    //     year: 2026,
-    //     date: "2026-05-02",
-    //     topic: "Digital Mobility Outcomes",
-    //     summary: "This toy paper examines whether digital mobility outcomes can function as explainable indicators of pathology rather than simple performance markers. It highlights convergent validity with mechanistic and clinical measures. The work frames mobility biomarkers as tools for both monitoring and scientific explanation.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 17,
-    //     citationLink: "https://scholar.google.com/scholar?q=Digital+Mobility+Outcomes+as+Explainable+Biomarkers+of+Disease+Progression",
-    //     awards: ["🥇 Outstanding Student-Led Paper"]
-    //   },
-    //   {
-    //     id: "pub-2025-1",
-    //     title: "Real-World Gait Complexity and Neural Signatures of Locomotor Control",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Alexandra Potvin-Desrochers*", link: "https://example.com/alexandra-potvin" },
-    //       { name: "Dahlia Leibovich*", link: "https://example.com/dahlia-leibovich" },
-    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-    //     ],
-    //     journal: "Movement Disorders",
-    //     year: 2025,
-    //     date: "2025-11-07",
-    //     topic: "Parkinson’s Disease",
-    //     summary: "This fictive article links gait complexity metrics to brain-based signatures of locomotor control in Parkinson’s disease. The results support the idea that specific mobility features are more mechanistically informative than others. The paper provides a template for combining wearable and neural data in translational mobility research.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 31,
-    //     citationLink: "https://scholar.google.com/scholar?q=Real-World+Gait+Complexity+and+Neural+Signatures+of+Locomotor+Control",
-    //     awards: []
-    //   },
-    //   {
-    //     id: "pub-2025-2",
-    //     title: "Towards Transparent Mobility Monitoring with Lower-Back Inertial Sensors",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
-    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" },
-    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" }
-    //     ],
-    //     journal: "Sensors",
-    //     year: 2025,
-    //     date: "2025-04-14",
-    //     topic: "Wearable Sensing",
-    //     summary: "This toy paper presents a transparent framework for extracting clinically interpretable mobility metrics from a single lower-back sensor. It emphasizes traceability from raw signals to outcome measures. The study illustrates how simple sensor setups can still produce rich and useful mobility information.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 12,
-    //     citationLink: "https://scholar.google.com/scholar?q=Towards+Transparent+Mobility+Monitoring+with+Lower-Back+Inertial+Sensors",
-    //     awards: ["🎖️ Editor’s Choice Selection"]
-    //   },
-    //   {
-    //     id: "pub-2024-1",
-    //     title: "Wearable Sensing for Longitudinal Mobility Monitoring in Free-Living Contexts",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-    //       { name: "Clara Guedes**", link: "https://example.com/clara-guedes" },
-    //       { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
-    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-    //     ],
-    //     journal: "Journal of NeuroEngineering and Rehabilitation",
-    //     year: 2024,
-    //     date: "2024-09-22",
-    //     topic: "Wearable Sensing",
-    //     summary: "This fictive work evaluates continuous mobility monitoring outside the laboratory using wearable sensors deployed over multiple weeks. It shows how ecologically valid data can complement traditional clinic-based assessment. The paper also discusses challenges related to noise, adherence, and real-world variability.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 28,
-    //     citationLink: "https://scholar.google.com/scholar?q=Wearable+Sensing+for+Longitudinal+Mobility+Monitoring+in+Free-Living+Contexts",
-    //     awards: []
-    //   },
-    //   {
-    //     id: "pub-2024-2",
-    //     title: "Construct Validity of AI-Derived Gait Biomarkers Across Clinical States",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
-    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
-    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
-    //     ],
-    //     journal: "Artificial Intelligence in Medicine",
-    //     year: 2024,
-    //     date: "2024-02-09",
-    //     topic: "Digital Mobility Outcomes",
-    //     summary: "This toy study tests whether AI-derived gait biomarkers remain valid across different clinical states and medication conditions. It argues that performance alone is insufficient without mechanistic alignment. The paper proposes a construct validity lens for evaluating digital health algorithms.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 19,
-    //     citationLink: "https://scholar.google.com/scholar?q=Construct+Validity+of+AI-Derived+Gait+Biomarkers+Across+Clinical+States",
-    //     awards: ["🏅 Early Career Spotlight Paper"]
-    //   },
-    //   {
-    //     id: "pub-2023-1",
-    //     title: "Identifying Interpretable Sources of Prediction Confidence in Human Movement Models",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Sara Perfetto**", link: "https://example.com/sara-perfetto" },
-    //       { name: "Dahlia Leibovich", link: "https://example.com/dahlia-leibovich" },
-    //       { name: "Caroline Paquette", link: "https://example.com/caroline-paquette" }
-    //     ],
-    //     journal: "Pattern Recognition Letters",
-    //     year: 2023,
-    //     date: "2023-08-30",
-    //     topic: "Uncertainty-Aware AI",
-    //     summary: "This fictive article focuses on model confidence in human movement analytics and asks when confidence can be trusted. It separates interpretable uncertainty sources from opaque prediction behavior. The work serves as an accessible entry point to uncertainty-aware modeling for rehabilitation and mobility research.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 14,
-    //     citationLink: "https://scholar.google.com/scholar?q=Identifying+Interpretable+Sources+of+Prediction+Confidence+in+Human+Movement+Models",
-    //     awards: []
-    //   },
-    //   {
-    //     id: "pub-2023-2",
-    //     title: "Mobility Phenotyping in Parkinson’s Disease with Explainable Sensor Features",
-    //     authors: [
-    //       { name: "Cyrille E. Mvomo", me: true },
-    //       { name: "Jordan Bedime", link: "https://example.com/jordan-bedime" },
-    //       { name: "Alexandra Potvin-Desrochers", link: "https://example.com/alexandra-potvin" },
-    //       { name: "Philippe C. Dixon", link: "https://example.com/philippe-dixon" },
-    //       { name: "Chris Easthope Awai", link: "https://example.com/chris-easthope" }
-    //     ],
-    //     journal: "Gait & Posture",
-    //     year: 2023,
-    //     date: "2023-03-11",
-    //     topic: "Parkinson’s Disease",
-    //     summary: "This toy paper introduces an explainable feature-based framework for mobility phenotyping in Parkinson’s disease. Rather than relying only on black-box classification, it prioritizes sensor features that map to recognizable movement phenomena. The study highlights how explainability can improve trust and scientific usefulness.",
-    //     paperLink: "#",
-    //     videoLink: "#",
-    //     codeLink: "#",
-    //     citations: 22,
-    //     citationLink: "https://scholar.google.com/scholar?q=Mobility+Phenotyping+in+Parkinson%E2%80%99s+Disease+with+Explainable+Sensor+Features",
-    //     awards: ["🏆 Best Student Presentation Paper"]
-    //   }
-    // ];
-
-    // const topicOrder = [
-    //   "Wearable Sensing",
-    //   "Parkinson’s Disease",
-    //   "Uncertainty-Aware AI",
-    //   "Digital Mobility Outcomes"
-    // ];
     const publications = [
       {
-        id: "pub-2022-1",
-        title: "Does locomotor perturbation training induce a change in relative sensory contribution to balance? A pilot study",
-        authors: [
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Deepak Ravi", link: "https://scholar.google.com/citations?user=Pvpi1DgAAAAJ&hl=en" },
-          { name: "Friederike Schulte", link: "https://scholar.google.com/citations?user=vXL_IJoAAAAJ&hl=en&oi=ao" },
-          { name: "Lorenz Assländer", link: "https://scholar.google.com/citations?user=fJMory8AAAAJ&hl=en&oi=ao" },
-          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" }
-        ],
-        journal: "RehabWeek",
-        year: 2022,
-        date: "2022-07-25",
-        topic: "Precision Mobility Intervention",
-        summary: "In this study, we apply an independent channel model to assess the impact of a perturbation-based training session on a smart treadmill (CAREN) using a novel VR-based sensory integration balance test.",
-        desktopSummary: "We examine whether treadmill perturbation training changes sensory contributions to balance using a virtual reality–based test.",
-        paperLink: "https://www.researchgate.net/publication/368292867_Does_locomotor_perturbation_training_induce_a_change_in_relative_sensory_contribution_to_balance_A_pilot_study?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImxvZ2luIiwicGFnZSI6InByb2ZpbGUifX0",
-        awards: ["🥇 Top Venue in Rehabilitation Engineering"],
-        image: "rehabweek.jpg"
-      }, 
-      {
-        id: "pub-2023-1",
-        title: "Relative importance of the visual system for balance control is reflected in the continuous margins of stability while walking",
-        authors: [
-          { name: "Saskia Neumann", link: "https://scholar.google.com/citations?user=VFVpDoEAAAAJ&hl=de" },
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Deepak Ravi", link: "https://scholar.google.com/citations?user=Pvpi1DgAAAAJ&hl=en" },
-          { name: "Friederike Schulte", link: "https://scholar.google.com/citations?user=vXL_IJoAAAAJ&hl=en&oi=ao" },
-          { name: "Lorenz Assländer", link: "https://scholar.google.com/citations?user=fJMory8AAAAJ&hl=en&oi=ao" },
-          { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" }
-        ],
-        journal: "ISB",
-        year: 2023,
-        date: "2023-07-30",
-        topic: "Mechanistic Phenotyping",
-        summary: "In this study, we apply an independent channel model to examine the interplay between altered static sensory reliance for balance and dynamic stability during walking, using a smart treadmill (CAREN) and a virtual reality–based sensory integration balance test.",
-        desktopSummary: "We examine how visual reliance for balance relates to stability during walking on a smart treadmill.",
-        paperLink: "https://media.isbweb.org/images/documents/2025/archive_matterials_challis/fukuoka2023/isb_jsb2023_program_-_abstract_book_compressed_part2.pdf",
-        awards: ["🥇 Top Venue in Movement Biomechanics"],
-        image: "isb.jpg"
-      },
-      {
         id: "pub-2024-1",
-        title: "Long-term, high-level aerobic training and the age-related decline in cortical thickness",
-        authors: [
-          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
-          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
-          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Kevin Shoemaker", link: "https://scholar.google.com/citations?user=KbCWqMMAAAAJ&hl=en" },
-          { name: "Mallar Chakravarty", link: "https://scholar.google.com/citations?user=KnO8dEcAAAAJ&hl=en" },
-          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
-        ],
-        journal: "SfN",
-        year: 2024,
-        date: "2024-09-05",
-        topic: "Mechanistic Phenotyping",
-        summary: "In this study, we analyze a neuroimaging dataset to examine the interplay between mobility capacity and age-related alterations in brain structure.",
-        desktopSummary: "We use neuroimaging to investigate links between mobility capacity and age-related differences in cortical structure.",
-        paperLink: "https://www.sfn.org/-/media/SfN/Documents/NEW-SfN/Meetings/Neuroscience-2024/Abstracts-and-Sessions/Abstract-PDFs/SFN24_Abstracts-PDF-Posters_WED_PM.pdf",
-        awards: ["🥇 Top Venue in Neurosciences"],
-        image: "sfn.jpg"
-      },
-      {
-        id: "pub-2024-2",
         title: "Influence of Fatigue in Parkinson’s Disease on the Variability of Gait Measures",
         authors: [
           { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
@@ -1057,15 +813,14 @@
         journal: "MDS",
         year: 2024,
         date: "2024-09-27",
-        topic: "Mechanistic Phenotyping",
-        summary: "In this study, we use wearable sensors to examine the sensitivity of gait-related digital mobility outcomes to participant-reported fatigue in Parkinson’s disease.",
-        desktopSummary: "We assess how perceived fatigue relates to variability in wearable-derived gait measures in Parkinson’s disease.",
+        topic: "Movement-based Biomarker Development",
+        summary: "This study explores the influence of perceived fatigue on gait variability in people with Parkinson’s disease using wearable sensing during prolonged walking.",
+        desktopSummary: "Exploring the influence of fatigue on gait variability in Parkinson’s disease through wearable sensing.",
         paperLink: "https://doi.org/10.1002/mds.29947",
-        awards: ["🥇 Top Venue in Parkinson's Disease"],
-        image: "mds242.jpg"
+        image: "assets/images/mds242.jpg"
       },
       {
-        id: "pub-2024-3",
+        id: "pub-2024-2",
         title: "Model-Based Gait Outcomes to Track Parkinson’s Disease Progression?",
         authors: [
           { name: "Cyrille E. Mvomo", me: true },
@@ -1080,43 +835,14 @@
         journal: "MDS",
         year: 2024,
         date: "2024-09-27",
-        topic: "Wearable Fingerprinting",
-        summary: "In this study, we apply data mining techniques to multimodal data (wearable, clinical, patient-reported outcomes, and neuroimaging) to examine the sensitivity of gait-related digital mobility outcomes to mobility decline in Parkinson’s disease.",
-        desktopSummary: "We combine wearable, clinical, patient-reported, and neuroimaging data to study gait outcomes and mobility decline in Parkinson’s disease.",
+        topic: "Movement-based Biomarker Development",
+        summary: "This project investigates the potential of model-based gait outcomes as markers of Parkinson’s disease progression. By combining multidimensional gait analysis with clinical assessments and neuroimaging, we explore how walking patterns reflect both symptom severity and underlying neural changes.",
+        desktopSummary: "Exploring multidimensional gait biomarkers to track clinical and neural changes in Parkinson’s disease.",
         paperLink: "https://doi.org/10.1002/mds.29953",
-        awards: ["🏆🏆 Travel Awards | 🥇 Top Venue in Parkinson's Disease"],
-        image: "mds241.jpg"
+        image: "assets/images/mds241.jpg"
       },
       {
         id: "pub-2025-1",
-        title: "Physical activity and sedentary behavior monitoring in people with Parkinson's disease and fatigue",
-        authors: [
-          { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
-          { name: "Cyrille E. Mvomo", me: true },
-          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en" },
-          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
-          { name: "Henri 	Lajeunesse", link: "https://www.researchgate.net/profile/Henri-Lajeunesse-2" },
-          { name: "Frederike Parent-L’Ecuyer", link: "https://www.researchgate.net/profile/Frederike_Parent-Lecuyer" },
-          { name: "Tomoha Ogawa**", link: "https://www.mcgill.ca/hbcl/team" },
-          { name: "Jae Young Park**", link: "https://www.mcgill.ca/hbcl/team" },
-          { name: "Madeleine Sharp", link: "https://scholar.google.com/citations?user=7EIrGjwAAAAJ&hl=en" },
-          { name: "Marie-Hélène Pennestri", link: "https://scholar.google.com/citations?user=VALPSAkAAAAJ&hl=fr" },
-          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
-          { name: "Bruno da Costa", link: "https://scholar.google.com/citations?user=cJqYIroAAAAJ&hl=en" },
-          { name: "Audrey Parent", link: "https://www.researchgate.net/profile/Audrey-Parent" },
-          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
-        ],
-        journal: "ISPGR",
-        year: 2025,
-        date: "2025-06-29",
-        topic: "Wearable Fingerprinting",
-        summary: "In this study, we examine the sensitivity of real-world digital mobility outcomes to perceived fatigue in Parkinson’s disease.",
-        desktopSummary: "We assess how real-world digital mobility outcomes relate to perceived fatigue in Parkinson’s disease.",
-        paperLink: "https://ispgr.org/wp-content/uploads/2025/06/ISPGR-World-Congress-2025_AbstractProceedings.pdf",
-        image: "ispgr.jpg"
-      },
-      {
-        id: "pub-2025-2",
         title: "Visual Dependence for Postural Control is Increased in Older Adults",
         authors: [
           { name: "Saskia Neumann", link: "https://scholar.google.com/citations?user=VFVpDoEAAAAJ&hl=de" },
@@ -1129,14 +855,14 @@
         journal: "Aging and Disease",
         year: 2025,
         date: "2025-11-11",
-        topic: "Mechanistic Phenotyping",
-        summary: "In this study, we apply an independent channel model to examine the relative sensory contribution to balance in older adults using a virtual reality–based sensory integration balance test.",
-        desktopSummary: "We use a virtual reality–based balance test to examine sensory contributions to postural control in older adults.",
+        topic: "Person-specific Modeling of Neuromotor Deficits",
+        summary: "This study examines how aging changes the contribution of vision to postural control. Using virtual reality and model-based sensorimotor analysis, we quantify visual dependence in younger and older adults and assess the reliability of the underlying balance-control measures.",
+        desktopSummary: "Investigating age-related changes in visual dependence for balance control using virtual reality and sensorimotor modeling.",
         paperLink: "https://www.aginganddisease.org/EN/10.14336/AD.2025.1119",
-        image: "agedis.jpg"
+        image: "assets/images/agedis.jpg"
       },
       {
-        id: "pub-2025-3",
+        id: "pub-2025-2",
         title: "Monitoring Parkinson’s Disease In-the-Wild",
         authors: [
           { name: "Cyrille E. Mvomo", me: true },
@@ -1152,12 +878,12 @@
         journal: "BHI",
         year: 2025,
         date: "2025-10-25",
-        topic: "Wearable Fingerprinting",
-        summary: "In this study, we apply data mining techniques to multimodal datasets to uncover the etiological meaning of digital mobility outcomes across laboratory and real-world settings in Parkinson’s disease.",
-        desktopSummary: "We investigate what digital mobility outcomes reveal about underlying mechanisms in Parkinson’s disease across laboratory and real-world settings.",
+        topic: "Movement-based Biomarker Development",
+        summary: "This work explores what AI-powered wearable biomarkers actually measure in Parkinson’s disease. Combining real-world gait sensing, deep learning, and neuroimaging, we investigate how movement-based predictions relate to both clinical motor symptoms and their underlying neural signatures.",
+        desktopSummary: "Connecting real-world wearable AI with clinical symptoms and brain signatures in Parkinson’s disease.",
         paperLink: "https://ieeexplore.ieee.org/document/11269453/",
-        awards: ["🏆🏆🏆 Travel Awards | 🥇 Top Venue in Health Informatics | 🗣️ Selected for Oral Presentation (500+ Submissions) | 🏆 Best Paper Award (3rd Place, ~Top 0.6%)"],
-        image: "bhi.jpg"
+        awards: ["🏆🏆🏆 Travel Awards | 🗣️ Selected for Oral Presentation (500+ Submissions) | 🏆 Best Paper Award (3rd Place, ~Top 0.6%)"],
+        image: "assets/images/bhi.jpg"
       },
       {
         id: "pub-2026-1",
@@ -1165,45 +891,72 @@
         authors: [
           { name: "Cyrille E. Mvomo", me: true },
           { name: "Jordan Bedime Songue Nijki", link: "https://www.researchgate.net/profile/Jordan-Bedime-Songue-Njiki" },
-          { name: "Dahlia Leibovich", link: "https://www.researchgate.net/scientific-contributions/Dahlia-Leibovich-2291376477" },
-          { name: "Clara Guedes", link: "https://ca.linkedin.com/in/clara-guedes-b78887211" },
+          { name: "Dahlia Leibovich**", link: "https://www.researchgate.net/scientific-contributions/Dahlia-Leibovich-2291376477" },
+          { name: "Clara Guedes**", link: "https://ca.linkedin.com/in/clara-guedes-b78887211" },
           { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr" },
           { name: "Philippe C. Dixon", link: "https://scholar.google.com/citations?user=zsitUZkAAAAJ&hl=en" },
           { name: "Chris Easthope Awai", link: "https://scholar.google.com/citations?user=61DvKEIAAAAJ&hl=en" },
           { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=en" }
         ],
-        journal: "To Appear",
+        journal: "medRxiv",
         year: 2026,
         date: "2026-03-06",
-        topic: "Wearable Fingerprinting",
-        summary: "In this study, we apply data mining techniques to multimodal datasets to examine the interplay between etiology and validity of digital mobility outcomes in Parkinson’s disease, from controlled laboratory settings to real-world environments.",
-        desktopSummary: "We examine the clinical and etiological validity of gait-related digital mobility outcomes in Parkinson’s disease across laboratory and real-world settings.",
+        topic: "Movement-based Biomarker Development",
+        summary: "This study explores how gait-related digital mobility outcomes can be validated beyond their agreement with clinical assessments in Parkinson’s disease. Combining wearable sensing, functional neuroimaging, and explainable AI, we investigate how gait automaticity and neural dysfunction shape the relationship between digital measures and motor severity across laboratory and real-world settings.",
+        desktopSummary: "Exploring the neural foundations of wearable gait biomarkers in Parkinson’s disease through neuroimaging and explainable AI.",
         paperLink: "https://www.medrxiv.org/content/10.64898/2026.03.07.26347847v1",
         awards: ["🏆 Invited contribution to BHI’25 Special Issue in IEEE-TBME"],
-        image: "tbme.jpg"
+        image: "assets/images/tbme.jpg"
       },
       {
         id: "pub-2026-2",
-        title: "Exploring the Link Between Belief in Neuromyths and Academic Performance in Undergraduate Science Students",
+        title: "Examining the Impact of Fatigue on White Matter tracts in Parkinson’s Disease",
         authors: [
+          { name: "Jae Young Park**", link: "https://www.mcgill.ca/hbcl/team" },
+          { name: "Emilia Z-Morales", link: "https://mx.linkedin.com/in/emilia-zald%C3%ADvar-morales" },
+          { name: "Jordan Bedime", link: "https://scholar.google.com/citations?user=WbGY5cEAAAAJ&hl=en&oi=ao" },
           { name: "Cyrille E. Mvomo", me: true },
-          { name: "Jean-Christophe Boivin", link: "https://www.researchgate.net/scientific-contributions/Jean-Christophe-Boivin-2210428555" },
-          { name: "Hilary Sweatman", link: "https://scholar.google.com/citations?user=SLswKdwAAAAJ&hl=en" },
-          { name: "Kira Smith", link: "https://ca.linkedin.com/in/kiraebsmith" },
-          { name: "Armin Yazdani", link: "https://scholar.google.com/citations?user=xZhnxrkAAAAJ&hl=en" },
-          { name: "Marcy Slapcoff", link: "https://www.researchgate.net/scientific-contributions/Marcy-Slapcoff-2231619054" }
+          { name: "Sara Perfetto", link: "https://scholar.google.com/citations?user=Ph31kWIAAAAJ&hl=en&oi=ao" },
+          { name: "Frédérike Parent-L’Ecuyer", link: "https://www.researchgate.net/profile/Frederike_Parent-Lecuyer" },
+          { name: "Isabella Sierra", link: "https://ca.linkedin.com/in/bellasierra" },
+          { name: "Henri Lajeunesse", link: "https://www.researchgate.net/profile/Henri-Lajeunesse-2" },
+          { name: "Audrey Parent", link: "https://www.researchgate.net/profile/Audrey-Parent" },
+          { name: "Madeleine Sharp", link: "https://scholar.google.com/citations?user=7EIrGjwAAAAJ&hl=en" },
+          { name: "Annie Rochette", link: "https://scholar.google.com/citations?user=yuL_gjYAAAAJ&hl=fr" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr&oi=ao" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=fr&oi=ao" }
         ],
-        journal: "SALTISE",
+        journal: "MDS",
         year: 2026,
-        date: "2026-06-01",
-        topic: "Neuroeducation",
-        summary: "In this study, we explore the relationship between belief in misconceptions about the brain and final grades among undergraduate science students at McGill University.",
-        desktopSummary: "We explore associations between belief in neuromyths and final grades among McGill undergraduate science students.",
-        awards: ["🗣️ Selected for Oral Presentation"],
-        image: "saltise.jpg"
+        date: "2026-10-04",
+        topic: "Person-specific Modeling of Neuromotor Deficits",
+        summary: "This study investigates whether fatigue in Parkinson’s disease is associated with alterations in white matter structure using diffusion MRI and probabilistic tractography.",
+        desktopSummary: "Exploring white matter connectivity and integrity underlying fatigue in Parkinson’s disease.",
+        image: "assets/images/jae.jpg"
       },
       {
         id: "pub-2026-3",
+        title: "Effects of Upregulation of the Posterior Parietal Cortex on Gait Adaptation Skills in People with Parkinson’s Disease",
+        authors: [
+          { name: "Tomoha Ogawa**", link: "https://www.mcgill.ca/hbcl/team" },
+          { name: "Clara Guedes**", link: "https://mx.linkedin.com/in/emilia-zald%C3%ADvar-morales" },
+          { name: "Cyrille E. Mvomo", me: true },
+          { name: "Jordan Bedime", link: "https://scholar.google.com/citations?user=WbGY5cEAAAAJ&hl=en&oi=ao" },
+          { name: "Leila Hajjaji", link: "https://ca.linkedin.com/in/leila-hajjaji-429126263" },
+          { name: "Alexandra Potvin-Desrochers", link: "https://scholar.google.com/citations?user=BCT7KcUAAAAJ&hl=fr&oi=ao" },
+          { name: "Julia Choi", link: "https://scholar.google.com/citations?hl=en&user=vDq3dIQAAAAJ&view_op=list_works&sortby=pubdate" },
+          { name: "Caroline Paquette", link: "https://scholar.google.com/citations?user=dPw3kgcAAAAJ&hl=fr&oi=ao" }
+        ],
+        journal: "MDS",
+        year: 2026,
+        date: "2026-10-04",
+        topic: "Person-specific Modeling of Neuromotor Deficits",
+        summary: "This study explores whether upregulating the posterior parietal cortex can enhance gait adaptation training in Parkinson’s disease. By pairing split-belt treadmill training with intermittent theta burst stimulation, we examine adaptation on the treadmill and its transfer to overground walking.",
+        desktopSummary: "Exploring whether posterior parietal cortex stimulation can support gait adaptation training in Parkinson’s disease.",
+        image: "assets/images/tomoha_mds.jpg"
+      },
+      {
+        id: "pub-2026-4",
         title: "Epistemic Uncertainty as a Driver of Performance in Wearable Monitoring of Parkinson’s Disease: A Real-World Proof-of-Concept Study",
         authors: [
           { name: "Cyrille E. Mvomo", me: true },
@@ -1213,19 +966,18 @@
         journal: "ICNR",
         year: 2026,
         date: "2026-09-29",
-        topic: "Wearable Fingerprinting",
-        summary: "In this study, we simulate an uncertainty-aware, personalized, real-world continuous motor state estimator that combines a time-series forecasting module, based on a foundation model, to predict movement ahead of time with a deep neural network that infers medication state from forecasted movement in Parkinson’s disease, in order to quantify the impact of epistemic uncertainty on outcome prediction uncertainty.",
-        desktopSummary: "We simulate personalized motor-state estimation using movement forecasting to examine how epistemic uncertainty affects predictions in Parkinson’s disease.",
-        image: "icnr.jpg"
-      },
+        topic: "Clinical Decision Support System Design",
+        summary: "This proof-of-concept study explores how different sources of uncertainty influence AI-powered wearable monitoring in Parkinson’s disease. Using personalized models and real-world gait recordings, we investigate how distinguishing uncertainty from limited model knowledge versus measurement noise can impact the detection of motor fluctuations.",
+        desktopSummary: "Understanding uncertainty in personalized wearable AI for real-world Parkinson’s disease monitoring.",
+        image: "assets/images/icnr.jpg"
+      }
 
     ];
 
     const topicOrder = [
-      "Mechanistic Phenotyping",
-      "Wearable Fingerprinting",
-      "Precision Mobility Intervention",
-      "Neuroeducation"
+      "Movement-based Biomarker Development",
+      "Person-specific Modeling of Neuromotor Deficits",
+      "Clinical Decision Support System Design"
     ];
     const publicationsContainer = document.getElementById("publications-container");
     const viewByDateButton = document.getElementById("view-by-date");
